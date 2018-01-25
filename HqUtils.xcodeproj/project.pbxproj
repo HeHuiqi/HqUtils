@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8ED6CD1720189BA50001393A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1620189BA50001393A /* AppDelegate.m */; };
-		8ED6CD1A20189BA50001393A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1920189BA50001393A /* ViewController.m */; };
+		8ED6CD1A20189BA50001393A /* HqRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1920189BA50001393A /* HqRootVC.m */; };
 		8ED6CD1D20189BA50001393A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1B20189BA50001393A /* Main.storyboard */; };
 		8ED6CD1F20189BA50001393A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1E20189BA50001393A /* Assets.xcassets */; };
 		8ED6CD2220189BA50001393A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED6CD2020189BA50001393A /* LaunchScreen.storyboard */; };
@@ -20,8 +20,8 @@
 		8ED6CD1220189BA50001393A /* HqUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HqUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED6CD1520189BA50001393A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8ED6CD1620189BA50001393A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8ED6CD1820189BA50001393A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8ED6CD1920189BA50001393A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8ED6CD1820189BA50001393A /* HqRootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqRootVC.h; sourceTree = "<group>"; };
+		8ED6CD1920189BA50001393A /* HqRootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqRootVC.m; sourceTree = "<group>"; };
 		8ED6CD1C20189BA50001393A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8ED6CD1E20189BA50001393A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ED6CD2120189BA50001393A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 				8ED6CD2B20189BC90001393A /* HqUtils */,
 				8ED6CD1520189BA50001393A /* AppDelegate.h */,
 				8ED6CD1620189BA50001393A /* AppDelegate.m */,
-				8ED6CD1820189BA50001393A /* ViewController.h */,
-				8ED6CD1920189BA50001393A /* ViewController.m */,
+				8ED6CD1820189BA50001393A /* HqRootVC.h */,
+				8ED6CD1920189BA50001393A /* HqRootVC.m */,
 				8ED6CD1B20189BA50001393A /* Main.storyboard */,
 				8ED6CD1E20189BA50001393A /* Assets.xcassets */,
 				8ED6CD2020189BA50001393A /* LaunchScreen.storyboard */,
@@ -156,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ED6CD2E20189BC90001393A /* HqColorImage.m in Sources */,
-				8ED6CD1A20189BA50001393A /* ViewController.m in Sources */,
+				8ED6CD1A20189BA50001393A /* HqRootVC.m in Sources */,
 				8ED6CD2520189BA50001393A /* main.m in Sources */,
 				8ED6CD1720189BA50001393A /* AppDelegate.m in Sources */,
 			);
@@ -295,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34AC3PEMF7;
 				INFOPLIST_FILE = HqUtils/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhq.HqUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -309,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34AC3PEMF7;
 				INFOPLIST_FILE = HqUtils/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hhq.HqUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
