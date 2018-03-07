@@ -79,6 +79,8 @@
     HqColorImage *colorImage = [[HqColorImage alloc] initWithFillColor:color isBorder:isBorder];
     return colorImage.corloImage;
 }
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

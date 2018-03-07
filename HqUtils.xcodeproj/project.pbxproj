@@ -7,16 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E074072204F8C1000A782E5 /* HqKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074061204F8C1000A782E5 /* HqKeyBoard.m */; };
+		8E074073204F8C1000A782E5 /* resign@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E074064204F8C1000A782E5 /* resign@3x.png */; };
+		8E074074204F8C1000A782E5 /* resign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E074065204F8C1000A782E5 /* resign@2x.png */; };
+		8E074075204F8C1000A782E5 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E074066204F8C1000A782E5 /* delete@2x.png */; };
+		8E074076204F8C1000A782E5 /* delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E074067204F8C1000A782E5 /* delete@3x.png */; };
+		8E074077204F8C1000A782E5 /* ZPNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074069204F8C1000A782E5 /* ZPNumberKeyboard.m */; };
+		8E074078204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E07406A204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.m */; };
+		8E074079204F8C1000A782E5 /* HqColorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E07406E204F8C1000A782E5 /* HqColorImage.m */; };
+		8E07407A204F8C1000A782E5 /* UITextField+LimitInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074070204F8C1000A782E5 /* UITextField+LimitInput.m */; };
+		8E07408A204F8E6200A782E5 /* NSArray+SafeGetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E07407D204F8E6200A782E5 /* NSArray+SafeGetValue.m */; };
+		8E07408B204F8E6200A782E5 /* HqTLVParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074080204F8E6200A782E5 /* HqTLVParse.m */; };
+		8E07408C204F8E6200A782E5 /* NSDictionary+isNULL.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074083204F8E6200A782E5 /* NSDictionary+isNULL.m */; };
+		8E07408D204F8E6200A782E5 /* NSString+HqString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074086204F8E6200A782E5 /* NSString+HqString.m */; };
+		8E07408E204F8E6200A782E5 /* HqString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074088204F8E6200A782E5 /* HqString.m */; };
+		8E074092204F946000A782E5 /* HqDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E074091204F946000A782E5 /* HqDateFormatter.m */; };
 		8ED6CD1720189BA50001393A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1620189BA50001393A /* AppDelegate.m */; };
 		8ED6CD1A20189BA50001393A /* HqRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1920189BA50001393A /* HqRootVC.m */; };
 		8ED6CD1D20189BA50001393A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1B20189BA50001393A /* Main.storyboard */; };
 		8ED6CD1F20189BA50001393A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED6CD1E20189BA50001393A /* Assets.xcassets */; };
 		8ED6CD2220189BA50001393A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED6CD2020189BA50001393A /* LaunchScreen.storyboard */; };
 		8ED6CD2520189BA50001393A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6CD2420189BA50001393A /* main.m */; };
-		8ED6CD2E20189BC90001393A /* HqColorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6CD2D20189BC90001393A /* HqColorImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E074060204F8C1000A782E5 /* HqKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqKeyBoard.h; sourceTree = "<group>"; };
+		8E074061204F8C1000A782E5 /* HqKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqKeyBoard.m; sourceTree = "<group>"; };
+		8E074064204F8C1000A782E5 /* resign@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resign@3x.png"; sourceTree = "<group>"; };
+		8E074065204F8C1000A782E5 /* resign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resign@2x.png"; sourceTree = "<group>"; };
+		8E074066204F8C1000A782E5 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		8E074067204F8C1000A782E5 /* delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@3x.png"; sourceTree = "<group>"; };
+		8E074068204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ZPNumberKeyboard.h"; sourceTree = "<group>"; };
+		8E074069204F8C1000A782E5 /* ZPNumberKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPNumberKeyboard.m; sourceTree = "<group>"; };
+		8E07406A204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ZPNumberKeyboard.m"; sourceTree = "<group>"; };
+		8E07406B204F8C1000A782E5 /* ZPNumberKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPNumberKeyboard.h; sourceTree = "<group>"; };
+		8E07406D204F8C1000A782E5 /* HqColorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqColorImage.h; sourceTree = "<group>"; };
+		8E07406E204F8C1000A782E5 /* HqColorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqColorImage.m; sourceTree = "<group>"; };
+		8E074070204F8C1000A782E5 /* UITextField+LimitInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+LimitInput.m"; sourceTree = "<group>"; };
+		8E074071204F8C1000A782E5 /* UITextField+LimitInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+LimitInput.h"; sourceTree = "<group>"; };
+		8E07407C204F8E6200A782E5 /* NSArray+SafeGetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SafeGetValue.h"; sourceTree = "<group>"; };
+		8E07407D204F8E6200A782E5 /* NSArray+SafeGetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SafeGetValue.m"; sourceTree = "<group>"; };
+		8E07407F204F8E6200A782E5 /* HqTLVParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqTLVParse.h; sourceTree = "<group>"; };
+		8E074080204F8E6200A782E5 /* HqTLVParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqTLVParse.m; sourceTree = "<group>"; };
+		8E074082204F8E6200A782E5 /* NSDictionary+isNULL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+isNULL.h"; sourceTree = "<group>"; };
+		8E074083204F8E6200A782E5 /* NSDictionary+isNULL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+isNULL.m"; sourceTree = "<group>"; };
+		8E074085204F8E6200A782E5 /* NSString+HqString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HqString.h"; sourceTree = "<group>"; };
+		8E074086204F8E6200A782E5 /* NSString+HqString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HqString.m"; sourceTree = "<group>"; };
+		8E074088204F8E6200A782E5 /* HqString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqString.m; sourceTree = "<group>"; };
+		8E074089204F8E6200A782E5 /* HqString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqString.h; sourceTree = "<group>"; };
+		8E074090204F946000A782E5 /* HqDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqDateFormatter.h; sourceTree = "<group>"; };
+		8E074091204F946000A782E5 /* HqDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqDateFormatter.m; sourceTree = "<group>"; };
 		8ED6CD1220189BA50001393A /* HqUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HqUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED6CD1520189BA50001393A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8ED6CD1620189BA50001393A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,8 +67,6 @@
 		8ED6CD2120189BA50001393A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ED6CD2320189BA50001393A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ED6CD2420189BA50001393A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8ED6CD2C20189BC90001393A /* HqColorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqColorImage.h; sourceTree = "<group>"; };
-		8ED6CD2D20189BC90001393A /* HqColorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqColorImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +80,110 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E07405F204F8C1000A782E5 /* HqKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				8E074060204F8C1000A782E5 /* HqKeyBoard.h */,
+				8E074061204F8C1000A782E5 /* HqKeyBoard.m */,
+			);
+			path = HqKeyBoard;
+			sourceTree = "<group>";
+		};
+		8E074062204F8C1000A782E5 /* HqCustomerKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8E074063204F8C1000A782E5 /* images */,
+				8E074068204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.h */,
+				8E074069204F8C1000A782E5 /* ZPNumberKeyboard.m */,
+				8E07406A204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.m */,
+				8E07406B204F8C1000A782E5 /* ZPNumberKeyboard.h */,
+			);
+			path = HqCustomerKeyboard;
+			sourceTree = "<group>";
+		};
+		8E074063204F8C1000A782E5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8E074064204F8C1000A782E5 /* resign@3x.png */,
+				8E074065204F8C1000A782E5 /* resign@2x.png */,
+				8E074066204F8C1000A782E5 /* delete@2x.png */,
+				8E074067204F8C1000A782E5 /* delete@3x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		8E07406C204F8C1000A782E5 /* HqColorImage */ = {
+			isa = PBXGroup;
+			children = (
+				8E07406D204F8C1000A782E5 /* HqColorImage.h */,
+				8E07406E204F8C1000A782E5 /* HqColorImage.m */,
+			);
+			path = HqColorImage;
+			sourceTree = "<group>";
+		};
+		8E07406F204F8C1000A782E5 /* HqTextInputLimit */ = {
+			isa = PBXGroup;
+			children = (
+				8E074070204F8C1000A782E5 /* UITextField+LimitInput.m */,
+				8E074071204F8C1000A782E5 /* UITextField+LimitInput.h */,
+			);
+			path = HqTextInputLimit;
+			sourceTree = "<group>";
+		};
+		8E07407B204F8E6200A782E5 /* HqArraySafeGetValue */ = {
+			isa = PBXGroup;
+			children = (
+				8E07407C204F8E6200A782E5 /* NSArray+SafeGetValue.h */,
+				8E07407D204F8E6200A782E5 /* NSArray+SafeGetValue.m */,
+			);
+			path = HqArraySafeGetValue;
+			sourceTree = "<group>";
+		};
+		8E07407E204F8E6200A782E5 /* HqTVLParse */ = {
+			isa = PBXGroup;
+			children = (
+				8E07407F204F8E6200A782E5 /* HqTLVParse.h */,
+				8E074080204F8E6200A782E5 /* HqTLVParse.m */,
+			);
+			path = HqTVLParse;
+			sourceTree = "<group>";
+		};
+		8E074081204F8E6200A782E5 /* HqDictionaryNull */ = {
+			isa = PBXGroup;
+			children = (
+				8E074082204F8E6200A782E5 /* NSDictionary+isNULL.h */,
+				8E074083204F8E6200A782E5 /* NSDictionary+isNULL.m */,
+			);
+			path = HqDictionaryNull;
+			sourceTree = "<group>";
+		};
+		8E074084204F8E6200A782E5 /* HqString */ = {
+			isa = PBXGroup;
+			children = (
+				8E074085204F8E6200A782E5 /* NSString+HqString.h */,
+				8E074086204F8E6200A782E5 /* NSString+HqString.m */,
+			);
+			path = HqString;
+			sourceTree = "<group>";
+		};
+		8E074087204F8E6200A782E5 /* HqRichString */ = {
+			isa = PBXGroup;
+			children = (
+				8E074088204F8E6200A782E5 /* HqString.m */,
+				8E074089204F8E6200A782E5 /* HqString.h */,
+			);
+			path = HqRichString;
+			sourceTree = "<group>";
+		};
+		8E07408F204F946000A782E5 /* HqDateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				8E074090204F946000A782E5 /* HqDateFormatter.h */,
+				8E074091204F946000A782E5 /* HqDateFormatter.m */,
+			);
+			path = HqDateFormatter;
+			sourceTree = "<group>";
+		};
 		8ED6CD0920189BA50001393A = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +220,16 @@
 		8ED6CD2B20189BC90001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
-				8ED6CD2C20189BC90001393A /* HqColorImage.h */,
-				8ED6CD2D20189BC90001393A /* HqColorImage.m */,
+				8E07408F204F946000A782E5 /* HqDateFormatter */,
+				8E07407B204F8E6200A782E5 /* HqArraySafeGetValue */,
+				8E074081204F8E6200A782E5 /* HqDictionaryNull */,
+				8E074087204F8E6200A782E5 /* HqRichString */,
+				8E074084204F8E6200A782E5 /* HqString */,
+				8E07407E204F8E6200A782E5 /* HqTVLParse */,
+				8E07406C204F8C1000A782E5 /* HqColorImage */,
+				8E074062204F8C1000A782E5 /* HqCustomerKeyboard */,
+				8E07405F204F8C1000A782E5 /* HqKeyBoard */,
+				8E07406F204F8C1000A782E5 /* HqTextInputLimit */,
 			);
 			path = HqUtils;
 			sourceTree = "<group>";
@@ -142,9 +292,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E074074204F8C1000A782E5 /* resign@2x.png in Resources */,
+				8E074075204F8C1000A782E5 /* delete@2x.png in Resources */,
+				8E074076204F8C1000A782E5 /* delete@3x.png in Resources */,
 				8ED6CD2220189BA50001393A /* LaunchScreen.storyboard in Resources */,
 				8ED6CD1F20189BA50001393A /* Assets.xcassets in Resources */,
 				8ED6CD1D20189BA50001393A /* Main.storyboard in Resources */,
+				8E074073204F8C1000A782E5 /* resign@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +309,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED6CD2E20189BC90001393A /* HqColorImage.m in Sources */,
 				8ED6CD1A20189BA50001393A /* HqRootVC.m in Sources */,
+				8E07408D204F8E6200A782E5 /* NSString+HqString.m in Sources */,
+				8E074078204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.m in Sources */,
+				8E074072204F8C1000A782E5 /* HqKeyBoard.m in Sources */,
+				8E074079204F8C1000A782E5 /* HqColorImage.m in Sources */,
+				8E07407A204F8C1000A782E5 /* UITextField+LimitInput.m in Sources */,
+				8E07408C204F8E6200A782E5 /* NSDictionary+isNULL.m in Sources */,
+				8E074092204F946000A782E5 /* HqDateFormatter.m in Sources */,
+				8E07408A204F8E6200A782E5 /* NSArray+SafeGetValue.m in Sources */,
+				8E074077204F8C1000A782E5 /* ZPNumberKeyboard.m in Sources */,
+				8E07408B204F8E6200A782E5 /* HqTLVParse.m in Sources */,
 				8ED6CD2520189BA50001393A /* main.m in Sources */,
+				8E07408E204F8E6200A782E5 /* HqString.m in Sources */,
 				8ED6CD1720189BA50001393A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
