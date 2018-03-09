@@ -513,8 +513,8 @@
 		8E074087204F8E6200A782E5 /* HqRichString */ = {
 			isa = PBXGroup;
 			children = (
-				8E074088204F8E6200A782E5 /* HqString.m */,
 				8E074089204F8E6200A782E5 /* HqString.h */,
+				8E074088204F8E6200A782E5 /* HqString.m */,
 			);
 			path = HqRichString;
 			sourceTree = "<group>";
@@ -598,8 +598,6 @@
 				8E07405F204F8C1000A782E5 /* HqKeyBoard */,
 				8ED987F220512F1400CBE329 /* HqKeyChain.h */,
 				8ED987F320512F1400CBE329 /* HqKeyChain.m */,
-				8ED987D920512F1300CBE329 /* HqNSURLSession.h */,
-				8ED987F020512F1400CBE329 /* HqNSURLSession.m */,
 				8E074087204F8E6200A782E5 /* HqRichString */,
 				8E074084204F8E6200A782E5 /* HqString */,
 				8E07406F204F8C1000A782E5 /* HqTextInputLimit */,
@@ -1009,6 +1007,8 @@
 		8ED989612051468B00CBE329 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8ED987D920512F1300CBE329 /* HqNSURLSession.h */,
+				8ED987F020512F1400CBE329 /* HqNSURLSession.m */,
 				8ED989622051468B00CBE329 /* HqAFHttpClient.h */,
 				8ED989642051468B00CBE329 /* HqAFHttpClient.m */,
 				8ED989652051468B00CBE329 /* HqHttpUtil.h */,
