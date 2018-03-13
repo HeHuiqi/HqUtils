@@ -149,6 +149,8 @@
 		8ED989602051460300CBE329 /* HqDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9895E2051460300CBE329 /* HqDownLoader.m */; };
 		8ED989662051468B00CBE329 /* HqHttpUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED989632051468B00CBE329 /* HqHttpUtil.m */; };
 		8ED989672051468B00CBE329 /* HqAFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED989642051468B00CBE329 /* HqAFHttpClient.m */; };
+		8ED98A3220575C6100CBE329 /* UIImage+HqImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED98A3120575C6100CBE329 /* UIImage+HqImage.m */; };
+		8ED98A372057721F00CBE329 /* HqAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED98A352057721E00CBE329 /* HqAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -411,6 +413,10 @@
 		8ED989632051468B00CBE329 /* HqHttpUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqHttpUtil.m; sourceTree = "<group>"; };
 		8ED989642051468B00CBE329 /* HqAFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqAFHttpClient.m; sourceTree = "<group>"; };
 		8ED989652051468B00CBE329 /* HqHttpUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqHttpUtil.h; sourceTree = "<group>"; };
+		8ED98A3020575C6100CBE329 /* UIImage+HqImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+HqImage.h"; sourceTree = "<group>"; };
+		8ED98A3120575C6100CBE329 /* UIImage+HqImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HqImage.m"; sourceTree = "<group>"; };
+		8ED98A352057721E00CBE329 /* HqAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqAlertView.m; sourceTree = "<group>"; };
+		8ED98A362057721E00CBE329 /* HqAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqAlertView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,6 +584,8 @@
 		8ED6CD2B20189BC90001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				8ED98A342057721E00CBE329 /* HqAlertView */,
+				8ED98A2F20575C3D00CBE329 /* HqImage */,
 				8ED989612051468B00CBE329 /* Network */,
 				8ED9895D2051460300CBE329 /* HqDownloader */,
 				8ED988402051414A00CBE329 /* HqPullZoomView */,
@@ -1017,6 +1025,24 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		8ED98A2F20575C3D00CBE329 /* HqImage */ = {
+			isa = PBXGroup;
+			children = (
+				8ED98A3020575C6100CBE329 /* UIImage+HqImage.h */,
+				8ED98A3120575C6100CBE329 /* UIImage+HqImage.m */,
+			);
+			path = HqImage;
+			sourceTree = "<group>";
+		};
+		8ED98A342057721E00CBE329 /* HqAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				8ED98A352057721E00CBE329 /* HqAlertView.m */,
+				8ED98A362057721E00CBE329 /* HqAlertView.h */,
+			);
+			path = HqAlertView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1141,6 +1167,7 @@
 				8EC81B552051152B0073D356 /* AppDelegate+Hq3DTouch.m in Sources */,
 				8ED989362051451300CBE329 /* UIProgressView+AFNetworking.m in Sources */,
 				8ED989552051451300CBE329 /* NSData+ImageContentType.m in Sources */,
+				8ED98A3220575C6100CBE329 /* UIImage+HqImage.m in Sources */,
 				8ED989542051451300CBE329 /* SDWebImageDownloaderOperation.m in Sources */,
 				8ED9890C2051451300CBE329 /* MJPropertyKey.m in Sources */,
 				8ED989272051451300CBE329 /* IQTitleBarButtonItem.m in Sources */,
@@ -1180,6 +1207,7 @@
 				8E07407A204F8C1000A782E5 /* UITextField+LimitInput.m in Sources */,
 				8ED989582051451300CBE329 /* SDImageCacheConfig.m in Sources */,
 				8E07408C204F8E6200A782E5 /* NSDictionary+isNULL.m in Sources */,
+				8ED98A372057721F00CBE329 /* HqAlertView.m in Sources */,
 				8ED9883F2051326900CBE329 /* AVPlayerCachingVC.m in Sources */,
 				8ED989292051451300CBE329 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				8ED989412051451300CBE329 /* AFURLSessionManager.m in Sources */,
