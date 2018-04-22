@@ -38,8 +38,7 @@
 //十六进制转字符 GBK编码
 + (NSString *)stringFromHexString:(NSString *)hexString;
 //十六进制字符串转换
-+ (NSMutableData *)getByteFromStringCommond:(NSString *)commond;
-
++ (NSData *)convertHexStrToData:(NSString *)str;
 //二进制转十进制
 + (int)toDecimalSystemWithBinarySystem:(NSString *)binary;
 //十进制转二进制

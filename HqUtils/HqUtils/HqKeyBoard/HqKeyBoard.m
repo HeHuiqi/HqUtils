@@ -132,12 +132,38 @@
     }
     [super layoutSubviews];
 }
+
+- (void) setSelectedRange:(NSRange) range
+{
+    UITextPosition* beginning = _tf.beginningOfDocument;
+    UITextPosition* startPosition = [_tf positionFromPosition:beginning offset:range.location];
+    UITextPosition* endPosition = [_tf positionFromPosition:beginning offset:range.location + range.length];
+    UITextRange* selectionRange = [_tf textRangeFromPosition:startPosition toPosition:endPosition];
+    [_tf setSelectedTextRange:selectionRange];
+}
 - (void)btnClick:(UIButton *)btn{
     switch (btn.tag) {
         case 3:
             {
                 if (_tf.text.length>=1) {
+                    UITextPosition *positon = _tf.beginningOfDocument;
+                    
+                    //开始位置
+                    UITextPosition* beginning = _tf.beginningOfDocument;
+                    //光标选择区域
+                    UITextRange* selectedRange = _tf.selectedTextRange;
+                    //选择的开始位置
+                    UITextPosition* selectionStart = selectedRange.start;
+                    //选择的结束位置
+                    UITextPosition* selectionEnd = selectedRange.end;
+                    //选择的实际位置
+                    const NSInteger location = [_tf offsetFromPosition:beginning toPosition:selectionStart];
+                    
                     _tf.text = [_tf.text substringToIndex:_tf.text.length-1];
+//                    NSString *last = [_tf.text substringWithRange:NSMakeRange(location, _tf.text.length-location)];
+//                    NSString *header = [_tf.text substringWithRange:NSMakeRange(0, location-1)];
+//                    _tf.text = [NSString stringWithFormat:@"%@%@",header,last];
+//                    [self setSelectedRange:NSMakeRange(location-1, _tf.text.length-location-1)];
                 }
             }
             break;

@@ -125,36 +125,32 @@
 }
 
 // 十六进制字符串转换
-+ (NSMutableData *)getByteFromStringCommond:(NSString *)commond
-{
-    NSMutableData *mutableData = [[NSMutableData alloc]init];
-    
-    const char *buf = [commond UTF8String];
-    
-    if (buf)
-    {
-        uint32_t len = (uint32_t)strlen(buf);
-        
-        char singleNumberString[3] = {'\0', '\0', '\0'};
-        uint32_t singleNumber = 0;
-        
-        for (uint32_t i = 0; i < len; i+=2)
-        {
-            if ( ((i+1) < len) && isxdigit(buf[i]) && (isxdigit(buf[i+1])) )
-            {
-                singleNumberString[0] = buf[i];
-                singleNumberString[1] = buf[i + 1];
-                sscanf(singleNumberString, "%x", &singleNumber);
-                uint8_t tmp = (uint8_t)(singleNumber & 0x000000FF);
-                [mutableData appendBytes:(void *)(&tmp)length:1];
-            }
-            else
-            {
-                break;
-            }
-        }
++ (NSData *)convertHexStrToData:(NSString *)str {
+    if (!str || [str length] == 0) {
+        return nil;
     }
-    return mutableData;
+    
+    NSMutableData *hexData = [[NSMutableData alloc] initWithCapacity:8];
+    NSRange range;
+    if ([str length] % 2 == 0) {
+        range = NSMakeRange(0, 2);
+    } else {
+        range = NSMakeRange(0, 1);
+    }
+    for (NSInteger i = range.location; i < [str length]; i += 2) {
+        unsigned int anInt;
+        NSString *hexCharStr = [str substringWithRange:range];
+        NSScanner *scanner = [[NSScanner alloc] initWithString:hexCharStr];
+        
+        [scanner scanHexInt:&anInt];
+        NSData *entity = [[NSData alloc] initWithBytes:&anInt length:1];
+        [hexData appendData:entity];
+        
+        range.location += range.length;
+        range.length = 2;
+    }
+    
+    return hexData;
 }
 // 二进制转十进制
 + (int)toDecimalSystemWithBinarySystem:(NSString *)binary
