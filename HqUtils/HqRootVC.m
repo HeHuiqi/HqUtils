@@ -8,6 +8,8 @@
 
 #import "HqRootVC.h"
 #import "HqColorImage.h"
+#import "HqKeyboardUseVC.h"
+
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
@@ -20,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _titles = @[@"HqColorImage"];
+    self.title = @"HqUtils";
+    _titles = @[@"HqColorImage",@"HqKeyboardUseVC"];
     [self initView];
 }
 - (void)initView{
@@ -48,6 +51,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    HqKeyboardUseVC *keyboard = [[HqKeyboardUseVC alloc] init];
+    [self.navigationController pushViewController:keyboard animated:YES];
 
 }
 - (void)hqBtn{

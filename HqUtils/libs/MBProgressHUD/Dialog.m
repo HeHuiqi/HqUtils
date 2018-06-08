@@ -44,26 +44,22 @@ static Dialog *instance = nil;
    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:controller.view animated:YES];
 	hud.mode = MBProgressHUDModeText;
-	hud.label.text = message;
+	hud.labelText = message;
 	hud.margin = 10.f;
-    hud.bezelView.color = [UIColor blackColor];
-    hud.label.textColor = [UIColor whiteColor];
-    hud.offset = CGPointMake(hud.offset.x, 150);
+	hud.yOffset = 150.f;
 	hud.removeFromSuperViewOnHide = YES;
-	[hud hideAnimated:YES afterDelay:2];
+	[hud hide:YES afterDelay:2];
 }
 
 + (void)toast:(NSString *)message {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
 	hud.mode = MBProgressHUDModeText;
     hud.animationType = MBProgressHUDAnimationZoomOut;
-	hud.label.text = message;
+	hud.labelText = message;
 	hud.margin = 10.f;
-    hud.bezelView.color = [UIColor blackColor];
-    hud.label.textColor = [UIColor whiteColor];
-    hud.offset = CGPointMake(hud.offset.x, 150);
+	hud.yOffset = 150.f;
 	hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:2];
+	[hud hide:YES afterDelay:2];
 }
 
 + (void)simpleToast:(NSString *)message
@@ -72,59 +68,54 @@ static Dialog *instance = nil;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.animationType = MBProgressHUDAnimationFade;
-    hud.label.text = message;
+    hud.labelText = message;
     hud.margin = 10.f;
-    hud.bezelView.color = [UIColor blackColor];
-    hud.label.textColor = [UIColor whiteColor];
-    hud.offset = CGPointMake(hud.offset.x, 200.f);
+    hud.yOffset = 200.f;
     hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:2];
+    [hud hide:YES afterDelay:2];
 }
 
 + (void)hideSimpleToast
 {
-    [SVProgressHUD dismissWithDelay:2.0];
+    [SVProgressHUD dismissAfterDelay:2];
 }
 
 + (void)toastCenter:(NSString *)message {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
 	hud.mode = MBProgressHUDModeText;
     hud.animationType = MBProgressHUDAnimationZoomOut;
-	hud.label.text = message;
+	hud.labelText = message;
 	hud.margin = 10.f;
-    hud.bezelView.color = [UIColor blackColor];
-    hud.label.textColor = [UIColor whiteColor];
-    hud.offset = CGPointMake(hud.offset.x, -20.f);
+	hud.yOffset = -20.f;
 	hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:2];
+	[hud hide:YES afterDelay:2];
 }
-+ (void)showMessage:(NSString *)message{
-    [SVProgressHUD showWithStatus:message];
-    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
-}
-+ (void)hideMessage{
-    [SVProgressHUD dismiss];
-}
+
 + (void)progressToast:(NSString *)message
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
 	hud.mode = MBProgressHUDModeIndeterminate;
-	hud.label.text = message;
+	hud.labelText = message;
 	hud.margin = 10.f;
-    hud.offset = CGPointMake(hud.offset.x, -20.f);
-//    hud.yOffset = -20.f;
+	hud.yOffset = -20.f;
 	hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:2];
+	[hud hide:YES afterDelay:2];
 }
 
-
+- (void)gradient:(UIViewController *)controller seletor:(SEL)method {
+    HUD = [[MBProgressHUD alloc] initWithView:controller.view];
+	[controller.view addSubview:HUD];
+//	HUD.dimBackground = YES;
+	HUD.delegate = self;
+	[HUD showWhileExecuting:method onTarget:controller withObject:nil animated:YES];
+}
 
 - (void)showProgress:(UIViewController *)controller {
     HUD = [[MBProgressHUD alloc] initWithView:controller.view];
     [controller.view addSubview:HUD];
 //    HUD.dimBackground = YES;
     HUD.delegate = self;
-    [HUD showAnimated:YES];
+    [HUD show:YES];
 }
 
 - (void)showProgress:(UIViewController *)controller withLabel:(NSString *)labelText {
@@ -132,8 +123,8 @@ static Dialog *instance = nil;
     [controller.view addSubview:HUD];
     HUD.delegate = self;
 //    HUD.dimBackground = YES;
-    HUD.label.text = labelText;
-    [HUD showAnimated:YES];
+    HUD.labelText = labelText;
+    [HUD show:YES];
 }
 
 - (void)showCenterProgressWithLabel:(NSString *)labelText
@@ -142,14 +133,21 @@ static Dialog *instance = nil;
     [[UIApplication sharedApplication].keyWindow addSubview:HUD];
     HUD.delegate = self;
     //    HUD.dimBackground = YES;
-    HUD.label.text = labelText;
-    [HUD showAnimated:YES];
+    HUD.labelText = labelText;
+    [HUD show:YES];
 }
 
 - (void)hideProgress {
-    [HUD hideAnimated:YES];
+    [HUD hide:YES];
 }
 
+- (void)progressWithLabel:(UIViewController *)controller seletor:(SEL)method {
+    HUD = [[MBProgressHUD alloc] initWithView:controller.view];
+    [controller.view addSubview:HUD];
+    HUD.delegate = self;
+    //HUD.labelText = @"数据加载中...";
+    [HUD showWhileExecuting:method onTarget:controller withObject:nil animated:YES];
+}
 
 #pragma mark -
 #pragma mark Execution code
@@ -170,7 +168,7 @@ static Dialog *instance = nil;
 - (void)myMixedTask {
 	sleep(2);
 	HUD.mode = MBProgressHUDModeDeterminate;
-	HUD.label.text = @"Progress";
+	HUD.labelText = @"Progress";
 	float progress = 0.0f;
 	while (progress < 1.0f)
 	{
@@ -179,11 +177,11 @@ static Dialog *instance = nil;
 		usleep(50000);
 	}
 	HUD.mode = MBProgressHUDModeIndeterminate;
-	HUD.label.text = @"Cleaning up";
+	HUD.labelText = @"Cleaning up";
 	sleep(2);
 	HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
 	HUD.mode = MBProgressHUDModeCustomView;
-	HUD.label.text = @"Completed";
+	HUD.labelText = @"Completed";
 	sleep(2);
 }
 
@@ -204,11 +202,11 @@ static Dialog *instance = nil;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
 	HUD.mode = MBProgressHUDModeCustomView;
-	[HUD hideAnimated:YES afterDelay:2];
+	[HUD hide:YES afterDelay:2];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	[HUD hideAnimated:YES];
+	[HUD hide:YES];
 }
 
 #pragma mark -
