@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598CB8521BF672A000FE829 /* NSObject+HqInputLimit.m */; };
 		33D03937207AEF1600B46E74 /* HqKeyboardUseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D03936207AEF1600B46E74 /* HqKeyboardUseVC.m */; };
 		33D03944207AF26B00B46E74 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D03939207AF26B00B46E74 /* MBProgressHUD.m */; };
 		33D03945207AF26B00B46E74 /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D0393B207AF26B00B46E74 /* MBProgressHUD+Add.m */; };
@@ -150,6 +151,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1598CB8421BF672A000FE829 /* NSObject+HqInputLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HqInputLimit.h"; sourceTree = "<group>"; };
+		1598CB8521BF672A000FE829 /* NSObject+HqInputLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqInputLimit.m"; sourceTree = "<group>"; };
 		337A70F4208C5C7500413919 /* HqUtilsPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqUtilsPrefix.pch; sourceTree = "<group>"; };
 		33D03935207AEF1600B46E74 /* HqKeyboardUseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqKeyboardUseVC.h; sourceTree = "<group>"; };
 		33D03936207AEF1600B46E74 /* HqKeyboardUseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqKeyboardUseVC.m; sourceTree = "<group>"; };
@@ -493,6 +496,8 @@
 		8E07406F204F8C1000A782E5 /* HqTextInputLimit */ = {
 			isa = PBXGroup;
 			children = (
+				1598CB8421BF672A000FE829 /* NSObject+HqInputLimit.h */,
+				1598CB8521BF672A000FE829 /* NSObject+HqInputLimit.m */,
 				8E074070204F8C1000A782E5 /* UITextField+LimitInput.m */,
 				8E074071204F8C1000A782E5 /* UITextField+LimitInput.h */,
 			);
@@ -1049,7 +1054,7 @@
 		8ED6CD0A20189BA50001393A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = macpro;
 				TargetAttributes = {
 					8ED6CD1120189BA50001393A = {
@@ -1143,6 +1148,7 @@
 				8ED989532051451300CBE329 /* SDImageCache.m in Sources */,
 				8ED9890D2051451300CBE329 /* MJFoundation.m in Sources */,
 				8EC81B552051152B0073D356 /* AppDelegate+Hq3DTouch.m in Sources */,
+				1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */,
 				8ED989362051451300CBE329 /* UIProgressView+AFNetworking.m in Sources */,
 				8ED989552051451300CBE329 /* NSData+ImageContentType.m in Sources */,
 				8ED98A3220575C6100CBE329 /* UIImage+HqImage.m in Sources */,
@@ -1270,6 +1276,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1277,6 +1284,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1325,6 +1333,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1332,6 +1341,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1365,7 +1375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34AC3PEMF7;
+				DEVELOPMENT_TEAM = 7V926B465U;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HqUtils/HqUtilsPrefix.pch;
 				INFOPLIST_FILE = HqUtils/Info.plist;
@@ -1382,7 +1392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34AC3PEMF7;
+				DEVELOPMENT_TEAM = 7V926B465U;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HqUtils/HqUtilsPrefix.pch;
 				INFOPLIST_FILE = HqUtils/Info.plist;

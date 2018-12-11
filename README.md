@@ -18,7 +18,8 @@ iOS开发中常用的的工具类和一些UI组件
 * HqTextInputLimit 输入框字符限制类别
 * HqKeyChain 钥匙串的简单操作
 * Hq3DTouch 3DTouch的使用
-* HqPlayer 视频播放器工具类
+* HqPlayer  视频播放器组件
+* HqLoopView  无限轮播组件
 
 ## HqCustomKeyboard
 ```
