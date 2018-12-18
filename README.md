@@ -8,7 +8,7 @@ iOS开发中常用的的工具类和一些UI组件
 ## 部分列举如下：
 * HqAlertView 一个以block方式的系统提示（iOS8.0+）
 * HqImage UImage的一个类别
-* Network 是一个网络请求工具类，包好系统和AFNetworking的封装
+* Network 是一个网络请求工具类，包括系统和AFNetworking的封装
 * HqPullZoomView 下拉放大视图
 * HqCustomKeyboard、HqKeyBoard 自定义键盘
 * HqDateFormatter 字符串日期各式转换，方便快捷
