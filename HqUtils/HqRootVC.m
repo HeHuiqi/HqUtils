@@ -7,7 +7,6 @@
 //
 
 #import "HqRootVC.h"
-#import "HqColorImage.h"
 #import "HqKeyboardUseVC.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -23,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqColorImage",@"HqKeyboardUseVC"];
+    _titles = @[@"HqColorImageVC",@"HqKeyboardUseVC"];
     [self initView];
 }
 - (void)initView{
@@ -52,21 +51,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    HqKeyboardUseVC *keyboard = [[HqKeyboardUseVC alloc] init];
-    [self.navigationController pushViewController:keyboard animated:YES];
+    NSString *vcname = self.titles[indexPath.row];
+    Class vcClass = NSClassFromString(vcname);
+    UIViewController *vc = [vcClass new];
+    vc.title = vcname;
+    [self.navigationController pushViewController:vc animated:YES];
 
-}
-- (void)hqBtn{
-    UIImage *normalImage = [HqColorImage imageWithColor:[UIColor blueColor] isBorder:YES];
-    UIImage *HighlightedImage = [HqColorImage imageWithColor:[UIColor blueColor] isBorder:NO];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setTitle:@"Title" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [btn setBackgroundImage:normalImage forState:UIControlStateNormal];
-    [btn setBackgroundImage:HighlightedImage forState:UIControlStateHighlighted];
-    btn.frame = CGRectMake(10, 80, 100, 40);
-    [self.view addSubview:btn];
 }
 
 - (void)didReceiveMemoryWarning {

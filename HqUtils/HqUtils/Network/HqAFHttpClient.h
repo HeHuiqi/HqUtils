@@ -16,7 +16,7 @@
 #import "SVProgressHUD.h"
 #import "Dialog.h"
 
-#import "NSDictionary+isNULL.h"
+#import "NSObject+HqSafeGetValue.h"
 
 typedef NS_ENUM(int,RequestMethod){
     Get =1,

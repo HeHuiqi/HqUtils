@@ -20,6 +20,7 @@ iOS开发中常用的的工具类和一些UI组件
 * Hq3DTouch 3DTouch的使用
 * HqPlayer  视频播放器组件
 * HqLoopView  无限轮播组件
+* HqSafeGetValue 安全的访问NSDictionary、NSArray
 
 ## HqCustomKeyboard
 ```
