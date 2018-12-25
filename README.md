@@ -22,6 +22,7 @@ iOS开发中常用的的工具类和一些UI组件
 * HqLoopView  无限轮播组件
 * HqSafeGetValue 安全的访问NSDictionary、NSArray
 * HqDecimalNumberUtils 浮点数精确计算，适合金融类app的一个工具
+* WSDaePickerView 一个日期选择期
 
 ## HqCustomKeyboard
 ```

@@ -8,6 +8,7 @@
 
 #import "HqRootVC.h"
 #import "HqKeyboardUseVC.h"
+#import "HqDatePickerVC.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -22,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqColorImageVC",@"HqKeyboardUseVC"];
+    _titles = @[@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC"];
     [self initView];
 }
 - (void)initView{

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151E4A4421D208BF006AADC3 /* WSDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A4021D208BF006AADC3 /* WSDatePickerView.xib */; };
+		151E4A4521D208BF006AADC3 /* WSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4121D208BF006AADC3 /* WSDatePickerView.m */; };
+		151E4A4621D208BF006AADC3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4221D208BF006AADC3 /* NSDate+Extension.m */; };
+		151E4A4721D208BF006AADC3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4321D208BF006AADC3 /* UIView+Extension.m */; };
+		151E4A4B21D208FE006AADC3 /* HqDatePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4A21D208FE006AADC3 /* HqDatePickerVC.m */; };
 		158411E721C8F0EF00772A14 /* NSObject+HqSafeGetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 158411E621C8F0EF00772A14 /* NSObject+HqSafeGetValue.m */; };
 		158411EA21C8F55300772A14 /* HqColorImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 158411E921C8F55300772A14 /* HqColorImageVC.m */; };
 		1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598CB8521BF672A000FE829 /* NSObject+HqInputLimit.m */; };
@@ -70,6 +75,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		151E4A3D21D208BF006AADC3 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		151E4A3E21D208BF006AADC3 /* WSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDatePickerView.h; sourceTree = "<group>"; };
+		151E4A3F21D208BF006AADC3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		151E4A4021D208BF006AADC3 /* WSDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSDatePickerView.xib; sourceTree = "<group>"; };
+		151E4A4121D208BF006AADC3 /* WSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDatePickerView.m; sourceTree = "<group>"; };
+		151E4A4221D208BF006AADC3 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		151E4A4321D208BF006AADC3 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		151E4A4921D208FE006AADC3 /* HqDatePickerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqDatePickerVC.h; sourceTree = "<group>"; };
+		151E4A4A21D208FE006AADC3 /* HqDatePickerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqDatePickerVC.m; sourceTree = "<group>"; };
 		158411E521C8F0EF00772A14 /* NSObject+HqSafeGetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HqSafeGetValue.h"; sourceTree = "<group>"; };
 		158411E621C8F0EF00772A14 /* NSObject+HqSafeGetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqSafeGetValue.m"; sourceTree = "<group>"; };
 		158411E821C8F55300772A14 /* HqColorImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqColorImageVC.h; sourceTree = "<group>"; };
@@ -185,6 +199,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151E4A3C21D208BF006AADC3 /* WSDaePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				151E4A3D21D208BF006AADC3 /* NSDate+Extension.h */,
+				151E4A3E21D208BF006AADC3 /* WSDatePickerView.h */,
+				151E4A3F21D208BF006AADC3 /* UIView+Extension.h */,
+				151E4A4021D208BF006AADC3 /* WSDatePickerView.xib */,
+				151E4A4121D208BF006AADC3 /* WSDatePickerView.m */,
+				151E4A4221D208BF006AADC3 /* NSDate+Extension.m */,
+				151E4A4321D208BF006AADC3 /* UIView+Extension.m */,
+			);
+			path = WSDaePickerView;
+			sourceTree = "<group>";
+		};
+		151E4A4821D208D9006AADC3 /* HqDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				151E4A4921D208FE006AADC3 /* HqDatePickerVC.h */,
+				151E4A4A21D208FE006AADC3 /* HqDatePickerVC.m */,
+			);
+			path = HqDatePicker;
+			sourceTree = "<group>";
+		};
 		158411E421C8F0EF00772A14 /* HqSafeGetValue */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +393,8 @@
 		8ED6CD2B20189BC90001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				151E4A4821D208D9006AADC3 /* HqDatePicker */,
+				151E4A3C21D208BF006AADC3 /* WSDaePickerView */,
 				158411E421C8F0EF00772A14 /* HqSafeGetValue */,
 				8ED98A342057721E00CBE329 /* HqAlertView */,
 				8ED98A2F20575C3D00CBE329 /* HqImage */,
@@ -562,6 +601,7 @@
 				8ED988322051326900CBE329 /* yuan@3x.png in Resources */,
 				8E074075204F8C1000A782E5 /* delete@2x.png in Resources */,
 				8E074076204F8C1000A782E5 /* delete@3x.png in Resources */,
+				151E4A4421D208BF006AADC3 /* WSDatePickerView.xib in Resources */,
 				8ED988312051326900CBE329 /* big_icon.png in Resources */,
 				8ED988372051326900CBE329 /* big_icon@3x.png in Resources */,
 				8ED9883C2051326900CBE329 /* san_jiao@3x.png in Resources */,
@@ -638,6 +678,7 @@
 				8ED988432051414A00CBE329 /* HqPullZoomView.m in Sources */,
 				8ED9880A20512F1400CBE329 /* HqDeviceInfo.m in Sources */,
 				8ED988192051326300CBE329 /* DownloadOperation.m in Sources */,
+				151E4A4621D208BF006AADC3 /* NSDate+Extension.m in Sources */,
 				8E074078204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.m in Sources */,
 				8E074072204F8C1000A782E5 /* HqKeyBoard.m in Sources */,
 				8E074079204F8C1000A782E5 /* HqColorImage.m in Sources */,
@@ -651,15 +692,18 @@
 				8E074077204F8C1000A782E5 /* ZPNumberKeyboard.m in Sources */,
 				8E07408B204F8E6200A782E5 /* HqTLVParse.m in Sources */,
 				8ED988182051326300CBE329 /* HqOperation.m in Sources */,
+				151E4A4521D208BF006AADC3 /* WSDatePickerView.m in Sources */,
 				8ED989602051460300CBE329 /* HqDownLoader.m in Sources */,
 				33D03937207AEF1600B46E74 /* HqKeyboardUseVC.m in Sources */,
 				8ED989672051468B00CBE329 /* HqAFHttpClient.m in Sources */,
 				8ED987F720512F1400CBE329 /* NSString+Hash.m in Sources */,
+				151E4A4721D208BF006AADC3 /* UIView+Extension.m in Sources */,
 				8ED9880C20512F1400CBE329 /* HqFileManager.m in Sources */,
 				8ED989662051468B00CBE329 /* HqHttpUtil.m in Sources */,
 				8ED6CD2520189BA50001393A /* main.m in Sources */,
 				8ED987F520512F1400CBE329 /* HqEncrypt.m in Sources */,
 				8E07408E204F8E6200A782E5 /* HqString.m in Sources */,
+				151E4A4B21D208FE006AADC3 /* HqDatePickerVC.m in Sources */,
 				8ED9880B20512F1400CBE329 /* HqKeyChain.m in Sources */,
 				8EC81B572051152B0073D356 /* HqPreviewVC.m in Sources */,
 				8ED6CD1720189BA50001393A /* AppDelegate.m in Sources */,
