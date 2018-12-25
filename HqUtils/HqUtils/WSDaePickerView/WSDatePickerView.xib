@@ -18,7 +18,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvZ-fK-lMh" userLabel="容器">
                     <rect key="frame" x="0.0" y="397" width="375" height="270"/>
                     <subviews>
-                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zE9-lT-myF" userLabel="年份">
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zE9-lT-myF" userLabel="大年份">
                             <rect key="frame" x="0.0" y="45" width="375" height="225"/>
                             <fontDescription key="fontDescription" type="system" pointSize="110"/>
                             <color key="textColor" red="0.91225260496139526" green="0.93091040849685669" blue="0.95064496994018555" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,9 +35,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwp-LQ-VOg" userLabel="确定">
-                            <rect key="frame" x="315" y="0.0" width="60" height="45"/>
+                            <rect key="frame" x="305" y="0.0" width="70" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="60" id="Zvk-CT-4P1"/>
+                                <constraint firstAttribute="width" constant="70" id="Zvk-CT-4P1"/>
                                 <constraint firstAttribute="height" constant="45" id="ef8-vb-lWa"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -46,7 +46,7 @@
                                 <action selector="doneAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="pJk-ty-47x"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An7-Vy-UcN">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An7-Vy-UcN" userLabel="取消">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="GPf-SE-F3L"/>
