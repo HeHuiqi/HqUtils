@@ -77,9 +77,6 @@
                 [self reloadIndex:indexPath dateStr:dateString];
                 
             }];
-            datepicker.dateLabelColor = [UIColor orangeColor];//年-月-日-时-分 颜色
-            datepicker.datePickerColor = [UIColor blackColor];//滚轮日期颜色
-            datepicker.doneButtonColor = [UIColor orangeColor];//确定按钮的颜色
             [datepicker show];
         }
             break;

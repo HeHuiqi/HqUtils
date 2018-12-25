@@ -31,6 +31,9 @@ typedef enum{
  *  确定按钮颜色
  */
 @property (nonatomic,strong)UIColor *doneButtonColor;
+//TopBar 颜色
+@property (nonatomic,strong)UIColor *topBarColor;
+
 /**
  *  年-月-日-时-分 文字颜色(默认橙色)
  */

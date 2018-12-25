@@ -47,15 +47,19 @@ typedef void(^doneBlock)(NSDate *);
     
 }
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UILabel *topBarView;
 @property (weak, nonatomic) IBOutlet UILabel *showYearView;
 @property (weak, nonatomic) IBOutlet UIButton *doneBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
+
 - (IBAction)doneAction:(UIButton *)btn;
+- (IBAction)cancelAction:(UIButton *)sender;
 
 
-@property (nonatomic,strong)UIPickerView *datePicker;
-@property (nonatomic, retain) NSDate *scrollToDate;//滚到指定日期
-@property (nonatomic,strong)doneBlock doneBlock;
-@property (nonatomic,assign)WSDateStyle datePickerStyle;
+@property (nonatomic,strong) UIPickerView *datePicker;
+@property (nonatomic,strong) NSDate *scrollToDate;//滚到指定日期
+@property (nonatomic,strong) doneBlock doneBlock;
+@property (nonatomic,assign) WSDateStyle datePickerStyle;
 
 
 @end
@@ -175,7 +179,7 @@ typedef void(^doneBlock)(NSDate *);
 -(void)setupUI {
 
     
-    self.doneButtonColor = RGB(247, 133, 51);
+    self.doneButtonColor = RGB(0, 122.0, 255.0);
     self.frame=CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     
     //点击背景是否影藏
@@ -227,7 +231,7 @@ typedef void(^doneBlock)(NSDate *);
     
     //最大最小限制
     if (!self.maxLimitDate) {
-        self.maxLimitDate = [NSDate date:@"2099-12-31 23:59" WithFormat:@"yyyy-MM-dd HH:mm"];
+        self.maxLimitDate = [NSDate date:@"2200-12-31 23:59" WithFormat:@"yyyy-MM-dd HH:mm"];
     }
     //最小限制
     if (!self.minLimitDate) {
@@ -702,6 +706,12 @@ typedef void(^doneBlock)(NSDate *);
     [self dismiss];
 }
 
+- (IBAction)cancelAction:(UIButton *)sender {
+    
+    [self dismiss];
+}
+
+
 #pragma mark - tools
 //通过年月求每月天数
 - (NSInteger)DaysfromYear:(NSInteger)year andMonth:(NSInteger)month
@@ -817,10 +827,15 @@ typedef void(^doneBlock)(NSDate *);
     }
     [self getNowDate:self.scrollToDate animated:NO];
 }
-
+- (void)setTopBarColor:(UIColor *)topBarColor{
+    _topBarColor = topBarColor;
+    self.topBarView.backgroundColor = _topBarColor;
+}
 -(void)setDoneButtonColor:(UIColor *)doneButtonColor {
     _doneButtonColor = doneButtonColor;
-    self.doneBtn.backgroundColor = doneButtonColor;
+    self.doneBtn.tintColor = _doneButtonColor;
+    self.cancelBtn.tintColor = _doneButtonColor;
+    self.topBarView.textColor = _doneButtonColor;
 }
 
 -(void)setHideBackgroundYearLabel:(BOOL)hideBackgroundYearLabel {
