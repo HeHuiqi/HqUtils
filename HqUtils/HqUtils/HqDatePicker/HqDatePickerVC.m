@@ -13,36 +13,60 @@
 
 #define randomColor [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1]
 
-@interface HqDatePickerVC ()
+@interface HqDatePickerVC ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray *dateStyles;
 @end
 
 @implementation HqDatePickerVC
-
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+    }
+    return _tableView;
+}
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dateStyles.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellIndentifer = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifer];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifer];
+    }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text = self.dateStyles[indexPath.row];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self selectAction:indexPath];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    
-    NSArray *arr = @[@"年-月-日-时-分",@"月-日-时-分",@"年-月-日",@"年-月",@"月-日",@"时-分",@"年",@"月",@"指定日期2011-11-11 11:11",@"日-时-分"];
-    for (NSInteger i = 0; i < arr.count; i++) {
-        UIButton *selectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        selectBtn.frame = CGRectMake(20, 40+50*i, self.view.frame.size.width-40, 40);
-        selectBtn.tag = i;
-        selectBtn.layer.cornerRadius = 5;
-        selectBtn.backgroundColor = [UIColor lightGrayColor];
-        [selectBtn setTitle:[arr objectAtIndex:i] forState:UIControlStateNormal];
-        [self.view addSubview:selectBtn];
-        [selectBtn addTarget:self action:@selector(selectAction:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    
+    NSArray *initDate = @[@"年-月-日-时-分",@"月-日-时-分",@"年-月-日",@"年-月",@"月-日",@"时-分",@"年",@"月",@"指定日期2011-11-11 11:11",@"日-时-分"];
+    self.dateStyles = [[NSMutableArray alloc] initWithArray:initDate];
+    [self.view addSubview:self.tableView];
     
     
 }
-
-- (void)selectAction:(UIButton *)btn {
+- (void)reloadIndex:(NSIndexPath *)indexPath dateStr:(NSString *)dateStr{
+    NSString *lastDate = self.dateStyles[indexPath.row];
+    [self.dateStyles removeObject:lastDate];
+    [self.dateStyles insertObject:dateStr atIndex:indexPath.row];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+- (void)selectAction:(NSIndexPath *)indexPath {
     
-    switch (btn.tag) {
+    switch (indexPath.row) {
         case 0:
         {
             //年-月-日-时-分
@@ -50,7 +74,8 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"yyyy-MM-dd HH:mm"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
+                
             }];
             datepicker.dateLabelColor = [UIColor orangeColor];//年-月-日-时-分 颜色
             datepicker.datePickerColor = [UIColor blackColor];//滚轮日期颜色
@@ -65,7 +90,7 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"MM-dd HH:mm"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
             }];
             datepicker.dateLabelColor = [UIColor purpleColor];//年-月-日-时-分 颜色
             datepicker.datePickerColor = [UIColor blackColor];//滚轮日期颜色
@@ -81,7 +106,7 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"yyyy-MM-dd"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
             }];
             datepicker.dateLabelColor = randomColor;//年-月-日-时-分 颜色
             datepicker.datePickerColor = randomColor;//滚轮日期颜色
@@ -96,7 +121,7 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"yyyy-MM"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
             }];
             datepicker.dateLabelColor = randomColor;//年-月-日-时-分 颜色
             datepicker.datePickerColor = randomColor;//滚轮日期颜色
@@ -112,7 +137,7 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"MM-dd"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
             }];
             datepicker.dateLabelColor = randomColor;//年-月-日-时-分 颜色
             datepicker.datePickerColor = randomColor;//滚轮日期颜色
@@ -128,7 +153,7 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"HH:mm"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
             }];
             datepicker.dateLabelColor = randomColor;//年-月-日-时-分 颜色
             datepicker.datePickerColor = randomColor;//滚轮日期颜色
@@ -145,7 +170,7 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"yyyy"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
             }];
             datepicker.dateLabelColor = randomColor;//年-月-日-时-分 颜色
             datepicker.datePickerColor = randomColor;//滚轮日期颜色
@@ -160,7 +185,7 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"MM"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
             }];
             datepicker.dateLabelColor = randomColor;//年-月-日-时-分 颜色
             datepicker.datePickerColor = randomColor;//滚轮日期颜色
@@ -179,7 +204,7 @@
                 
                 NSString *date = [selectDate stringWithFormat:@"yyyy-MM-dd HH:mm"];
                 NSLog(@"选择的日期：%@",date);
-                [btn setTitle:date forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:date];
                 
             }];
             datepicker.dateLabelColor = RGB(65, 188, 241);//年-月-日-时-分 颜色
@@ -196,7 +221,7 @@
                 
                 NSString *dateString = [selectDate stringWithFormat:@"dd HH:mm"];
                 NSLog(@"选择的日期：%@",dateString);
-                [btn setTitle:dateString forState:UIControlStateNormal];
+                [self reloadIndex:indexPath dateStr:dateString];
             }];
             datepicker.dateLabelColor = randomColor;//年-月-日-时-分 颜色
             datepicker.datePickerColor = randomColor;//滚轮日期颜色
