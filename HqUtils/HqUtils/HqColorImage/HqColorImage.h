@@ -18,6 +18,7 @@
 - (instancetype)initWithFillColor:(UIColor *)fillColor isBorder:(BOOL)isBorder;
 
 + (UIImage *)imageWithColor:(UIColor *)color isBorder:(BOOL)isBorder;
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 
 @end

@@ -79,6 +79,21 @@
     return image;
 }
 
++ (UIImage *)imageWithColor:(UIColor *)color {
+    
+    return [self imageWithColor:color size:CGSizeMake(1.f, 1.f)];
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

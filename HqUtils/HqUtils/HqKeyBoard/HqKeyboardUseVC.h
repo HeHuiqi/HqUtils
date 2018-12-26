@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HqKeyboardUseVC : UIViewController
+@interface HqKeyboardUseVC : SuperVC
 
 @end

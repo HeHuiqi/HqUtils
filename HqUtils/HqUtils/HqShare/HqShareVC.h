@@ -1,8 +1,8 @@
 //
-//  HqDatePickerVC.h
+//  HqShareVC.h
 //  HqUtils
 //
-//  Created by hqmac on 2018/12/25.
+//  Created by hqmac on 2018/12/26.
 //  Copyright © 2018 macpro. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HqDatePickerVC : SuperVC
+@interface HqShareVC : SuperVC
 
 @end
 

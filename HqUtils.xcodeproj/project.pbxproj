@@ -12,6 +12,17 @@
 		151E4A4621D208BF006AADC3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4221D208BF006AADC3 /* NSDate+Extension.m */; };
 		151E4A4721D208BF006AADC3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4321D208BF006AADC3 /* UIView+Extension.m */; };
 		151E4A4B21D208FE006AADC3 /* HqDatePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4A21D208FE006AADC3 /* HqDatePickerVC.m */; };
+		151E4A4F21D32A8E006AADC3 /* HqShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4E21D32A8E006AADC3 /* HqShareVC.m */; };
+		151E4A5B21D37D03006AADC3 /* SuperNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A5221D37D03006AADC3 /* SuperNavigationVC.m */; };
+		151E4A5C21D37D03006AADC3 /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A5321D37D03006AADC3 /* nav_back.png */; };
+		151E4A5D21D37D03006AADC3 /* SuperVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A5421D37D03006AADC3 /* SuperVC.m */; };
+		151E4A5E21D37D03006AADC3 /* HqViewControllerAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A5521D37D03006AADC3 /* HqViewControllerAnimated.m */; };
+		151E4A5F21D37D03006AADC3 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A5821D37D03006AADC3 /* nav_back@2x.png */; };
+		151E4A6021D37D03006AADC3 /* nav_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A5921D37D03006AADC3 /* nav_back@3x.png */; };
+		151E4A6421D37E6E006AADC3 /* HqTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A6321D37E6E006AADC3 /* HqTestVC.m */; };
+		151E4A6721D37E81006AADC3 /* HqTest1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A6621D37E81006AADC3 /* HqTest1VC.m */; };
+		151E4A6A21D37E91006AADC3 /* HqTest2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A6921D37E91006AADC3 /* HqTest2VC.m */; };
+		151E4A6C21D39227006AADC3 /* HqNavBar.md in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A6B21D39227006AADC3 /* HqNavBar.md */; };
 		158411E721C8F0EF00772A14 /* NSObject+HqSafeGetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 158411E621C8F0EF00772A14 /* NSObject+HqSafeGetValue.m */; };
 		158411EA21C8F55300772A14 /* HqColorImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 158411E921C8F55300772A14 /* HqColorImageVC.m */; };
 		1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598CB8521BF672A000FE829 /* NSObject+HqInputLimit.m */; };
@@ -84,6 +95,25 @@
 		151E4A4321D208BF006AADC3 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		151E4A4921D208FE006AADC3 /* HqDatePickerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqDatePickerVC.h; sourceTree = "<group>"; };
 		151E4A4A21D208FE006AADC3 /* HqDatePickerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqDatePickerVC.m; sourceTree = "<group>"; };
+		151E4A4D21D32A8E006AADC3 /* HqShareVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqShareVC.h; sourceTree = "<group>"; };
+		151E4A4E21D32A8E006AADC3 /* HqShareVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqShareVC.m; sourceTree = "<group>"; };
+		151E4A5121D37D03006AADC3 /* HqViewControllerAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqViewControllerAnimated.h; sourceTree = "<group>"; };
+		151E4A5221D37D03006AADC3 /* SuperNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperNavigationVC.m; sourceTree = "<group>"; };
+		151E4A5321D37D03006AADC3 /* nav_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_back.png; sourceTree = "<group>"; };
+		151E4A5421D37D03006AADC3 /* SuperVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperVC.m; sourceTree = "<group>"; };
+		151E4A5521D37D03006AADC3 /* HqViewControllerAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqViewControllerAnimated.m; sourceTree = "<group>"; };
+		151E4A5621D37D03006AADC3 /* SuperVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperVC.h; sourceTree = "<group>"; };
+		151E4A5721D37D03006AADC3 /* SuperNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperNavigationVC.h; sourceTree = "<group>"; };
+		151E4A5821D37D03006AADC3 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		151E4A5921D37D03006AADC3 /* nav_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@3x.png"; sourceTree = "<group>"; };
+		151E4A5A21D37D03006AADC3 /* HqSuperDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqSuperDefine.h; sourceTree = "<group>"; };
+		151E4A6221D37E6E006AADC3 /* HqTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqTestVC.h; sourceTree = "<group>"; };
+		151E4A6321D37E6E006AADC3 /* HqTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTestVC.m; sourceTree = "<group>"; };
+		151E4A6521D37E81006AADC3 /* HqTest1VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqTest1VC.h; sourceTree = "<group>"; };
+		151E4A6621D37E81006AADC3 /* HqTest1VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTest1VC.m; sourceTree = "<group>"; };
+		151E4A6821D37E91006AADC3 /* HqTest2VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqTest2VC.h; sourceTree = "<group>"; };
+		151E4A6921D37E91006AADC3 /* HqTest2VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTest2VC.m; sourceTree = "<group>"; };
+		151E4A6B21D39227006AADC3 /* HqNavBar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = HqNavBar.md; sourceTree = "<group>"; };
 		158411E521C8F0EF00772A14 /* NSObject+HqSafeGetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HqSafeGetValue.h"; sourceTree = "<group>"; };
 		158411E621C8F0EF00772A14 /* NSObject+HqSafeGetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqSafeGetValue.m"; sourceTree = "<group>"; };
 		158411E821C8F55300772A14 /* HqColorImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqColorImageVC.h; sourceTree = "<group>"; };
@@ -220,6 +250,46 @@
 				151E4A4A21D208FE006AADC3 /* HqDatePickerVC.m */,
 			);
 			path = HqDatePicker;
+			sourceTree = "<group>";
+		};
+		151E4A4C21D32A75006AADC3 /* HqShare */ = {
+			isa = PBXGroup;
+			children = (
+				151E4A4D21D32A8E006AADC3 /* HqShareVC.h */,
+				151E4A4E21D32A8E006AADC3 /* HqShareVC.m */,
+			);
+			path = HqShare;
+			sourceTree = "<group>";
+		};
+		151E4A5021D37D03006AADC3 /* SuperVC */ = {
+			isa = PBXGroup;
+			children = (
+				151E4A5A21D37D03006AADC3 /* HqSuperDefine.h */,
+				151E4A5121D37D03006AADC3 /* HqViewControllerAnimated.h */,
+				151E4A5521D37D03006AADC3 /* HqViewControllerAnimated.m */,
+				151E4A5321D37D03006AADC3 /* nav_back.png */,
+				151E4A5821D37D03006AADC3 /* nav_back@2x.png */,
+				151E4A5921D37D03006AADC3 /* nav_back@3x.png */,
+				151E4A5721D37D03006AADC3 /* SuperNavigationVC.h */,
+				151E4A5221D37D03006AADC3 /* SuperNavigationVC.m */,
+				151E4A5621D37D03006AADC3 /* SuperVC.h */,
+				151E4A5421D37D03006AADC3 /* SuperVC.m */,
+				151E4A6B21D39227006AADC3 /* HqNavBar.md */,
+			);
+			path = SuperVC;
+			sourceTree = "<group>";
+		};
+		151E4A6121D37E43006AADC3 /* HqTestVC */ = {
+			isa = PBXGroup;
+			children = (
+				151E4A6221D37E6E006AADC3 /* HqTestVC.h */,
+				151E4A6321D37E6E006AADC3 /* HqTestVC.m */,
+				151E4A6521D37E81006AADC3 /* HqTest1VC.h */,
+				151E4A6621D37E81006AADC3 /* HqTest1VC.m */,
+				151E4A6821D37E91006AADC3 /* HqTest2VC.h */,
+				151E4A6921D37E91006AADC3 /* HqTest2VC.m */,
+			);
+			path = HqTestVC;
 			sourceTree = "<group>";
 		};
 		158411E421C8F0EF00772A14 /* HqSafeGetValue */ = {
@@ -393,6 +463,9 @@
 		8ED6CD2B20189BC90001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				151E4A6121D37E43006AADC3 /* HqTestVC */,
+				151E4A5021D37D03006AADC3 /* SuperVC */,
+				151E4A4C21D32A75006AADC3 /* HqShare */,
 				151E4A4821D208D9006AADC3 /* HqDatePicker */,
 				151E4A3C21D208BF006AADC3 /* WSDaePickerView */,
 				158411E421C8F0EF00772A14 /* HqSafeGetValue */,
@@ -594,7 +667,9 @@
 				8ED988332051326900CBE329 /* yuan@2x.png in Resources */,
 				8ED988342051326900CBE329 /* big_icon@2x.png in Resources */,
 				8ED988382051326900CBE329 /* san_jiao.png in Resources */,
+				151E4A6C21D39227006AADC3 /* HqNavBar.md in Resources */,
 				8E074074204F8C1000A782E5 /* resign@2x.png in Resources */,
+				151E4A5C21D37D03006AADC3 /* nav_back.png in Resources */,
 				8ED9883B2051326900CBE329 /* stop@3x.png in Resources */,
 				8ED988352051326900CBE329 /* small_icon@2x.png in Resources */,
 				8ED9883A2051326900CBE329 /* stop@2x.png in Resources */,
@@ -602,11 +677,13 @@
 				8E074075204F8C1000A782E5 /* delete@2x.png in Resources */,
 				8E074076204F8C1000A782E5 /* delete@3x.png in Resources */,
 				151E4A4421D208BF006AADC3 /* WSDatePickerView.xib in Resources */,
+				151E4A5F21D37D03006AADC3 /* nav_back@2x.png in Resources */,
 				8ED988312051326900CBE329 /* big_icon.png in Resources */,
 				8ED988372051326900CBE329 /* big_icon@3x.png in Resources */,
 				8ED9883C2051326900CBE329 /* san_jiao@3x.png in Resources */,
 				8ED9883D2051326900CBE329 /* small_icon.png in Resources */,
 				8ED9882F2051326900CBE329 /* yuan.png in Resources */,
+				151E4A6021D37D03006AADC3 /* nav_back@3x.png in Resources */,
 				8ED6CD2220189BA50001393A /* LaunchScreen.storyboard in Resources */,
 				8ED988362051326900CBE329 /* small_icon@3x.png in Resources */,
 				8ED988302051326900CBE329 /* stop.png in Resources */,
@@ -677,20 +754,25 @@
 				8ED98A3220575C6100CBE329 /* UIImage+HqImage.m in Sources */,
 				8ED988432051414A00CBE329 /* HqPullZoomView.m in Sources */,
 				8ED9880A20512F1400CBE329 /* HqDeviceInfo.m in Sources */,
+				151E4A6A21D37E91006AADC3 /* HqTest2VC.m in Sources */,
 				8ED988192051326300CBE329 /* DownloadOperation.m in Sources */,
 				151E4A4621D208BF006AADC3 /* NSDate+Extension.m in Sources */,
+				151E4A5D21D37D03006AADC3 /* SuperVC.m in Sources */,
 				8E074078204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.m in Sources */,
 				8E074072204F8C1000A782E5 /* HqKeyBoard.m in Sources */,
 				8E074079204F8C1000A782E5 /* HqColorImage.m in Sources */,
 				8E07407A204F8C1000A782E5 /* UITextField+LimitInput.m in Sources */,
 				8ED98A372057721F00CBE329 /* HqAlertView.m in Sources */,
 				8ED9883F2051326900CBE329 /* AVPlayerCachingVC.m in Sources */,
+				151E4A6721D37E81006AADC3 /* HqTest1VC.m in Sources */,
+				151E4A6421D37E6E006AADC3 /* HqTestVC.m in Sources */,
 				33D03948207AF26B00B46E74 /* Dialog.m in Sources */,
 				8E074092204F946000A782E5 /* HqDateFormatter.m in Sources */,
 				158411EA21C8F55300772A14 /* HqColorImageVC.m in Sources */,
 				8ED9883E2051326900CBE329 /* PlayView.m in Sources */,
 				8E074077204F8C1000A782E5 /* ZPNumberKeyboard.m in Sources */,
 				8E07408B204F8E6200A782E5 /* HqTLVParse.m in Sources */,
+				151E4A5E21D37D03006AADC3 /* HqViewControllerAnimated.m in Sources */,
 				8ED988182051326300CBE329 /* HqOperation.m in Sources */,
 				151E4A4521D208BF006AADC3 /* WSDatePickerView.m in Sources */,
 				8ED989602051460300CBE329 /* HqDownLoader.m in Sources */,
@@ -704,10 +786,12 @@
 				8ED987F520512F1400CBE329 /* HqEncrypt.m in Sources */,
 				8E07408E204F8E6200A782E5 /* HqString.m in Sources */,
 				151E4A4B21D208FE006AADC3 /* HqDatePickerVC.m in Sources */,
+				151E4A4F21D32A8E006AADC3 /* HqShareVC.m in Sources */,
 				8ED9880B20512F1400CBE329 /* HqKeyChain.m in Sources */,
 				8EC81B572051152B0073D356 /* HqPreviewVC.m in Sources */,
 				8ED6CD1720189BA50001393A /* AppDelegate.m in Sources */,
 				8ED987F620512F1400CBE329 /* HqTouchID.m in Sources */,
+				151E4A5B21D37D03006AADC3 /* SuperNavigationVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
