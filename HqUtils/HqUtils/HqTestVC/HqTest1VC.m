@@ -29,7 +29,9 @@
     self.view.backgroundColor  = [UIColor redColor];
     //导航透明
     self.isAlphaZeroNavBar = YES;
-    
+    self.titelLab.textColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+
  
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

@@ -23,6 +23,9 @@
     
     //设置导航颜色
     self.navbarCorlor  =[UIColor orangeColor];
+    self.isShowBottomLine = NO;
+    self.titelLab.textColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
    
 }

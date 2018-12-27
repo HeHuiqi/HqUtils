@@ -34,11 +34,10 @@
     BOOL isPop = self.viewControllers.count==1 ? NO:YES;
     return isPop;
 }
-/*
-- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
-    return [[HqViewControllerAnimated alloc] init];
-}
-*/
+
+//- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
+//    return [[HqViewControllerAnimated alloc] init];
+//}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

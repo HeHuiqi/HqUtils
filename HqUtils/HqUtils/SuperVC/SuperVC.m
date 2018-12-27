@@ -7,7 +7,7 @@
 //
 
 #import "SuperVC.h"
-
+#define kNetworkStatus @"kNetworkStatus"
 @interface SuperVC ()
 @property (nonatomic,strong) UIImage *bottomLineImage;
 @property (nonatomic,strong) UIImage *origalBottomImage;
@@ -33,41 +33,36 @@
 }
 
 - (void)viewDidLoad {
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_networkState:) name:kNetworkStatus object:nil];
-
+    
     [super viewDidLoad];
+
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor whiteColor];
-    
     self.navbarCorlor =[UIColor whiteColor];
-    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_networkState:) name:kNetworkStatus object:nil];
+
     [self titelLab];
+    
     self.isAlphaZeroNavBar = NO;
+    self.isShowBottomLine = YES;
+
     self.leftBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     self.leftBtnImageName = @"nav_back";
     self.leftBtn.tintColor = HqBarBtnTintColor;
     self.leftBtn.frame = CGRectMake(0, 0, 50, 44);
     self.leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     //当导航控制器的的控制器数为0即根控制器时，隐藏返回键
-    
     if (self.navigationController.viewControllers.count==1) {
         
         self.navigationItem.leftBarButtonItem = nil;
-        
     }else{
+        
         UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:UIBarButtonItemStyleDone target:self action:@selector(backClick)];
         item.tintColor = [UIColor blackColor];
         self.navigationItem.leftBarButtonItem = item;
     }
-//    UIImage *navbg = [UIImage imageNamed:@"nav_bg"];
-//    [self.navigationController.navigationBar setBackgroundImage:navbg forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.translucent = NO;
-//    UIImage *image = [self createImageWithColor:HqHexColor(0x88f8f8)];
-//    self.navigationController.navigationBar.shadowImage = image;
-    
-    self.bottomLineImage = self.navigationController.navigationBar.shadowImage;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-
-
+    self.origalBottomImage = self.navigationController.navigationBar.shadowImage;
 }
 #pragma mark Title
 - (void)setTitle:(NSString *)title{
@@ -175,7 +170,6 @@
 #pragma mark - NavBarBottomLine
 - (void)_setBottomLine{
     if (self.isShowBottomLine) {
-        self.navigationController.navigationBar.shadowImage = nil;
         self.bottomLineImage = self.bottomLineImage;
     }else{
         self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -187,7 +181,7 @@
     if (_isAlphaZeroNavBar) {
         self.isShowBottomLine = NO;
     }else{
-        self.isShowBottomLine = YES;
+//        self.isShowBottomLine = YES;
     }
 }
 - (void)_setNavBar{

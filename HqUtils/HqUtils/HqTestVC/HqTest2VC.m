@@ -17,9 +17,11 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"HqTest2VC";
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     //改变底线颜色
     self.bottomLineColor = [UIColor redColor];
+    
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
 
 }
 
