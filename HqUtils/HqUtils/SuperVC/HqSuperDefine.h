@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#define HqDeviceHeight [UIScreen mainScreen].bounds.size.height
+#define IS_iPhoneX (UIScreen.mainScreen.bounds.size.width >= 375.f && UIScreen.mainScreen.bounds.size.height >= 812.f)
 
-#define  IS_NOT_IPHONE_X ((HqDeviceHeight < 812.0f) ? 1 : 0)
 
 #define HqTitleColor [UIColor blackColor]
 #define HqTitleFontsize 18

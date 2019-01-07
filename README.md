@@ -24,6 +24,8 @@ iOS开发中常用的的工具类和一些UI组件
 * HqDecimalNumberUtils 浮点数精确计算，适合金融类app的一个工具
 * WSDaePickerView 一个日期选择期
 * SuperNavigationVC、SuperVC App常见导航的处理简单易用
+* SuperNavigationVC、SuperVC App常见导航的处理简单易用
+* UIBarButtonItem+HqIsSelected UIBarButtonItem的类别，增加选中状态和为选择状态的处理
 
 ## HqCustomKeyboard
 ```

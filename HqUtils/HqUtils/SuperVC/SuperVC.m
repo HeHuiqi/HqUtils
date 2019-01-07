@@ -134,15 +134,15 @@
 
 #pragma mark - NavBar
 - (CGFloat )navBarheight{
-    BOOL device = IS_NOT_IPHONE_X;
+    BOOL device = IS_iPhoneX;
     CGFloat barHeight = 64;
-    if (!device) {
+    if (device) {
         barHeight = 88;
     }
     return barHeight;
 }
 - (CGFloat)tabBarheight{
-    BOOL device = IS_NOT_IPHONE_X;
+    BOOL device = IS_iPhoneX;
     CGFloat barHeight = 50;
     if (!device) {
         barHeight = 84;
