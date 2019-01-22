@@ -12,6 +12,8 @@
 #import "HqShareVC.h"
 #import "HqTestVC.h"
 #import "HqRegExVC.h"
+#import "HqAuthIDVC.h"
+#import "HqAlertVC.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -26,8 +28,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqTestVC"];
+    _titles = @[@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqAuthIDVC",@"HqTestVC"];
+    UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert)];
+    self.navigationItem.rightBarButtonItem = rbtn;
     [self initView];
+}
+- (void)enterAlert{
+
+    HqAlertVC *alert = [[HqAlertVC alloc] init];
+    [alert showWithVC:self];
 }
 - (void)initView{
     _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];

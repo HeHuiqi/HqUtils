@@ -25,11 +25,17 @@
 		151E4A6C21D39227006AADC3 /* HqNavBar.md in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A6B21D39227006AADC3 /* HqNavBar.md */; };
 		151E4A7321D4D88A006AADC3 /* UIBarButtonItem+HqIsSelected.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A7221D4D88A006AADC3 /* UIBarButtonItem+HqIsSelected.m */; };
 		151E4A7521D4EB45006AADC3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A7421D4EB44006AADC3 /* README.md */; };
+		15235B8721F715B600493E10 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 15235B8421F715B600493E10 /* User.m */; };
+		15235B8821F715B600493E10 /* NSObject+HqKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 15235B8621F715B600493E10 /* NSObject+HqKVO.m */; };
 		158411E721C8F0EF00772A14 /* NSObject+HqSafeGetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 158411E621C8F0EF00772A14 /* NSObject+HqSafeGetValue.m */; };
 		158411EA21C8F55300772A14 /* HqColorImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 158411E921C8F55300772A14 /* HqColorImageVC.m */; };
 		1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598CB8521BF672A000FE829 /* NSObject+HqInputLimit.m */; };
 		15B644C421DF029700BD32EA /* HqRegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B644C321DF029700BD32EA /* HqRegEx.m */; };
 		15B644C821DF112C00BD32EA /* HqRegExVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B644C721DF112C00BD32EA /* HqRegExVC.m */; };
+		15B644CC21E3034A00BD32EA /* HqAuthIDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B644CB21E3034A00BD32EA /* HqAuthIDVC.m */; };
+		15B644CF21E3035A00BD32EA /* HqAuthID.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B644CE21E3035A00BD32EA /* HqAuthID.m */; };
+		15B644D121E31FAD00BD32EA /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B644D021E31FAD00BD32EA /* LocalAuthentication.framework */; };
+		15E9787621F1731100F3E6A2 /* HqAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9787521F1731100F3E6A2 /* HqAlertVC.m */; };
 		33D03937207AEF1600B46E74 /* HqKeyboardUseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D03936207AEF1600B46E74 /* HqKeyboardUseVC.m */; };
 		33D03948207AF26B00B46E74 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D03942207AF26B00B46E74 /* Dialog.m */; };
 		4AF1300B7449750A224BD05B /* libPods-HqUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A9BD65B803BDC8E30B8A3 /* libPods-HqUtils.a */; };
@@ -121,6 +127,10 @@
 		151E4A7121D4D88A006AADC3 /* UIBarButtonItem+HqIsSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+HqIsSelected.h"; sourceTree = "<group>"; };
 		151E4A7221D4D88A006AADC3 /* UIBarButtonItem+HqIsSelected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+HqIsSelected.m"; sourceTree = "<group>"; };
 		151E4A7421D4EB44006AADC3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		15235B8321F715B600493E10 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		15235B8421F715B600493E10 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		15235B8521F715B600493E10 /* NSObject+HqKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HqKVO.h"; sourceTree = "<group>"; };
+		15235B8621F715B600493E10 /* NSObject+HqKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqKVO.m"; sourceTree = "<group>"; };
 		158411E521C8F0EF00772A14 /* NSObject+HqSafeGetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HqSafeGetValue.h"; sourceTree = "<group>"; };
 		158411E621C8F0EF00772A14 /* NSObject+HqSafeGetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqSafeGetValue.m"; sourceTree = "<group>"; };
 		158411E821C8F55300772A14 /* HqColorImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqColorImageVC.h; sourceTree = "<group>"; };
@@ -131,6 +141,13 @@
 		15B644C321DF029700BD32EA /* HqRegEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqRegEx.m; sourceTree = "<group>"; };
 		15B644C621DF112C00BD32EA /* HqRegExVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqRegExVC.h; sourceTree = "<group>"; };
 		15B644C721DF112C00BD32EA /* HqRegExVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqRegExVC.m; sourceTree = "<group>"; };
+		15B644CA21E3034A00BD32EA /* HqAuthIDVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqAuthIDVC.h; sourceTree = "<group>"; };
+		15B644CB21E3034A00BD32EA /* HqAuthIDVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqAuthIDVC.m; sourceTree = "<group>"; };
+		15B644CD21E3035A00BD32EA /* HqAuthID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqAuthID.h; sourceTree = "<group>"; };
+		15B644CE21E3035A00BD32EA /* HqAuthID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqAuthID.m; sourceTree = "<group>"; };
+		15B644D021E31FAD00BD32EA /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		15E9787421F1731100F3E6A2 /* HqAlertVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqAlertVC.h; sourceTree = "<group>"; };
+		15E9787521F1731100F3E6A2 /* HqAlertVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqAlertVC.m; sourceTree = "<group>"; };
 		337A70F4208C5C7500413919 /* HqUtilsPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqUtilsPrefix.pch; sourceTree = "<group>"; };
 		33D03935207AEF1600B46E74 /* HqKeyboardUseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqKeyboardUseVC.h; sourceTree = "<group>"; };
 		33D03936207AEF1600B46E74 /* HqKeyboardUseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqKeyboardUseVC.m; sourceTree = "<group>"; };
@@ -233,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B644D121E31FAD00BD32EA /* LocalAuthentication.framework in Frameworks */,
 				4AF1300B7449750A224BD05B /* libPods-HqUtils.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +331,17 @@
 			path = ../../../../../Projects/GlobalPay/GlobalPay/GlobalPay/PublicView/HqBarButtonItem;
 			sourceTree = "<group>";
 		};
+		15235B8221F715AA00493E10 /* HqKVO */ = {
+			isa = PBXGroup;
+			children = (
+				15235B8521F715B600493E10 /* NSObject+HqKVO.h */,
+				15235B8621F715B600493E10 /* NSObject+HqKVO.m */,
+				15235B8321F715B600493E10 /* User.h */,
+				15235B8421F715B600493E10 /* User.m */,
+			);
+			path = HqKVO;
+			sourceTree = "<group>";
+		};
 		158411E421C8F0EF00772A14 /* HqSafeGetValue */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,9 +362,21 @@
 			path = HqRegEx;
 			sourceTree = "<group>";
 		};
+		15B644C921E3033300BD32EA /* HqAuthID */ = {
+			isa = PBXGroup;
+			children = (
+				15B644CA21E3034A00BD32EA /* HqAuthIDVC.h */,
+				15B644CB21E3034A00BD32EA /* HqAuthIDVC.m */,
+				15B644CD21E3035A00BD32EA /* HqAuthID.h */,
+				15B644CE21E3035A00BD32EA /* HqAuthID.m */,
+			);
+			path = HqAuthID;
+			sourceTree = "<group>";
+		};
 		6FC932FBB1B04CAD2689DA9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15B644D021E31FAD00BD32EA /* LocalAuthentication.framework */,
 				916A9BD65B803BDC8E30B8A3 /* libPods-HqUtils.a */,
 			);
 			name = Frameworks;
@@ -476,12 +517,15 @@
 		8ED6CD1420189BA50001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				15B644C921E3033300BD32EA /* HqAuthID */,
 				8ED988442051451300CBE329 /* libs */,
 				8ED6CD2B20189BC90001393A /* HqUtils */,
 				8ED6CD1520189BA50001393A /* AppDelegate.h */,
 				8ED6CD1620189BA50001393A /* AppDelegate.m */,
 				8ED6CD1820189BA50001393A /* HqRootVC.h */,
 				8ED6CD1920189BA50001393A /* HqRootVC.m */,
+				15E9787421F1731100F3E6A2 /* HqAlertVC.h */,
+				15E9787521F1731100F3E6A2 /* HqAlertVC.m */,
 				151E4A7421D4EB44006AADC3 /* README.md */,
 				8ED6CD1B20189BA50001393A /* Main.storyboard */,
 				8ED6CD1E20189BA50001393A /* Assets.xcassets */,
@@ -496,6 +540,7 @@
 		8ED6CD2B20189BC90001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				15235B8221F715AA00493E10 /* HqKVO */,
 				15B644C121DF026E00BD32EA /* HqRegEx */,
 				151E4A7021D4D88A006AADC3 /* HqBarButtonItem */,
 				151E4A6121D37E43006AADC3 /* HqTestVC */,
@@ -787,11 +832,13 @@
 				8EC81B552051152B0073D356 /* AppDelegate+Hq3DTouch.m in Sources */,
 				1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */,
 				158411E721C8F0EF00772A14 /* NSObject+HqSafeGetValue.m in Sources */,
+				15235B8821F715B600493E10 /* NSObject+HqKVO.m in Sources */,
 				8ED98A3220575C6100CBE329 /* UIImage+HqImage.m in Sources */,
 				8ED988432051414A00CBE329 /* HqPullZoomView.m in Sources */,
 				8ED9880A20512F1400CBE329 /* HqDeviceInfo.m in Sources */,
 				151E4A6A21D37E91006AADC3 /* HqTest2VC.m in Sources */,
 				8ED988192051326300CBE329 /* DownloadOperation.m in Sources */,
+				15B644CC21E3034A00BD32EA /* HqAuthIDVC.m in Sources */,
 				151E4A4621D208BF006AADC3 /* NSDate+Extension.m in Sources */,
 				151E4A5D21D37D03006AADC3 /* SuperVC.m in Sources */,
 				8E074078204F8C1000A782E5 /* UITextField+ZPNumberKeyboard.m in Sources */,
@@ -807,6 +854,7 @@
 				158411EA21C8F55300772A14 /* HqColorImageVC.m in Sources */,
 				151E4A7321D4D88A006AADC3 /* UIBarButtonItem+HqIsSelected.m in Sources */,
 				8ED9883E2051326900CBE329 /* PlayView.m in Sources */,
+				15E9787621F1731100F3E6A2 /* HqAlertVC.m in Sources */,
 				8E074077204F8C1000A782E5 /* ZPNumberKeyboard.m in Sources */,
 				8E07408B204F8E6200A782E5 /* HqTLVParse.m in Sources */,
 				151E4A5E21D37D03006AADC3 /* HqViewControllerAnimated.m in Sources */,
@@ -828,6 +876,8 @@
 				151E4A4F21D32A8E006AADC3 /* HqShareVC.m in Sources */,
 				8ED9880B20512F1400CBE329 /* HqKeyChain.m in Sources */,
 				8EC81B572051152B0073D356 /* HqPreviewVC.m in Sources */,
+				15235B8721F715B600493E10 /* User.m in Sources */,
+				15B644CF21E3035A00BD32EA /* HqAuthID.m in Sources */,
 				8ED6CD1720189BA50001393A /* AppDelegate.m in Sources */,
 				8ED987F620512F1400CBE329 /* HqTouchID.m in Sources */,
 				151E4A5B21D37D03006AADC3 /* SuperNavigationVC.m in Sources */,
@@ -971,6 +1021,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V926B465U;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HqUtils/HqUtilsPrefix.pch;
 				INFOPLIST_FILE = HqUtils/Info.plist;
@@ -989,6 +1040,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V926B465U;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HqUtils/HqUtilsPrefix.pch;
 				INFOPLIST_FILE = HqUtils/Info.plist;
