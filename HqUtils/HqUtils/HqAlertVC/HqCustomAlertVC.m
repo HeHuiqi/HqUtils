@@ -18,7 +18,7 @@
 }
 - (instancetype)init{
     if (self = [super init]) {
-         self.contentHeight = 100;
+         self.contentHeight = 300;
     }
     return self;
 }

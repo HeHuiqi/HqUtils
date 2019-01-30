@@ -27,6 +27,7 @@ iOS开发中常用的的工具类和一些UI组件
 * SuperNavigationVC、SuperVC App常见导航的处理简单易用
 * UIBarButtonItem+HqIsSelected UIBarButtonItem的类别，增加选中状态和为选择状态的处理
 * HqRefresh  下拉刷新和上拉加载的组件
+* HqAlertVC 底部弹出组件,使用时可继承此组件重写- (void)hqLayoutSubViews;方法即可，可设置内容的高度
 
 ## HqCustomKeyboard
 ```
