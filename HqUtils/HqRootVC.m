@@ -14,6 +14,9 @@
 #import "HqRegExVC.h"
 #import "HqAuthIDVC.h"
 #import "HqAlertVC.h"
+#import "HqCustomAlertVC.h"
+#import "hqRefreshVC.h"
+#import "HqTableView.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -28,18 +31,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqAuthIDVC",@"HqTestVC"];
-    UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert)];
+    _titles = @[@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqAuthIDVC",@"HqTestVC"];
+    UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
     [self initView];
+    
 }
-- (void)enterAlert{
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
-    HqAlertVC *alert = [[HqAlertVC alloc] init];
-    [alert showWithVC:self];
+- (void)enterAlert:(UIBarButtonItem *)sender{
+
+    HqCustomAlertVC *alert = [[HqCustomAlertVC alloc] init];
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ) {
+        
+        UIViewController *popRootVC = [[UIViewController alloc] init];
+        popRootVC.view.backgroundColor = [UIColor redColor];
+        
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:popRootVC];
+        popRootVC.title = @"POP";
+        
+        UIPopoverController *popVC = [[UIPopoverController alloc] initWithContentViewController:nav];
+        popVC.popoverContentSize = CGSizeMake(200, 300);
+    
+        [popVC presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }else{
+        [alert showWithVC:self];
+    }
+
 }
 - (void)initView{
-    _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    _tableView = [[HqTableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];

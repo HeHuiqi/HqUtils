@@ -29,6 +29,11 @@
 		15235B8821F715B600493E10 /* NSObject+HqKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 15235B8621F715B600493E10 /* NSObject+HqKVO.m */; };
 		158411E721C8F0EF00772A14 /* NSObject+HqSafeGetValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 158411E621C8F0EF00772A14 /* NSObject+HqSafeGetValue.m */; };
 		158411EA21C8F55300772A14 /* HqColorImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 158411E921C8F55300772A14 /* HqColorImageVC.m */; };
+		1593B39C22004F2700626F4F /* HqCustomAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1593B39B22004F2700626F4F /* HqCustomAlertVC.m */; };
+		1593B3A222019A8400626F4F /* HqTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1593B3A122019A8400626F4F /* HqTableView.m */; };
+		1593B3A92201ABE000626F4F /* HqRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1593B3A42201ABE000626F4F /* HqRefreshHeader.m */; };
+		1593B3AA2201ABE000626F4F /* HqRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1593B3A52201ABE000626F4F /* HqRefreshFooter.m */; };
+		1593B3AD2201AC0400626F4F /* hqRefreshVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1593B3AC2201AC0400626F4F /* hqRefreshVC.m */; };
 		1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1598CB8521BF672A000FE829 /* NSObject+HqInputLimit.m */; };
 		15B644C421DF029700BD32EA /* HqRegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B644C321DF029700BD32EA /* HqRegEx.m */; };
 		15B644C821DF112C00BD32EA /* HqRegExVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B644C721DF112C00BD32EA /* HqRegExVC.m */; };
@@ -135,6 +140,17 @@
 		158411E621C8F0EF00772A14 /* NSObject+HqSafeGetValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqSafeGetValue.m"; sourceTree = "<group>"; };
 		158411E821C8F55300772A14 /* HqColorImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqColorImageVC.h; sourceTree = "<group>"; };
 		158411E921C8F55300772A14 /* HqColorImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqColorImageVC.m; sourceTree = "<group>"; };
+		1593B39A22004F2700626F4F /* HqCustomAlertVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqCustomAlertVC.h; sourceTree = "<group>"; };
+		1593B39B22004F2700626F4F /* HqCustomAlertVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqCustomAlertVC.m; sourceTree = "<group>"; };
+		1593B3A022019A8400626F4F /* HqTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqTableView.h; sourceTree = "<group>"; };
+		1593B3A122019A8400626F4F /* HqTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTableView.m; sourceTree = "<group>"; };
+		1593B3A42201ABE000626F4F /* HqRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqRefreshHeader.m; sourceTree = "<group>"; };
+		1593B3A52201ABE000626F4F /* HqRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqRefreshFooter.m; sourceTree = "<group>"; };
+		1593B3A62201ABE000626F4F /* HqRefreshProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqRefreshProtocol.h; sourceTree = "<group>"; };
+		1593B3A72201ABE000626F4F /* HqRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqRefreshFooter.h; sourceTree = "<group>"; };
+		1593B3A82201ABE000626F4F /* HqRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqRefreshHeader.h; sourceTree = "<group>"; };
+		1593B3AB2201AC0400626F4F /* hqRefreshVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hqRefreshVC.h; sourceTree = "<group>"; };
+		1593B3AC2201AC0400626F4F /* hqRefreshVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hqRefreshVC.m; sourceTree = "<group>"; };
 		1598CB8421BF672A000FE829 /* NSObject+HqInputLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HqInputLimit.h"; sourceTree = "<group>"; };
 		1598CB8521BF672A000FE829 /* NSObject+HqInputLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqInputLimit.m"; sourceTree = "<group>"; };
 		15B644C221DF029700BD32EA /* HqRegEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqRegEx.h; sourceTree = "<group>"; };
@@ -351,6 +367,31 @@
 			path = HqSafeGetValue;
 			sourceTree = "<group>";
 		};
+		1593B3A32201ABE000626F4F /* HqRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				1593B3A72201ABE000626F4F /* HqRefreshFooter.h */,
+				1593B3A52201ABE000626F4F /* HqRefreshFooter.m */,
+				1593B3A82201ABE000626F4F /* HqRefreshHeader.h */,
+				1593B3A42201ABE000626F4F /* HqRefreshHeader.m */,
+				1593B3A62201ABE000626F4F /* HqRefreshProtocol.h */,
+				1593B3AB2201AC0400626F4F /* hqRefreshVC.h */,
+				1593B3AC2201AC0400626F4F /* hqRefreshVC.m */,
+			);
+			path = HqRefresh;
+			sourceTree = "<group>";
+		};
+		1593B3AE2201AD8300626F4F /* HqAlertVC */ = {
+			isa = PBXGroup;
+			children = (
+				15E9787421F1731100F3E6A2 /* HqAlertVC.h */,
+				15E9787521F1731100F3E6A2 /* HqAlertVC.m */,
+				1593B39A22004F2700626F4F /* HqCustomAlertVC.h */,
+				1593B39B22004F2700626F4F /* HqCustomAlertVC.m */,
+			);
+			path = HqAlertVC;
+			sourceTree = "<group>";
+		};
 		15B644C121DF026E00BD32EA /* HqRegEx */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,8 +565,8 @@
 				8ED6CD1620189BA50001393A /* AppDelegate.m */,
 				8ED6CD1820189BA50001393A /* HqRootVC.h */,
 				8ED6CD1920189BA50001393A /* HqRootVC.m */,
-				15E9787421F1731100F3E6A2 /* HqAlertVC.h */,
-				15E9787521F1731100F3E6A2 /* HqAlertVC.m */,
+				1593B3A022019A8400626F4F /* HqTableView.h */,
+				1593B3A122019A8400626F4F /* HqTableView.m */,
 				151E4A7421D4EB44006AADC3 /* README.md */,
 				8ED6CD1B20189BA50001393A /* Main.storyboard */,
 				8ED6CD1E20189BA50001393A /* Assets.xcassets */,
@@ -540,6 +581,8 @@
 		8ED6CD2B20189BC90001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				1593B3AE2201AD8300626F4F /* HqAlertVC */,
+				1593B3A32201ABE000626F4F /* HqRefresh */,
 				15235B8221F715AA00493E10 /* HqKVO */,
 				15B644C121DF026E00BD32EA /* HqRegEx */,
 				151E4A7021D4D88A006AADC3 /* HqBarButtonItem */,
@@ -830,9 +873,11 @@
 				8E07408D204F8E6200A782E5 /* NSString+HqString.m in Sources */,
 				8EC81B562051152B0073D356 /* ThreeDTouchVC.m in Sources */,
 				8EC81B552051152B0073D356 /* AppDelegate+Hq3DTouch.m in Sources */,
+				1593B3A92201ABE000626F4F /* HqRefreshHeader.m in Sources */,
 				1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */,
 				158411E721C8F0EF00772A14 /* NSObject+HqSafeGetValue.m in Sources */,
 				15235B8821F715B600493E10 /* NSObject+HqKVO.m in Sources */,
+				1593B3A222019A8400626F4F /* HqTableView.m in Sources */,
 				8ED98A3220575C6100CBE329 /* UIImage+HqImage.m in Sources */,
 				8ED988432051414A00CBE329 /* HqPullZoomView.m in Sources */,
 				8ED9880A20512F1400CBE329 /* HqDeviceInfo.m in Sources */,
@@ -851,8 +896,10 @@
 				151E4A6421D37E6E006AADC3 /* HqTestVC.m in Sources */,
 				33D03948207AF26B00B46E74 /* Dialog.m in Sources */,
 				8E074092204F946000A782E5 /* HqDateFormatter.m in Sources */,
+				1593B39C22004F2700626F4F /* HqCustomAlertVC.m in Sources */,
 				158411EA21C8F55300772A14 /* HqColorImageVC.m in Sources */,
 				151E4A7321D4D88A006AADC3 /* UIBarButtonItem+HqIsSelected.m in Sources */,
+				1593B3AA2201ABE000626F4F /* HqRefreshFooter.m in Sources */,
 				8ED9883E2051326900CBE329 /* PlayView.m in Sources */,
 				15E9787621F1731100F3E6A2 /* HqAlertVC.m in Sources */,
 				8E074077204F8C1000A782E5 /* ZPNumberKeyboard.m in Sources */,
@@ -863,6 +910,7 @@
 				151E4A4521D208BF006AADC3 /* WSDatePickerView.m in Sources */,
 				8ED989602051460300CBE329 /* HqDownLoader.m in Sources */,
 				33D03937207AEF1600B46E74 /* HqKeyboardUseVC.m in Sources */,
+				1593B3AD2201AC0400626F4F /* hqRefreshVC.m in Sources */,
 				8ED989672051468B00CBE329 /* HqAFHttpClient.m in Sources */,
 				8ED987F720512F1400CBE329 /* NSString+Hash.m in Sources */,
 				151E4A4721D208BF006AADC3 /* UIView+Extension.m in Sources */,
@@ -1022,6 +1070,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V926B465U;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_CW_ASM_SYNTAX = YES;
+				GCC_ENABLE_ASM_KEYWORD = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HqUtils/HqUtilsPrefix.pch;
 				INFOPLIST_FILE = HqUtils/Info.plist;
@@ -1041,6 +1091,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V926B465U;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_CW_ASM_SYNTAX = YES;
+				GCC_ENABLE_ASM_KEYWORD = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HqUtils/HqUtilsPrefix.pch;
 				INFOPLIST_FILE = HqUtils/Info.plist;

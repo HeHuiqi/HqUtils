@@ -13,9 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HqAlertVC : UIViewController
 
 @property (nonatomic,assign) CGFloat contentHeight;
+@property (nonatomic,strong) UIView *contentView;
 
 - (void)showWithVC:(UIViewController *)vc;
-
+- (void)hqLayoutSubViews;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,12 +10,15 @@
 
 @interface HqAlertVC ()
 
-@property (nonatomic,strong) UIView *contentView;
+
 @property (nonatomic,strong) UIView *bgcontentView;
 
 @end
 
 @implementation HqAlertVC
+- (void)dealloc{
+    NSLog(@"HqAlertVC--dealloc");
+}
 - (instancetype)init{
     if (self = [super init]) {
         
@@ -26,6 +29,10 @@
 }
 - (void)showWithVC:(UIViewController *)vc{
     [vc presentViewController:self animated:NO completion:nil];
+    [self hqLayoutSubViews];
+}
+- (void)hqLayoutSubViews{
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -14,5 +14,5 @@
 #import "SuperVC.h"
 #import "HqColorImage.h"
 #import "NSString+HqString.h"
-
+#import "Masonry.h"
 #endif /* HqUtilsPrefix_pch */
