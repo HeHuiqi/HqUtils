@@ -28,6 +28,7 @@ iOS开发中常用的的工具类和一些UI组件
 * UIBarButtonItem+HqIsSelected UIBarButtonItem的类别，增加选中状态和为选择状态的处理
 * HqRefresh  下拉刷新和上拉加载的组件
 * HqAlertVC 底部弹出组件,使用时可继承此组件重写- (void)hqLayoutSubViews;方法即可，可设置内容的高度
+* HqKVO 封装系统KVO和NSNotificationCenter便于使用，无需担心忘记移除造成的隐患
 
 ## HqCustomKeyboard
 ```
