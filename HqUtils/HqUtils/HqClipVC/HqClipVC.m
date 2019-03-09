@@ -6,6 +6,8 @@
 //  Copyright © 2019 macpro. All rights reserved.
 //
 
+// 参考：https://github.com/TimOliver/TOCropViewController.git
+
 #import "HqClipVC.h"
 
 @interface HqClipVC ()<UIScrollViewDelegate>
@@ -14,7 +16,7 @@
 @property (nonatomic,strong) UIImageView *bgImageView;
 
 @end
-
+//
 @implementation HqClipVC
 - (UIScrollView *)contentView{
     if (!_contentView) {
