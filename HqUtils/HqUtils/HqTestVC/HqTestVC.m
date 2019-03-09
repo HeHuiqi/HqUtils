@@ -8,6 +8,10 @@
 
 #import "HqTestVC.h"
 #import "HqTest1VC.h"
+#import "HqIconLab.h"
+#import "UIView+HqSetCorner.h"
+#import "HqCornerTestView.h"
+
 @implementation HqTestVC
 
 - (void)viewDidLoad{
@@ -26,9 +30,42 @@
     self.isShowBottomLine = NO;
     self.titelLab.textColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+  
     
+    HqCornerTestView *v = [[HqCornerTestView alloc] init];
+    v.backgroundColor = [UIColor lightGrayColor];
+  
+    [self.view addSubview:v];
+    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(20);
+        make.top.equalTo(self.view).offset(100);
+        make.size.mas_equalTo(CGSizeMake(100, 150));
+    }];
+    v.layer.borderColor = [UIColor purpleColor].CGColor;
+    v.layer.borderWidth = 5;
+    [v hqSetCornerRaduis:10];
+    
+    UIView *v1 = [[UIView alloc] init];
+    v1.backgroundColor = [UIColor lightGrayColor];
+    
+    [self.view addSubview:v1];
+    [v1 hqSetCorner:HQUIRectCornerTopLeft | HQUIRectCornerTopRight raduis:10];
+    v1.layer.borderColor = [UIColor purpleColor].CGColor;
+    v1.layer.borderWidth = 5;
+    
+    [v1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(v.mas_right).offset(20);
+        make.top.equalTo(self.view).offset(100);
+        make.size.mas_equalTo(CGSizeMake(100, 150));
+    }];
    
 }
+- (CGFloat )getTextWidthWithString:(NSString *)string fontSize:(CGFloat )size textHeight:(CGFloat)height
+{
+    CGSize contentSize = [string boundingRectWithSize:CGSizeMake(CGFLOAT_MAX,height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:size]} context:nil].size;
+    return contentSize.width;
+}
+
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     HqTest1VC *vc = [HqTest1VC new];
     [vc pushWithLastVC:self];

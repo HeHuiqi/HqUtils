@@ -20,6 +20,9 @@
     [self applicationWillEnterForeground:application];
 //    myls(0, NULL);
   
+    [HqHttpUtil hqGet:nil url:@"https://www.pgyer.com/app/plist/f83ce030ebbf8260b6e3114f4fad163d/install/efbc825b574aa77543a83e8f60720c11/s.plist" complete:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+        NSLog(@"resss == %@",responseObject);
+    }];
 
 
     return YES;
@@ -31,6 +34,7 @@
     [auth authVerification];
 
 }
+//列出/dev目录下的所有文件，相当于ls命令
 int myls(int argc, const char * argv[]) {
     @autoreleasepool {
         DIR *dp;
@@ -57,9 +61,6 @@ int myls(int argc, const char * argv[]) {
         if (dp) {
             closedir(dp);
         }
-   
-      
-        printf("Hello, World!\n");
     }
     return 0;
 }

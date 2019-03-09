@@ -18,6 +18,9 @@
 #import "hqRefreshVC.h"
 #import "HqTableView.h"
 #import "HqKVOTestVC.h"
+#import "HqClipVC.h"
+
+#import "HqNSInvocationVC.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqTestVC"];
+    _titles = @[@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqTestVC"];
     UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
     [self initView];

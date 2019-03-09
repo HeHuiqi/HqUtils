@@ -53,6 +53,7 @@
     self.user.name = @"Owen";
     self.user.age = 30;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"kNotifyRefresh" object:@"哈哈哈"];
+    
 }
 
 /*

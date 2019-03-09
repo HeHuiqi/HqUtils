@@ -15,4 +15,6 @@
 #import "HqColorImage.h"
 #import "NSString+HqString.h"
 #import "Masonry.h"
+#import "HqHttpUtil.h"
+
 #endif /* HqUtilsPrefix_pch */
