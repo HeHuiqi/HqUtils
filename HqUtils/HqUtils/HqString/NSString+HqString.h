@@ -46,4 +46,6 @@
 
 #pragma mark - 获取实例属性值key-value
 + (NSDictionary *)getAllPropertiesInstance:(id)instance;
+//时分秒
++ (NSString *)formatSeconds:(NSInteger)seconds;
 @end

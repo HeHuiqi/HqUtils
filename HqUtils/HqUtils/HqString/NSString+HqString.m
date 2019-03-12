@@ -218,5 +218,17 @@
     return props;
 }
 
-
+//时分秒
++ (NSString *)formatSeconds:(NSInteger)seconds{
+    
+    NSString *result = @"00:00:00";
+    
+    if (seconds>0) {
+        NSInteger minute = seconds/60;
+        NSInteger second = seconds%60;
+        result = [NSString stringWithFormat:@"00:%02ld:%02ld",minute,second];
+    }
+    
+    return result;
+}
 @end

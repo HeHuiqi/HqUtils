@@ -42,7 +42,7 @@
     //把当前的缩放比例设进ZoomScale，以便下次缩放时实在现有的比例的基础上
     NSLog(@"scale is %f",scale);
     [scrollView setZoomScale:scale animated:NO];
-
+    
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSLog(@"scrollViewDidScroll==");

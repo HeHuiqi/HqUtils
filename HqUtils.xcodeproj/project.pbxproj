@@ -27,6 +27,7 @@
 		151E4A7521D4EB45006AADC3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A7421D4EB44006AADC3 /* README.md */; };
 		15235B8721F715B600493E10 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 15235B8421F715B600493E10 /* User.m */; };
 		15235B8821F715B600493E10 /* NSObject+HqKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 15235B8621F715B600493E10 /* NSObject+HqKVO.m */; };
+		1565479822375D660038A9A8 /* HqTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1565479722375D660038A9A8 /* HqTimer.m */; };
 		156BBD7D223213FD002A6BDF /* UIView+HqSetCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 156BBD7C223213FD002A6BDF /* UIView+HqSetCorner.m */; };
 		156BBD812232182D002A6BDF /* HqCornerTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 156BBD802232182D002A6BDF /* HqCornerTestView.m */; };
 		156BBD8422324965002A6BDF /* hq_bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 156BBD8322324964002A6BDF /* hq_bg.jpeg */; };
@@ -146,6 +147,8 @@
 		15235B8421F715B600493E10 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		15235B8521F715B600493E10 /* NSObject+HqKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HqKVO.h"; sourceTree = "<group>"; };
 		15235B8621F715B600493E10 /* NSObject+HqKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqKVO.m"; sourceTree = "<group>"; };
+		1565479622375D660038A9A8 /* HqTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqTimer.h; sourceTree = "<group>"; };
+		1565479722375D660038A9A8 /* HqTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTimer.m; sourceTree = "<group>"; };
 		156BBD7B223213FD002A6BDF /* UIView+HqSetCorner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HqSetCorner.h"; sourceTree = "<group>"; };
 		156BBD7C223213FD002A6BDF /* UIView+HqSetCorner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HqSetCorner.m"; sourceTree = "<group>"; };
 		156BBD7F2232182D002A6BDF /* HqCornerTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqCornerTestView.h; sourceTree = "<group>"; };
@@ -385,6 +388,15 @@
 				15235B8421F715B600493E10 /* User.m */,
 			);
 			path = HqKVOSimpleImplement;
+			sourceTree = "<group>";
+		};
+		1565479522375D460038A9A8 /* HqTimer */ = {
+			isa = PBXGroup;
+			children = (
+				1565479622375D660038A9A8 /* HqTimer.h */,
+				1565479722375D660038A9A8 /* HqTimer.m */,
+			);
+			path = HqTimer;
 			sourceTree = "<group>";
 		};
 		156BBD762232093B002A6BDF /* HqCornerView */ = {
@@ -674,6 +686,7 @@
 		8ED6CD2B20189BC90001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				1565479522375D460038A9A8 /* HqTimer */,
 				156BBD8A22335B7B002A6BDF /* HqNSInvocation */,
 				156BBD8522324976002A6BDF /* HqClipVC */,
 				15F878BD2223C90900060C84 /* HqKVO */,
@@ -983,6 +996,7 @@
 				8ED9880A20512F1400CBE329 /* HqDeviceInfo.m in Sources */,
 				151E4A6A21D37E91006AADC3 /* HqTest2VC.m in Sources */,
 				8ED988192051326300CBE329 /* DownloadOperation.m in Sources */,
+				1565479822375D660038A9A8 /* HqTimer.m in Sources */,
 				15B644CC21E3034A00BD32EA /* HqAuthIDVC.m in Sources */,
 				151E4A4621D208BF006AADC3 /* NSDate+Extension.m in Sources */,
 				156BBD8D22335B93002A6BDF /* HqNSInvocationVC.m in Sources */,

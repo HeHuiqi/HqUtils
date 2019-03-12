@@ -11,9 +11,17 @@
 #import "HqIconLab.h"
 #import "UIView+HqSetCorner.h"
 #import "HqCornerTestView.h"
+#import "HqTimer.h"
+@interface HqTestVC()
 
+@property (nonatomic,strong) HqTimer *timer;
+
+@end
 @implementation HqTestVC
-
+- (void)dealloc{
+    NSLog(@"HqTestVC-dealloc");
+    [self.timer destroyNStimer];
+}
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"HqTestVC";
@@ -58,6 +66,13 @@
         make.top.equalTo(self.view).offset(100);
         make.size.mas_equalTo(CGSizeMake(100, 150));
     }];
+    
+//    [HqTimer hq_dispatchTimerWithTarget:self timeInterval:1 repeats:NO handler:^(dispatch_source_t timer) {
+//        NSLog(@"--hq_dispatchTimerWithTarget-");
+//    }];
+    self.timer = [HqTimer hq_nsTimerWithTimeInterval:1.0 repeats:YES handler:^(HqTimer *hqTimer) {
+        NSLog(@"--hq_nsTimerWithTimeInterval-");
+    }];
    
 }
 - (CGFloat )getTextWidthWithString:(NSString *)string fontSize:(CGFloat )size textHeight:(CGFloat)height
@@ -69,6 +84,8 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     HqTest1VC *vc = [HqTest1VC new];
     [vc pushWithLastVC:self];
+    
 }
+
 
 @end
