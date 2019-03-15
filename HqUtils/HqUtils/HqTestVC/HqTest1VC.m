@@ -33,7 +33,31 @@
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
     
- 
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(20, 100, 100, 50)];
+    v.backgroundColor = v.tintColor;
+    [self.view addSubview:v];
+    NSLog(@"v.superview.tintColor== %@",v.superview.tintColor);
+    NSLog(@"v.tintColor== %@",v.tintColor);
+
+    
+    CGColorSpaceRef crfs  = CGColorSpaceCreateDeviceRGB();
+    const CGFloat bgColor[4] = {0.6,0.5,0.76,1};
+    CGColorRef cgrf =  CGColorCreate(crfs, bgColor);
+    self.view.backgroundColor  = [UIColor colorWithCGColor:cgrf];
+    CGColorSpaceRelease(crfs);
+    CGColorRelease(cgrf);
+    
+    /*
+    const CGFloat *colors = CGColorGetComponents(v.tintColor.CGColor);
+    UITableView *tab = [[UITableView alloc] init];
+    NSLog(@"tab-color = %@",tab.tintColor);
+    NSLog(@"colors[0]R== %f",colors[0]);
+    NSLog(@"colors[1]G== %f",colors[1]*255.0);
+    NSLog(@"colors[2]B== %f",colors[2]);
+    NSLog(@"colors[3]A== %f",colors[3]);
+   */
+    
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     HqTest2VC *vc = [HqTest2VC new];

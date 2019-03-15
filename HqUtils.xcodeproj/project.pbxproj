@@ -28,6 +28,10 @@
 		15235B8721F715B600493E10 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 15235B8421F715B600493E10 /* User.m */; };
 		15235B8821F715B600493E10 /* NSObject+HqKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 15235B8621F715B600493E10 /* NSObject+HqKVO.m */; };
 		1565479822375D660038A9A8 /* HqTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1565479722375D660038A9A8 /* HqTimer.m */; };
+		156547A6223A08340038A9A8 /* HqUIResponderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 156547A5223A08340038A9A8 /* HqUIResponderVC.m */; };
+		156547A9223A085B0038A9A8 /* HqCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 156547A8223A085B0038A9A8 /* HqCellView.m */; };
+		156547AD223A0D980038A9A8 /* HqThemeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 156547AC223A0D980038A9A8 /* HqThemeVC.m */; };
+		156547B0223A0DA90038A9A8 /* HqAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 156547AF223A0DA90038A9A8 /* HqAppView.m */; };
 		156BBD7D223213FD002A6BDF /* UIView+HqSetCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 156BBD7C223213FD002A6BDF /* UIView+HqSetCorner.m */; };
 		156BBD812232182D002A6BDF /* HqCornerTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 156BBD802232182D002A6BDF /* HqCornerTestView.m */; };
 		156BBD8422324965002A6BDF /* hq_bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 156BBD8322324964002A6BDF /* hq_bg.jpeg */; };
@@ -149,6 +153,14 @@
 		15235B8621F715B600493E10 /* NSObject+HqKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqKVO.m"; sourceTree = "<group>"; };
 		1565479622375D660038A9A8 /* HqTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqTimer.h; sourceTree = "<group>"; };
 		1565479722375D660038A9A8 /* HqTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTimer.m; sourceTree = "<group>"; };
+		156547A4223A08340038A9A8 /* HqUIResponderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqUIResponderVC.h; sourceTree = "<group>"; };
+		156547A5223A08340038A9A8 /* HqUIResponderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqUIResponderVC.m; sourceTree = "<group>"; };
+		156547A7223A085B0038A9A8 /* HqCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqCellView.h; sourceTree = "<group>"; };
+		156547A8223A085B0038A9A8 /* HqCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqCellView.m; sourceTree = "<group>"; };
+		156547AB223A0D980038A9A8 /* HqThemeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqThemeVC.h; sourceTree = "<group>"; };
+		156547AC223A0D980038A9A8 /* HqThemeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqThemeVC.m; sourceTree = "<group>"; };
+		156547AE223A0DA90038A9A8 /* HqAppView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqAppView.h; sourceTree = "<group>"; };
+		156547AF223A0DA90038A9A8 /* HqAppView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqAppView.m; sourceTree = "<group>"; };
 		156BBD7B223213FD002A6BDF /* UIView+HqSetCorner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HqSetCorner.h"; sourceTree = "<group>"; };
 		156BBD7C223213FD002A6BDF /* UIView+HqSetCorner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HqSetCorner.m"; sourceTree = "<group>"; };
 		156BBD7F2232182D002A6BDF /* HqCornerTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqCornerTestView.h; sourceTree = "<group>"; };
@@ -397,6 +409,28 @@
 				1565479722375D660038A9A8 /* HqTimer.m */,
 			);
 			path = HqTimer;
+			sourceTree = "<group>";
+		};
+		156547A3223A08130038A9A8 /* HqUIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				156547A4223A08340038A9A8 /* HqUIResponderVC.h */,
+				156547A5223A08340038A9A8 /* HqUIResponderVC.m */,
+				156547A7223A085B0038A9A8 /* HqCellView.h */,
+				156547A8223A085B0038A9A8 /* HqCellView.m */,
+			);
+			path = HqUIResponder;
+			sourceTree = "<group>";
+		};
+		156547AA223A0D600038A9A8 /* HqTheme */ = {
+			isa = PBXGroup;
+			children = (
+				156547AB223A0D980038A9A8 /* HqThemeVC.h */,
+				156547AC223A0D980038A9A8 /* HqThemeVC.m */,
+				156547AE223A0DA90038A9A8 /* HqAppView.h */,
+				156547AF223A0DA90038A9A8 /* HqAppView.m */,
+			);
+			path = HqTheme;
 			sourceTree = "<group>";
 		};
 		156BBD762232093B002A6BDF /* HqCornerView */ = {
@@ -660,6 +694,8 @@
 		8ED6CD1420189BA50001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				156547AA223A0D600038A9A8 /* HqTheme */,
+				156547A3223A08130038A9A8 /* HqUIResponder */,
 				156BBD8222324940002A6BDF /* images */,
 				156BBD762232093B002A6BDF /* HqCornerView */,
 				15F878E62227F2F500060C84 /* HqIconLab */,
@@ -987,9 +1023,11 @@
 				1593B3A92201ABE000626F4F /* HqRefreshHeader.m in Sources */,
 				1598CB8621BF672A000FE829 /* NSObject+HqInputLimit.m in Sources */,
 				158411E721C8F0EF00772A14 /* NSObject+HqSafeGetValue.m in Sources */,
+				156547B0223A0DA90038A9A8 /* HqAppView.m in Sources */,
 				15235B8821F715B600493E10 /* NSObject+HqKVO.m in Sources */,
 				156BBD812232182D002A6BDF /* HqCornerTestView.m in Sources */,
 				15F878C82223C90900060C84 /* HqKVOTestVC.m in Sources */,
+				156547A9223A085B0038A9A8 /* HqCellView.m in Sources */,
 				1593B3A222019A8400626F4F /* HqTableView.m in Sources */,
 				8ED98A3220575C6100CBE329 /* UIImage+HqImage.m in Sources */,
 				8ED988432051414A00CBE329 /* HqPullZoomView.m in Sources */,
@@ -1024,6 +1062,7 @@
 				151E4A5E21D37D03006AADC3 /* HqViewControllerAnimated.m in Sources */,
 				8ED988182051326300CBE329 /* HqOperation.m in Sources */,
 				15B644C821DF112C00BD32EA /* HqRegExVC.m in Sources */,
+				156547A6223A08340038A9A8 /* HqUIResponderVC.m in Sources */,
 				151E4A4521D208BF006AADC3 /* WSDatePickerView.m in Sources */,
 				8ED989602051460300CBE329 /* HqDownLoader.m in Sources */,
 				33D03937207AEF1600B46E74 /* HqKeyboardUseVC.m in Sources */,
@@ -1033,6 +1072,7 @@
 				151E4A4721D208BF006AADC3 /* UIView+Extension.m in Sources */,
 				8ED9880C20512F1400CBE329 /* HqFileManager.m in Sources */,
 				8ED989662051468B00CBE329 /* HqHttpUtil.m in Sources */,
+				156547AD223A0D980038A9A8 /* HqThemeVC.m in Sources */,
 				8ED6CD2520189BA50001393A /* main.m in Sources */,
 				8ED987F520512F1400CBE329 /* HqEncrypt.m in Sources */,
 				8E07408E204F8E6200A782E5 /* HqString.m in Sources */,

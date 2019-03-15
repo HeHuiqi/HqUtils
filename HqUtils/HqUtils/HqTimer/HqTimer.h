@@ -17,21 +17,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HqTimer : NSObject
 
-//使用这个方法，不用关心释放的问题
-+ (void)hq_dispatchTimerWithTarget:(id)target
-                      timeInterval:(double)timeInterval
-                           repeats:(BOOL)repeats
-                           handler:(HqTimerhandler)handler;
 
-//使用这个方法，需要声明全HqTimer局变量，然后在UIController的delloc方法调用destroyNStimer方法即可
-+ (HqTimer *)hq_nsTimerWithTimeInterval:(double)timeInterval
-                                repeats:(BOOL)repeats
-                                handler:(HqNSTimerhandler)handler;
+
 @property (nonatomic,strong) NSTimer *timer;
 @property (nonatomic,assign) BOOL repeats;
 
 @property (nonatomic,copy) HqNSTimerhandler hqNSHandler;
 - (void)destroyNStimer;
+
+
+@property (nonatomic,strong) dispatch_source_t dispatchTimer;
+
+//使用这个方法，然后在UIController的delloc方法调用destroyDispatchTimer方法
++ (HqTimer *)hq_dispatchTimerWithTarget:(id)target
+                      timeInterval:(double)timeInterval
+                           repeats:(BOOL)repeats
+                           handler:(HqTimerhandler)handler;
+- (void)destroyDispatchTimer;
+
+//使用这个方法，需要声明全HqTimer局变量，然后在UIController的delloc方法调用destroyNStimer方法即可
++ (HqTimer *)hq_nsTimerWithTimeInterval:(double)timeInterval
+                                repeats:(BOOL)repeats
+                                handler:(HqNSTimerhandler)handler;
+
 
 @end
 

@@ -13,7 +13,10 @@
     
     NSLog(@"HqTimer-dealloc");
 }
-+ (void)hq_dispatchTimerWithTarget:(id)target
+- (void)destroyDispatchTimer{
+    dispatch_source_cancel(self.dispatchTimer);
+}
++ (HqTimer *)hq_dispatchTimerWithTarget:(id)target
                       timeInterval:(double)timeInterval
                            repeats:(BOOL)repeats
                            handler:(HqTimerhandler)handler{
@@ -23,6 +26,10 @@
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
     dispatch_source_set_timer(timer,dispatch_time(DISPATCH_TIME_NOW, 0),1.0*NSEC_PER_SEC, 0);
     __weak __typeof(target) weaktarget  = target;
+    
+    HqTimer *ht = [[HqTimer alloc] init];
+    ht.repeats = repeats;
+    ht.dispatchTimer = timer;
     dispatch_source_set_event_handler(timer, ^{
         if (!weaktarget) {
             dispatch_source_cancel(timer);
@@ -39,6 +46,8 @@
         }
     });
     dispatch_resume(timer);
+    
+    return  ht;
 }
 
 + (HqTimer *)hq_nsTimerWithTimeInterval:(double)timeInterval

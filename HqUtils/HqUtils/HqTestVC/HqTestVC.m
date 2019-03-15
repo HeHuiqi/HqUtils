@@ -20,7 +20,8 @@
 @implementation HqTestVC
 - (void)dealloc{
     NSLog(@"HqTestVC-dealloc");
-    [self.timer destroyNStimer];
+//    [self.timer destroyNStimer];
+    [self.timer destroyDispatchTimer];
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -67,12 +68,14 @@
         make.size.mas_equalTo(CGSizeMake(100, 150));
     }];
     
-//    [HqTimer hq_dispatchTimerWithTarget:self timeInterval:1 repeats:NO handler:^(dispatch_source_t timer) {
+    
+//   self.timer =  [HqTimer hq_dispatchTimerWithTarget:self timeInterval:1 repeats:YES handler:^(dispatch_source_t timer) {
 //        NSLog(@"--hq_dispatchTimerWithTarget-");
 //    }];
-    self.timer = [HqTimer hq_nsTimerWithTimeInterval:1.0 repeats:YES handler:^(HqTimer *hqTimer) {
-        NSLog(@"--hq_nsTimerWithTimeInterval-");
-    }];
+    
+//    self.timer = [HqTimer hq_nsTimerWithTimeInterval:1.0 repeats:YES handler:^(HqTimer *hqTimer) {
+//        NSLog(@"--hq_nsTimerWithTimeInterval-");
+//    }];
    
 }
 - (CGFloat )getTextWidthWithString:(NSString *)string fontSize:(CGFloat )size textHeight:(CGFloat)height
