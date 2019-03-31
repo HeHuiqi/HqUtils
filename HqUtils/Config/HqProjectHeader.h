@@ -24,44 +24,20 @@
 #import "SuperNavigationVC.h"
 #import "SuperVC.h"
 #import "AppDelegate.h"
-#import "HqLocalTool.h"
 #import "NSObject+HqSafeGetValue.h"
 
 #import "HqAFHttpClient.h"
 #import "HqHttpUtil.h"
-#import "HqDealResponseCode.h"
 
 #import "HqDeviceInfo.h"
 #import "HqString.h"
-#import "NSString+Public.h"
-#import "HqListItemModel.h"
 
-#import "HqAlert.h"
-#import "HqAlertView.h"
-
-#import "HqTextField.h"
-#import "UITextView+Placeholder.h"
-#import "HqPassWordView.h"
 
 #import "HqDateFormatter.h"
-#import "UIImage+HqImageCategory.h"
-#import "UIButton+HqBgColor.h"
-#import "UIView+Gradient.h"
-#import "HqLoadingView.h"
-#import "HqSegmentView.h"
+
 
 #import "ProjectBlock.h"
 #import "HqTimer.h"
-#import "HqTextDidChangeProtocol.h"
-//注册
-#import "HqUser.h"
-#import "HqRegistDeal.h"
 
-//登录
-#import "HqLoginVC.h"
-#import "HqLoginDeal.h"
-
-//忘记密码
-#import "HqForgetDeal.h"
 
 #endif /* HqProjectHeader_h */
