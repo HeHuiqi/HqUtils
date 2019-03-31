@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #define HqLineColor  [UIColor colorWithRed:192/255.0 green:193/255.0 blue:200/255.0 alpha:1.0]
 
-#define HqNumberSize 17
+#define HqNumberSize 18.0
 #define HqBtnTitleColor [UIColor blackColor]
 
 #define HqDoneBtnBgColor [UIColor colorWithRed:10.0/255.0 green:97.0/255.0 blue:254.0/255.0 alpha:1.0]

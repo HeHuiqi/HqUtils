@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HqRootVC : UIViewController
+@interface HqRootVC : SuperVC
 
 
 @end

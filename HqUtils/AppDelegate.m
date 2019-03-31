@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "HqAuthIDVC.h"
+#import <dirent.h>
 @interface AppDelegate ()
 
 @end
@@ -16,34 +17,55 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self applicationWillEnterForeground:application];
+//    myls(0, NULL);
+  
+    [HqHttpUtil hqGet:nil url:@"https://www.pgyer.com/app/plist/f83ce030ebbf8260b6e3114f4fad163d/install/efbc825b574aa77543a83e8f60720c11/s.plist" complete:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+        NSLog(@"resss == %@",responseObject);
+    }];
+
+
     return YES;
 }
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
+- (void)applicationWillEnterForeground:(UIApplication *)application{
+    NSLog(@"-------applicationWillEnterForeground");
+    HqAuthIDVC *auth = [HqAuthIDVC new];
+    [auth authVerification];
+
 }
+//列出/dev目录下的所有文件，相当于ls命令
+int myls(int argc, const char * argv[]) {
+    @autoreleasepool {
+        DIR *dp;
+        struct dirent *dirp;
 
+//        if (argc != 2)
+//        {
+//            printf("usage:ls directory_name\n");
+//            return 0;
+//        }
+//        printf("argv[1]==%s\n", argv[1]);
+        dp = opendir("/dev");
+        int i = 0;
+        if (dp != NULL){
+//            printf("open %s\n",argv[1]);
+            while ((dirp = readdir(dp)) != NULL){
+                
+                printf("%s\n", dirp->d_name);
+                i++;
+               
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+            }
+        }
+        if (dp) {
+            closedir(dp);
+        }
+    }
+    return 0;
 }
+- (void)applicationDidEnterBackground:(UIApplication *)application{
+    NSLog(@"-------applicationDidEnterBackground");
 
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-
 @end

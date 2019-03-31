@@ -34,10 +34,14 @@
 - (void)check3DTouch{
     
     if ([self respondsToSelector:@selector(traitCollection)]) {
-        if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-            
-            [self registerForPreviewingWithDelegate:self sourceView:self.view];
-            NSLog(@"3D Touch 开启");
+        if (@available(iOS 9.0, *)) {
+            if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+                
+                [self registerForPreviewingWithDelegate:self sourceView:self.view];
+                NSLog(@"3D Touch 开启");
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
 }

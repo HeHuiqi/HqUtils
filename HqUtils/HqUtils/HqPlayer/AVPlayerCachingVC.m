@@ -172,7 +172,7 @@
     return didRespondFully;
 }
 
-
+#pragma mark - AVAssetResourceLoaderDelegate
 - (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest
 {
     if (self.connection == nil)

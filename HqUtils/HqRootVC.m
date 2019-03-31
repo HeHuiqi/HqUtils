@@ -7,8 +7,23 @@
 //
 
 #import "HqRootVC.h"
-#import "HqColorImage.h"
 #import "HqKeyboardUseVC.h"
+#import "HqDatePickerVC.h"
+#import "HqShareVC.h"
+#import "HqTestVC.h"
+#import "HqRegExVC.h"
+#import "HqAuthIDVC.h"
+#import "HqAlertVC.h"
+#import "HqCustomAlertVC.h"
+#import "hqRefreshVC.h"
+#import "HqTableView.h"
+#import "HqKVOTestVC.h"
+#import "HqClipVC.h"
+
+#import "HqNSInvocationVC.h"
+#import "HqUIResponderVC.h"
+#import "HqThemeVC.h"
+
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -23,11 +38,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqColorImage",@"HqKeyboardUseVC"];
+    _titles = @[@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
+    UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
+    self.navigationItem.rightBarButtonItem = rbtn;
     [self initView];
+    
+}
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)enterAlert:(UIBarButtonItem *)sender{
+
+    HqCustomAlertVC *alert = [[HqCustomAlertVC alloc] init];
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ) {
+        
+        UIViewController *popRootVC = [[UIViewController alloc] init];
+        popRootVC.view.backgroundColor = [UIColor redColor];
+        
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:popRootVC];
+        popRootVC.title = @"POP";
+        
+        UIPopoverController *popVC = [[UIPopoverController alloc] initWithContentViewController:nav];
+        popVC.popoverContentSize = CGSizeMake(200, 300);
+    
+        [popVC presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }else{
+        [alert showWithVC:self];
+    }
+
 }
 - (void)initView{
-    _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    _tableView = [[HqTableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
@@ -52,21 +94,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    HqKeyboardUseVC *keyboard = [[HqKeyboardUseVC alloc] init];
-    [self.navigationController pushViewController:keyboard animated:YES];
+    NSString *vcname = self.titles[indexPath.row];
+    Class vcClass = NSClassFromString(vcname);
+    UIViewController *vc = [vcClass new];
+    vc.title = vcname;
+    [self.navigationController pushViewController:vc animated:YES];
 
-}
-- (void)hqBtn{
-    UIImage *normalImage = [HqColorImage imageWithColor:[UIColor blueColor] isBorder:YES];
-    UIImage *HighlightedImage = [HqColorImage imageWithColor:[UIColor blueColor] isBorder:NO];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setTitle:@"Title" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [btn setBackgroundImage:normalImage forState:UIControlStateNormal];
-    [btn setBackgroundImage:HighlightedImage forState:UIControlStateHighlighted];
-    btn.frame = CGRectMake(10, 80, 100, 40);
-    [self.view addSubview:btn];
 }
 
 - (void)didReceiveMemoryWarning {
