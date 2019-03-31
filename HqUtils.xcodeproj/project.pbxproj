@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
+
 		3338C52D2250509400640999 /* HqPageViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3338C52C2250509400640999 /* HqPageViewVC.m */; };
 		3338C5382250518000640999 /* ProjectEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3338C5342250518000640999 /* ProjectEnvironment.m */; };
 		3338C5392250518000640999 /* ProjectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3338C5352250518000640999 /* ProjectConst.m */; };
 		3338C53A2250518000640999 /* ProjectBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3338C5362250518000640999 /* ProjectBlock.m */; };
-=======
 		151E4A4421D208BF006AADC3 /* WSDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 151E4A4021D208BF006AADC3 /* WSDatePickerView.xib */; };
 		151E4A4521D208BF006AADC3 /* WSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4121D208BF006AADC3 /* WSDatePickerView.m */; };
 		151E4A4621D208BF006AADC3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E4A4221D208BF006AADC3 /* NSDate+Extension.m */; };
@@ -62,7 +61,6 @@
 		15F878C82223C90900060C84 /* HqKVOTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F878C32223C90900060C84 /* HqKVOTestVC.m */; };
 		15F878C92223C90900060C84 /* HqKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F878C52223C90900060C84 /* HqKVO.m */; };
 		15F878E92227F30400060C84 /* HqIconLab.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F878E82227F30400060C84 /* HqIconLab.m */; };
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 		33D03937207AEF1600B46E74 /* HqKeyboardUseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D03936207AEF1600B46E74 /* HqKeyboardUseVC.m */; };
 		33D03948207AF26B00B46E74 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D03942207AF26B00B46E74 /* Dialog.m */; };
 		4AF1300B7449750A224BD05B /* libPods-HqUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 916A9BD65B803BDC8E30B8A3 /* libPods-HqUtils.a */; };
@@ -115,7 +113,6 @@
 		8ED9883E2051326900CBE329 /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9882D2051326900CBE329 /* PlayView.m */; };
 		8ED9883F2051326900CBE329 /* AVPlayerCachingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9882E2051326900CBE329 /* AVPlayerCachingVC.m */; };
 		8ED988432051414A00CBE329 /* HqPullZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED988422051414A00CBE329 /* HqPullZoomView.m */; };
-<<<<<<< HEAD
 		8ED989042051451300CBE329 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9884A2051451300CBE329 /* MJPropertyType.m */; };
 		8ED989052051451300CBE329 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9884D2051451300CBE329 /* NSObject+MJKeyValue.m */; };
 		8ED989062051451300CBE329 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9884E2051451300CBE329 /* MJProperty.m */; };
@@ -183,8 +180,7 @@
 		8ED989592051451300CBE329 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED988FD2051451300CBE329 /* UIView+WebCacheOperation.m */; };
 		8ED9895A2051451300CBE329 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED988FE2051451300CBE329 /* UIView+WebCache.m */; };
 		8ED9895B2051451300CBE329 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED989022051451300CBE329 /* UIButton+WebCache.m */; };
-=======
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
+
 		8ED989602051460300CBE329 /* HqDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED9895E2051460300CBE329 /* HqDownLoader.m */; };
 		8ED989662051468B00CBE329 /* HqHttpUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED989632051468B00CBE329 /* HqHttpUtil.m */; };
 		8ED989672051468B00CBE329 /* HqAFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED989642051468B00CBE329 /* HqAFHttpClient.m */; };
@@ -193,7 +189,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
 		3338C52B2250509400640999 /* HqPageViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPageViewVC.h; sourceTree = "<group>"; };
 		3338C52C2250509400640999 /* HqPageViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPageViewVC.m; sourceTree = "<group>"; };
 		3338C5302250518000640999 /* ProjectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectConst.h; sourceTree = "<group>"; };
@@ -204,7 +199,6 @@
 		3338C5352250518000640999 /* ProjectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectConst.m; sourceTree = "<group>"; };
 		3338C5362250518000640999 /* ProjectBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectBlock.m; sourceTree = "<group>"; };
 		3338C5372250518000640999 /* HqProjectHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqProjectHeader.h; sourceTree = "<group>"; };
-=======
 		151E4A3D21D208BF006AADC3 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		151E4A3E21D208BF006AADC3 /* WSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDatePickerView.h; sourceTree = "<group>"; };
 		151E4A3F21D208BF006AADC3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
@@ -297,7 +291,6 @@
 		15F878C52223C90900060C84 /* HqKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqKVO.m; sourceTree = "<group>"; };
 		15F878E72227F30400060C84 /* HqIconLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqIconLab.h; sourceTree = "<group>"; };
 		15F878E82227F30400060C84 /* HqIconLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqIconLab.m; sourceTree = "<group>"; };
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 		337A70F4208C5C7500413919 /* HqUtilsPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqUtilsPrefix.pch; sourceTree = "<group>"; };
 		33D03935207AEF1600B46E74 /* HqKeyboardUseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqKeyboardUseVC.h; sourceTree = "<group>"; };
 		33D03936207AEF1600B46E74 /* HqKeyboardUseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqKeyboardUseVC.m; sourceTree = "<group>"; };
@@ -382,7 +375,6 @@
 		8ED9882E2051326900CBE329 /* AVPlayerCachingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerCachingVC.m; sourceTree = "<group>"; };
 		8ED988412051414A00CBE329 /* HqPullZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPullZoomView.h; sourceTree = "<group>"; };
 		8ED988422051414A00CBE329 /* HqPullZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPullZoomView.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		8ED988472051451300CBE329 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		8ED988482051451300CBE329 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
 		8ED988492051451300CBE329 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
@@ -528,8 +520,7 @@
 		8ED989012051451300CBE329 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		8ED989022051451300CBE329 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		8ED989032051451300CBE329 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
-=======
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
+
 		8ED9895E2051460300CBE329 /* HqDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqDownLoader.m; sourceTree = "<group>"; };
 		8ED9895F2051460300CBE329 /* HqDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqDownLoader.h; sourceTree = "<group>"; };
 		8ED989622051468B00CBE329 /* HqAFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqAFHttpClient.h; sourceTree = "<group>"; };
@@ -556,7 +547,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
+
 		3338C52A2250502C00640999 /* HqPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,9 +581,7 @@
 			sourceTree = "<group>";
 		};
 		33D03938207AF26B00B46E74 /* MBProgressHUD */ = {
-=======
 		151E4A3C21D208BF006AADC3 /* WSDaePickerView */ = {
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 			isa = PBXGroup;
 			children = (
 				151E4A3D21D208BF006AADC3 /* NSDate+Extension.h */,
@@ -968,16 +957,14 @@
 		8ED6CD1420189BA50001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
+
 				3338C52F2250518000640999 /* Config */,
-=======
 				156547AA223A0D600038A9A8 /* HqTheme */,
 				156547A3223A08130038A9A8 /* HqUIResponder */,
 				156BBD8222324940002A6BDF /* images */,
 				156BBD762232093B002A6BDF /* HqCornerView */,
 				15F878E62227F2F500060C84 /* HqIconLab */,
 				15B644C921E3033300BD32EA /* HqAuthID */,
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 				8ED988442051451300CBE329 /* libs */,
 				8ED6CD2B20189BC90001393A /* HqUtils */,
 				8ED6CD1520189BA50001393A /* AppDelegate.h */,
@@ -1000,9 +987,8 @@
 		8ED6CD2B20189BC90001393A /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
+
 				3338C52A2250502C00640999 /* HqPageView */,
-=======
 				1565479522375D460038A9A8 /* HqTimer */,
 				156BBD8A22335B7B002A6BDF /* HqNSInvocation */,
 				156BBD8522324976002A6BDF /* HqClipVC */,
@@ -1018,7 +1004,6 @@
 				151E4A4821D208D9006AADC3 /* HqDatePicker */,
 				151E4A3C21D208BF006AADC3 /* WSDaePickerView */,
 				158411E421C8F0EF00772A14 /* HqSafeGetValue */,
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 				8ED98A342057721E00CBE329 /* HqAlertView */,
 				8ED98A2F20575C3D00CBE329 /* HqImage */,
 				8ED989612051468B00CBE329 /* Network */,
@@ -1114,7 +1099,7 @@
 			path = libs;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
+
 		8ED988452051451300CBE329 /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -1383,8 +1368,6 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 		8ED9895D2051460300CBE329 /* HqDownloader */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,10 +1473,7 @@
 				8ED988382051326900CBE329 /* san_jiao.png in Resources */,
 				151E4A6C21D39227006AADC3 /* HqNavBar.md in Resources */,
 				8E074074204F8C1000A782E5 /* resign@2x.png in Resources */,
-<<<<<<< HEAD
-=======
 				151E4A5C21D37D03006AADC3 /* nav_back.png in Resources */,
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 				8ED9883B2051326900CBE329 /* stop@3x.png in Resources */,
 				8ED988352051326900CBE329 /* small_icon@2x.png in Resources */,
 				8ED9883A2051326900CBE329 /* stop@2x.png in Resources */,
@@ -1513,10 +1493,8 @@
 				8ED988362051326900CBE329 /* small_icon@3x.png in Resources */,
 				156BBD8422324965002A6BDF /* hq_bg.jpeg in Resources */,
 				8ED988302051326900CBE329 /* stop.png in Resources */,
-<<<<<<< HEAD
+
 				33D03949207AF26B00B46E74 /* MBProgressHUD.bundle in Resources */,
-=======
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 				8ED988392051326900CBE329 /* san_jiao@2x.png in Resources */,
 				8ED6CD1F20189BA50001393A /* Assets.xcassets in Resources */,
 				8ED6CD1D20189BA50001393A /* Main.storyboard in Resources */,
@@ -1592,15 +1570,13 @@
 				8ED98A3220575C6100CBE329 /* UIImage+HqImage.m in Sources */,
 				8ED988432051414A00CBE329 /* HqPullZoomView.m in Sources */,
 				8ED9880A20512F1400CBE329 /* HqDeviceInfo.m in Sources */,
-<<<<<<< HEAD
+
 				3338C52D2250509400640999 /* HqPageViewVC.m in Sources */,
 				8ED9894F2051451300CBE329 /* UIImage+GIF.m in Sources */,
 				8ED9893A2051451300CBE329 /* UIButton+AFNetworking.m in Sources */,
 				8ED989512051451300CBE329 /* SDWebImageCompat.m in Sources */,
 				8ED989192051451300CBE329 /* MASViewConstraint.m in Sources */,
-=======
 				151E4A6A21D37E91006AADC3 /* HqTest2VC.m in Sources */,
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 				8ED988192051326300CBE329 /* DownloadOperation.m in Sources */,
 				1565479822375D660038A9A8 /* HqTimer.m in Sources */,
 				15B644CC21E3034A00BD32EA /* HqAuthIDVC.m in Sources */,
@@ -1646,15 +1622,13 @@
 				8ED6CD2520189BA50001393A /* main.m in Sources */,
 				8ED987F520512F1400CBE329 /* HqEncrypt.m in Sources */,
 				8E07408E204F8E6200A782E5 /* HqString.m in Sources */,
-<<<<<<< HEAD
+
 				8ED9890A2051451300CBE329 /* NSObject+MJClass.m in Sources */,
 				3338C5382250518000640999 /* ProjectEnvironment.m in Sources */,
-=======
 				15B644C421DF029700BD32EA /* HqRegEx.m in Sources */,
 				151E4A4B21D208FE006AADC3 /* HqDatePickerVC.m in Sources */,
 				15F878C92223C90900060C84 /* HqKVO.m in Sources */,
 				151E4A4F21D32A8E006AADC3 /* HqShareVC.m in Sources */,
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 				8ED9880B20512F1400CBE329 /* HqKeyChain.m in Sources */,
 				8EC81B572051152B0073D356 /* HqPreviewVC.m in Sources */,
 				15235B8721F715B600493E10 /* User.m in Sources */,
@@ -1803,14 +1777,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
+
 				DEVELOPMENT_TEAM = C9F6VFYR26;
-=======
 				DEVELOPMENT_TEAM = 7V926B465U;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_CW_ASM_SYNTAX = YES;
 				GCC_ENABLE_ASM_KEYWORD = YES;
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HqUtils/HqUtilsPrefix.pch;
 				INFOPLIST_FILE = HqUtils/Info.plist;
@@ -1828,14 +1800,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-<<<<<<< HEAD
+
 				DEVELOPMENT_TEAM = C9F6VFYR26;
-=======
-				DEVELOPMENT_TEAM = 7V926B465U;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_CW_ASM_SYNTAX = YES;
 				GCC_ENABLE_ASM_KEYWORD = YES;
->>>>>>> 174db84176677440bdb5574097945d7b2be99dd6
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HqUtils/HqUtilsPrefix.pch;
 				INFOPLIST_FILE = HqUtils/Info.plist;
