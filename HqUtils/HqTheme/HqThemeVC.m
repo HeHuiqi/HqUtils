@@ -41,7 +41,7 @@
     
     HGCategoryView *segv = [[HGCategoryView alloc] init];
     segv.height = 50;
-    segv.backgroundColor = HqRandomColor;
+    segv.backgroundColor = [UIColor groupTableViewBackgroundColor];
     segv.titles = @[@"全部",@"我的"];
     
     [self.view addSubview:segv];
@@ -51,9 +51,13 @@
         make.height.mas_equalTo(50);
     }];
     
-    UIColor *color = [self mostColor:[UIImage imageNamed:@"lc.jpg"]];
-    self.view.backgroundColor = color;
-
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        UIColor *color = [self mostColor:[UIImage imageNamed:@"lc.jpg"]];
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.view.backgroundColor = color;
+//        });
+//    });
     
 }
 
