@@ -58,4 +58,22 @@
     
     return [[HqDateFormatter shareInstance] dateString:dateString orginalFormat:orginal resultFormat:resultFormat];
 }
+
+//dateStr为这种格式 2019-04-19T02:38:41.000Z
+- (NSString *)UTCDateStr:(NSString *)dateStr convertFormat:(NSString *)format{
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+    NSDate *date = [df dateFromString:dateStr];
+    NSTimeInterval interval = [timeZone secondsFromGMTForDate:date];
+    date = [date dateByAddingTimeInterval:interval];
+//    NSLog(@"date----%@",date);
+    
+    [df setDateFormat:format];
+    
+    NSString *result = [df stringFromDate:date];
+//    NSLog(@"result----%@",result);
+    return result;
+}
 @end

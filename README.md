@@ -6,6 +6,7 @@
 iOS开发中常用的的工具类和一些UI组件
 
 ## 部分列举如下：
+* HQSegmentPageViewController 头部悬停UITableview嵌套，类似淘宝首页结构
 * HqAlertView 一个以block方式的系统提示（iOS8.0+）
 * HqImage UImage的一个类别
 * Network 是一个网络请求工具类，包括系统和AFNetworking的封装

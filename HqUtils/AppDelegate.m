@@ -17,21 +17,37 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self applicationWillEnterForeground:application];
-//    myls(0, NULL);
-  
-    [HqHttpUtil hqGet:nil url:@"https://www.pgyer.com/app/plist/f83ce030ebbf8260b6e3114f4fad163d/install/efbc825b574aa77543a83e8f60720c11/s.plist" complete:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
-        NSLog(@"resss == %@",responseObject);
-    }];
 
+    [self UTCDateStr:@"2019-04-19T02:33:04.000Z" convertFormat:@"yyyy-MM-dd"];
+    
+
+   
 
     return YES;
 }
+//dateStr为这种格式 2019-04-19T02:38:41.000Z
+- (NSString *)UTCDateStr:(NSString *)dateStr convertFormat:(NSString *)format{
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone localTimeZone];
+    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+    NSDate *date = [df dateFromString:dateStr];
+    NSTimeInterval interval = [timeZone secondsFromGMTForDate:date];
+    date = [date dateByAddingTimeInterval:interval];
+    NSLog(@"date----%@",date);
+
+    [df setDateFormat:format];
+
+    NSString *result = [df stringFromDate:date];
+    NSLog(@"result----%@",result);
+    return result;
+}
+
 
 - (void)applicationWillEnterForeground:(UIApplication *)application{
-    NSLog(@"-------applicationWillEnterForeground");
-    HqAuthIDVC *auth = [HqAuthIDVC new];
-    [auth authVerification];
+//    NSLog(@"-------applicationWillEnterForeground");
+//    HqAuthIDVC *auth = [HqAuthIDVC new];
+//    [auth authVerification];
 
 }
 //列出/dev目录下的所有文件，相当于ls命令
@@ -65,7 +81,7 @@ int myls(int argc, const char * argv[]) {
     return 0;
 }
 - (void)applicationDidEnterBackground:(UIApplication *)application{
-    NSLog(@"-------applicationDidEnterBackground");
+//    NSLog(@"-------applicationDidEnterBackground");
 
 }
 @end

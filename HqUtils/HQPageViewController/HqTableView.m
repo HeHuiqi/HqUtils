@@ -2,8 +2,8 @@
 //  HqTableView.m
 //  HqUtils
 //
-//  Created by hqmac on 2019/1/30.
-//  Copyright © 2019 macpro. All rights reserved.
+//  Created by hehuiqi on 4/23/19.
+//  Copyright © 2019 hhq. All rights reserved.
 //
 
 #import "HqTableView.h"
@@ -17,9 +17,8 @@
     // Drawing code
 }
 */
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [super touchesEnded:touches withEvent:event];
-    [[self nextResponder] touchesEnded:touches withEvent:event];
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
 
 @end

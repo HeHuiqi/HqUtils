@@ -32,6 +32,8 @@
 
 #pragma mark - 字符串日期-->另一个字符串日期
 + (NSString *)convertDateString:(NSString *)dateString orginalFormat:(NSString *)orginal resultFormat:(NSString *)resultFormat;
+//dateStr为这种格式 2019-04-19T02:38:41.000Z
++ (NSString *)UTCDateStr:(NSString *)dateStr convertFormat:(NSString *)format;
 @end
 
 
