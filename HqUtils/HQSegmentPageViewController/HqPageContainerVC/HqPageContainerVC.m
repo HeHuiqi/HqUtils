@@ -7,17 +7,9 @@
 //
 
 #import "HqPageContainerVC.h"
-
-#import "HQPage1VC.h"
-#import "HQPage2VC.h"
-#import "HqPage3VC.h"
+#import "HqPageItemSuperVC.h"
 
 @interface HqPageContainerVC ()<HqPageViewProtocol>
-
-
-@property(nonatomic,strong) HQPage1VC *pageV1;
-@property(nonatomic,strong) HQPage2VC *pageV2;
-@property(nonatomic,strong) HqPage3VC *pageV3;
 
 @end
 
@@ -27,9 +19,6 @@
     [super viewDidLoad];
     self.currentPageIndex = 0;
     [self.view addSubview:self.containerScrollview];
-//    self.pageItems = @[self.pageV1,self.pageV2,self.pageV3];
-//    
-//    [self hqAddChildVCWithindex:self.currentPageIndex];
     
 }
 - (void)hqAddChildVCWithindex:(NSInteger)index{
@@ -65,33 +54,6 @@
         _containerScrollview.delegate = self;
     }
     return _containerScrollview;
-}
-- (HQPage1VC *)pageV1{
-    if (!_pageV1) {
-        _pageV1 = [[HQPage1VC alloc] init];
-        _pageV1.title = @"HQPage1VC";
-        _pageV1.delegate = self;
-        
-    }
-    return _pageV1;
-}
-
-- (HQPage2VC *)pageV2{
-    if (!_pageV2) {
-        _pageV2 = [[HQPage2VC alloc] init];
-        _pageV2.title = @"HQPage2VC";
-        _pageV2.delegate = self;
-    }
-    return _pageV2;
-}
-- (HqPage3VC *)pageV3{
-    if (!_pageV3) {
-        _pageV3 = [[HqPage3VC alloc] init];
-        _pageV3.title = @"HQPage3VC";
-        _pageV3.delegate = self;
-        
-    }
-    return _pageV3;
 }
 
 #pragma mark - HqPageViewProtocol
@@ -191,8 +153,6 @@
             [self.delegate pageContainerScrollViewToIndex:index];
         }
     }
-//    self.currentPageIndex = index;
-    
 }
 
 /*

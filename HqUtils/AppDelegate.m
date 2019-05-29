@@ -18,13 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [self UTCDateStr:@"2019-04-19T02:33:04.000Z" convertFormat:@"yyyy-MM-dd"];
+//    [self UTCDateStr:@"2019-04-19T02:33:04.000Z" convertFormat:@"yyyy-MM-dd"];
     
-
-   
 
     return YES;
 }
+
 //dateStr为这种格式 2019-04-19T02:38:41.000Z
 - (NSString *)UTCDateStr:(NSString *)dateStr convertFormat:(NSString *)format{
     

@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2E6B2465F7DC6F48AF7D37B4 /* libPods-HqUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 336CD4F8717B9C2513EB3BD2 /* libPods-HqUtils.a */; };
-		33155FC2226D9439000ABDAE /* HQSegmentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33155FC1226D9439000ABDAE /* HQSegmentPageViewController.m */; };
-		33155FC5226D944F000ABDAE /* HQPage1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33155FC4226D944F000ABDAE /* HQPage1VC.m */; };
-		33155FC8226D9469000ABDAE /* HQPage2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33155FC7226D9469000ABDAE /* HQPage2VC.m */; };
-		33155FEE226EB151000ABDAE /* HqTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33155FED226EB151000ABDAE /* HqTableView.m */; };
+		331B7246229BABFA00A5D73B /* HSegmentTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B7245229BABFA00A5D73B /* HSegmentTestVC.m */; };
+		331B7253229BF74A00A5D73B /* HHSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B7252229BF74A00A5D73B /* HHSegmentView.m */; };
+		331B725A229CC8A700A5D73B /* HHSegmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B7259229CC8A700A5D73B /* HHSegmentCell.m */; };
+		3331CA9222924CB500E783FA /* HqPageItemSuperVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA7C22924CB500E783FA /* HqPageItemSuperVC.m */; };
+		3331CA9322924CB500E783FA /* HqPageContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA7F22924CB500E783FA /* HqPageContainerVC.m */; };
+		3331CA9422924CB500E783FA /* HqTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA8222924CB500E783FA /* HqTableView.m */; };
+		3331CA9522924CB500E783FA /* HQSegmentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA8422924CB500E783FA /* HQSegmentPageViewController.m */; };
+		3331CA9622924CB500E783FA /* HqCustomPageContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA8722924CB500E783FA /* HqCustomPageContainerVC.m */; };
+		3331CA9722924CB500E783FA /* HqCustomSegmentPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA8C22924CB500E783FA /* HqCustomSegmentPageVC.m */; };
+		3331CA9822924CB500E783FA /* HqPage3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA8E22924CB500E783FA /* HqPage3VC.m */; };
+		3331CA9922924CB500E783FA /* HQPage2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA8F22924CB500E783FA /* HQPage2VC.m */; };
+		3331CA9A22924CB500E783FA /* HQPage1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA9022924CB500E783FA /* HQPage1VC.m */; };
+		3331CA9B22924CB500E783FA /* HqPageDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3331CA9122924CB500E783FA /* HqPageDetailVC.m */; };
 		3338C55A22505B5700640999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3338C55922505B5700640999 /* AppDelegate.m */; };
 		3338C56022505B5700640999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3338C55E22505B5700640999 /* Main.storyboard */; };
 		3338C56222505B5800640999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3338C56122505B5800640999 /* Assets.xcassets */; };
@@ -125,27 +134,39 @@
 		3338C6CD22505C1600640999 /* HqCornerTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3338C65F22505C1600640999 /* HqCornerTestView.m */; };
 		3338C6D122505DF600640999 /* NSObject+HqInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3338C6CF22505DF600640999 /* NSObject+HqInputLimit.m */; };
 		334CE22D2282788900360565 /* HGCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 334CE22B2282788900360565 /* HGCategoryView.m */; };
-		3380DB5622904DE100470E8F /* HqPageItemSuperVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3380DB5522904DE100470E8F /* HqPageItemSuperVC.m */; };
-		3380DB5C22904F5C00470E8F /* HqPage3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3380DB5B22904F5C00470E8F /* HqPage3VC.m */; };
-		3380DB5F2290E65900470E8F /* HqPageContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3380DB5E2290E65900470E8F /* HqPageContainerVC.m */; };
-		3380DB622290EDB000470E8F /* HqPageTempVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3380DB612290EDB000470E8F /* HqPageTempVC.m */; };
-		3380DB682290F26600470E8F /* HqPageDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3380DB672290F26600470E8F /* HqPageDetailVC.m */; };
-		3380DB6B2291251E00470E8F /* HqCustomPageContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3380DB6A2291251E00470E8F /* HqCustomPageContainerVC.m */; };
 		3380DB6D229128E700470E8F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3380DB6C229128E600470E8F /* README.md */; };
 		338E619B228BDAEB009189BB /* lc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 338E619A228BDAEB009189BB /* lc.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2425FD2217E12E76E6892219 /* Pods-HqUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HqUtils.release.xcconfig"; path = "Pods/Target Support Files/Pods-HqUtils/Pods-HqUtils.release.xcconfig"; sourceTree = "<group>"; };
-		33155FC0226D9439000ABDAE /* HQSegmentPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQSegmentPageViewController.h; sourceTree = "<group>"; };
-		33155FC1226D9439000ABDAE /* HQSegmentPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQSegmentPageViewController.m; sourceTree = "<group>"; };
-		33155FC3226D944F000ABDAE /* HQPage1VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQPage1VC.h; sourceTree = "<group>"; };
-		33155FC4226D944F000ABDAE /* HQPage1VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQPage1VC.m; sourceTree = "<group>"; };
-		33155FC6226D9469000ABDAE /* HQPage2VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQPage2VC.h; sourceTree = "<group>"; };
-		33155FC7226D9469000ABDAE /* HQPage2VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQPage2VC.m; sourceTree = "<group>"; };
-		33155FC9226DA1E3000ABDAE /* HqPageViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPageViewProtocol.h; sourceTree = "<group>"; };
-		33155FEC226EB151000ABDAE /* HqTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqTableView.h; sourceTree = "<group>"; };
-		33155FED226EB151000ABDAE /* HqTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTableView.m; sourceTree = "<group>"; };
+		331B7244229BABFA00A5D73B /* HSegmentTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSegmentTestVC.h; sourceTree = "<group>"; };
+		331B7245229BABFA00A5D73B /* HSegmentTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSegmentTestVC.m; sourceTree = "<group>"; };
+		331B7251229BF74A00A5D73B /* HHSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHSegmentView.h; sourceTree = "<group>"; };
+		331B7252229BF74A00A5D73B /* HHSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHSegmentView.m; sourceTree = "<group>"; };
+		331B7258229CC8A700A5D73B /* HHSegmentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHSegmentCell.h; sourceTree = "<group>"; };
+		331B7259229CC8A700A5D73B /* HHSegmentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHSegmentCell.m; sourceTree = "<group>"; };
+		3331CA7C22924CB500E783FA /* HqPageItemSuperVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPageItemSuperVC.m; sourceTree = "<group>"; };
+		3331CA7D22924CB500E783FA /* HqPageContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPageContainerVC.h; sourceTree = "<group>"; };
+		3331CA7E22924CB500E783FA /* HqPageItemSuperVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPageItemSuperVC.h; sourceTree = "<group>"; };
+		3331CA7F22924CB500E783FA /* HqPageContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPageContainerVC.m; sourceTree = "<group>"; };
+		3331CA8022924CB500E783FA /* HqPageViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPageViewProtocol.h; sourceTree = "<group>"; };
+		3331CA8122924CB500E783FA /* HQSegmentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQSegmentPageViewController.h; sourceTree = "<group>"; };
+		3331CA8222924CB500E783FA /* HqTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqTableView.m; sourceTree = "<group>"; };
+		3331CA8322924CB500E783FA /* HqTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqTableView.h; sourceTree = "<group>"; };
+		3331CA8422924CB500E783FA /* HQSegmentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQSegmentPageViewController.m; sourceTree = "<group>"; };
+		3331CA8622924CB500E783FA /* HqCustomSegmentPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqCustomSegmentPageVC.h; sourceTree = "<group>"; };
+		3331CA8722924CB500E783FA /* HqCustomPageContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqCustomPageContainerVC.m; sourceTree = "<group>"; };
+		3331CA8822924CB500E783FA /* HQPage1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQPage1VC.h; sourceTree = "<group>"; };
+		3331CA8922924CB500E783FA /* HQPage2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQPage2VC.h; sourceTree = "<group>"; };
+		3331CA8A22924CB500E783FA /* HqPage3VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPage3VC.h; sourceTree = "<group>"; };
+		3331CA8B22924CB500E783FA /* HqPageDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPageDetailVC.h; sourceTree = "<group>"; };
+		3331CA8C22924CB500E783FA /* HqCustomSegmentPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqCustomSegmentPageVC.m; sourceTree = "<group>"; };
+		3331CA8D22924CB500E783FA /* HqCustomPageContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqCustomPageContainerVC.h; sourceTree = "<group>"; };
+		3331CA8E22924CB500E783FA /* HqPage3VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPage3VC.m; sourceTree = "<group>"; };
+		3331CA8F22924CB500E783FA /* HQPage2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQPage2VC.m; sourceTree = "<group>"; };
+		3331CA9022924CB500E783FA /* HQPage1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQPage1VC.m; sourceTree = "<group>"; };
+		3331CA9122924CB500E783FA /* HqPageDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPageDetailVC.m; sourceTree = "<group>"; };
 		3338C55522505B5700640999 /* HqUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HqUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3338C55822505B5700640999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3338C55922505B5700640999 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -349,18 +370,6 @@
 		334CE22C2282788900360565 /* HGCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGCategoryView.h; sourceTree = "<group>"; };
 		334CE22E228278BB00360565 /* HGPersonalCenterMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGPersonalCenterMacro.h; sourceTree = "<group>"; };
 		336CD4F8717B9C2513EB3BD2 /* libPods-HqUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HqUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3380DB5422904DE100470E8F /* HqPageItemSuperVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPageItemSuperVC.h; sourceTree = "<group>"; };
-		3380DB5522904DE100470E8F /* HqPageItemSuperVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPageItemSuperVC.m; sourceTree = "<group>"; };
-		3380DB5A22904F5C00470E8F /* HqPage3VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPage3VC.h; sourceTree = "<group>"; };
-		3380DB5B22904F5C00470E8F /* HqPage3VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPage3VC.m; sourceTree = "<group>"; };
-		3380DB5D2290E65900470E8F /* HqPageContainerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPageContainerVC.h; sourceTree = "<group>"; };
-		3380DB5E2290E65900470E8F /* HqPageContainerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPageContainerVC.m; sourceTree = "<group>"; };
-		3380DB602290EDB000470E8F /* HqPageTempVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPageTempVC.h; sourceTree = "<group>"; };
-		3380DB612290EDB000470E8F /* HqPageTempVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPageTempVC.m; sourceTree = "<group>"; };
-		3380DB662290F26600470E8F /* HqPageDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPageDetailVC.h; sourceTree = "<group>"; };
-		3380DB672290F26600470E8F /* HqPageDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPageDetailVC.m; sourceTree = "<group>"; };
-		3380DB692291251E00470E8F /* HqCustomPageContainerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqCustomPageContainerVC.h; sourceTree = "<group>"; };
-		3380DB6A2291251E00470E8F /* HqCustomPageContainerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqCustomPageContainerVC.m; sourceTree = "<group>"; };
 		3380DB6C229128E600470E8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		338E619A228BDAEB009189BB /* lc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lc.jpg; sourceTree = "<group>"; };
 		60ED819FFF2C3256E8BCB18A /* Pods-HqUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HqUtils.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HqUtils/Pods-HqUtils.debug.xcconfig"; sourceTree = "<group>"; };
@@ -378,19 +387,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33155FBF226D9411000ABDAE /* HQPageViewController */ = {
+		331B7243229BABB100A5D73B /* HSegmentTest */ = {
 			isa = PBXGroup;
 			children = (
-				3380DB652290F1E400470E8F /* Custom */,
-				3380DB642290F1B200470E8F /* HqPageContainerVC */,
-				3380DB632290F18300470E8F /* temp */,
-				33155FC0226D9439000ABDAE /* HQSegmentPageViewController.h */,
-				33155FC1226D9439000ABDAE /* HQSegmentPageViewController.m */,
-				33155FC9226DA1E3000ABDAE /* HqPageViewProtocol.h */,
-				33155FEC226EB151000ABDAE /* HqTableView.h */,
-				33155FED226EB151000ABDAE /* HqTableView.m */,
+				331B7250229BF74A00A5D73B /* HHSegmentView */,
+				331B7244229BABFA00A5D73B /* HSegmentTestVC.h */,
+				331B7245229BABFA00A5D73B /* HSegmentTestVC.m */,
 			);
-			path = HQPageViewController;
+			path = HSegmentTest;
+			sourceTree = "<group>";
+		};
+		331B7250229BF74A00A5D73B /* HHSegmentView */ = {
+			isa = PBXGroup;
+			children = (
+				331B7251229BF74A00A5D73B /* HHSegmentView.h */,
+				331B7252229BF74A00A5D73B /* HHSegmentView.m */,
+				331B7258229CC8A700A5D73B /* HHSegmentCell.h */,
+				331B7259229CC8A700A5D73B /* HHSegmentCell.m */,
+			);
+			path = HHSegmentView;
+			sourceTree = "<group>";
+		};
+		3331CA7A22924CB500E783FA /* HQSegmentPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3331CA8522924CB500E783FA /* Custom */,
+				3331CA7B22924CB500E783FA /* HqPageContainerVC */,
+				3331CA8022924CB500E783FA /* HqPageViewProtocol.h */,
+				3331CA8122924CB500E783FA /* HQSegmentPageViewController.h */,
+				3331CA8422924CB500E783FA /* HQSegmentPageViewController.m */,
+				3331CA8322924CB500E783FA /* HqTableView.h */,
+				3331CA8222924CB500E783FA /* HqTableView.m */,
+			);
+			path = HQSegmentPageViewController;
+			sourceTree = "<group>";
+		};
+		3331CA7B22924CB500E783FA /* HqPageContainerVC */ = {
+			isa = PBXGroup;
+			children = (
+				3331CA7D22924CB500E783FA /* HqPageContainerVC.h */,
+				3331CA7F22924CB500E783FA /* HqPageContainerVC.m */,
+				3331CA7E22924CB500E783FA /* HqPageItemSuperVC.h */,
+				3331CA7C22924CB500E783FA /* HqPageItemSuperVC.m */,
+			);
+			path = HqPageContainerVC;
+			sourceTree = "<group>";
+		};
+		3331CA8522924CB500E783FA /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				3331CA8D22924CB500E783FA /* HqCustomPageContainerVC.h */,
+				3331CA8722924CB500E783FA /* HqCustomPageContainerVC.m */,
+				3331CA8622924CB500E783FA /* HqCustomSegmentPageVC.h */,
+				3331CA8C22924CB500E783FA /* HqCustomSegmentPageVC.m */,
+				3331CA8822924CB500E783FA /* HQPage1VC.h */,
+				3331CA9022924CB500E783FA /* HQPage1VC.m */,
+				3331CA8922924CB500E783FA /* HQPage2VC.h */,
+				3331CA8F22924CB500E783FA /* HQPage2VC.m */,
+				3331CA8A22924CB500E783FA /* HqPage3VC.h */,
+				3331CA8E22924CB500E783FA /* HqPage3VC.m */,
+				3331CA8B22924CB500E783FA /* HqPageDetailVC.h */,
+				3331CA9122924CB500E783FA /* HqPageDetailVC.m */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		3338C54C22505B5700640999 = {
@@ -414,13 +473,14 @@
 		3338C55722505B5700640999 /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
-				33155FBF226D9411000ABDAE /* HQPageViewController */,
+				331B7243229BABB100A5D73B /* HSegmentTest */,
+				3338C65022505C1500640999 /* HqRootVC.h */,
+				3338C65522505C1600640999 /* HqRootVC.m */,
+				3331CA7A22924CB500E783FA /* HQSegmentPageViewController */,
 				3338C57022505C1500640999 /* Config */,
 				3338C57922505C1500640999 /* HqAuthID */,
 				3338C65B22505C1600640999 /* HqCornerView */,
 				3338C57E22505C1500640999 /* HqIconLab */,
-				3338C65022505C1500640999 /* HqRootVC.h */,
-				3338C65522505C1600640999 /* HqRootVC.m */,
 				3338C58122505C1500640999 /* HqTheme */,
 				3338C65622505C1600640999 /* HqUIResponder */,
 				3338C58822505C1500640999 /* HqUtils */,
@@ -974,43 +1034,6 @@
 			path = HqTextInputLimit;
 			sourceTree = "<group>";
 		};
-		3380DB632290F18300470E8F /* temp */ = {
-			isa = PBXGroup;
-			children = (
-				3380DB602290EDB000470E8F /* HqPageTempVC.h */,
-				3380DB612290EDB000470E8F /* HqPageTempVC.m */,
-			);
-			path = temp;
-			sourceTree = "<group>";
-		};
-		3380DB642290F1B200470E8F /* HqPageContainerVC */ = {
-			isa = PBXGroup;
-			children = (
-				3380DB5D2290E65900470E8F /* HqPageContainerVC.h */,
-				3380DB5E2290E65900470E8F /* HqPageContainerVC.m */,
-				3380DB5422904DE100470E8F /* HqPageItemSuperVC.h */,
-				3380DB5522904DE100470E8F /* HqPageItemSuperVC.m */,
-			);
-			path = HqPageContainerVC;
-			sourceTree = "<group>";
-		};
-		3380DB652290F1E400470E8F /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				3380DB662290F26600470E8F /* HqPageDetailVC.h */,
-				3380DB672290F26600470E8F /* HqPageDetailVC.m */,
-				33155FC3226D944F000ABDAE /* HQPage1VC.h */,
-				33155FC4226D944F000ABDAE /* HQPage1VC.m */,
-				33155FC6226D9469000ABDAE /* HQPage2VC.h */,
-				33155FC7226D9469000ABDAE /* HQPage2VC.m */,
-				3380DB5A22904F5C00470E8F /* HqPage3VC.h */,
-				3380DB5B22904F5C00470E8F /* HqPage3VC.m */,
-				3380DB692291251E00470E8F /* HqCustomPageContainerVC.h */,
-				3380DB6A2291251E00470E8F /* HqCustomPageContainerVC.m */,
-			);
-			path = Custom;
-			sourceTree = "<group>";
-		};
 		8CB0DAF407536C01A655E213 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1173,9 +1196,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3380DB5F2290E65900470E8F /* HqPageContainerVC.m in Sources */,
 				3338C66322505C1600640999 /* HqAuthIDVC.m in Sources */,
 				3338C6AF22505C1600640999 /* HqString.m in Sources */,
+				3331CA9522924CB500E783FA /* HQSegmentPageViewController.m in Sources */,
 				3338C6A622505C1600640999 /* HqUser.m in Sources */,
 				3338C6CA22505C1600640999 /* HqCellView.m in Sources */,
 				3338C66522505C1600640999 /* HqIconLab.m in Sources */,
@@ -1188,7 +1211,6 @@
 				3338C67D22505C1600640999 /* AppDelegate+Hq3DTouch.m in Sources */,
 				3338C67022505C1600640999 /* UIImage+HqImage.m in Sources */,
 				3338C6A822505C1600640999 /* HqKVOTestVC.m in Sources */,
-				33155FC2226D9439000ABDAE /* HQSegmentPageViewController.m in Sources */,
 				3338C68422505C1600640999 /* SuperVC.m in Sources */,
 				3338C6C322505C1600640999 /* AVPlayerCachingVC.m in Sources */,
 				3338C66222505C1600640999 /* ProjectBlock.m in Sources */,
@@ -1203,18 +1225,17 @@
 				3338C67F22505C1600640999 /* HqPreviewVC.m in Sources */,
 				3338C69222505C1600640999 /* HqNSURLSession.m in Sources */,
 				3338C68D22505C1600640999 /* ZPNumberKeyboard.m in Sources */,
-				33155FC5226D944F000ABDAE /* HQPage1VC.m in Sources */,
 				3338C67322505C1600640999 /* HqCustomAlertVC.m in Sources */,
 				3338C56822505B5800640999 /* main.m in Sources */,
+				331B725A229CC8A700A5D73B /* HHSegmentCell.m in Sources */,
 				3338C66122505C1600640999 /* ProjectConst.m in Sources */,
 				3338C69322505C1600640999 /* HqAFHttpClient.m in Sources */,
 				3338C6C422505C1600640999 /* HqTest2VC.m in Sources */,
 				3338C6AC22505C1600640999 /* WSDatePickerView.m in Sources */,
 				3338C6CB22505C1600640999 /* HqUIResponderVC.m in Sources */,
+				3331CA9422924CB500E783FA /* HqTableView.m in Sources */,
 				3338C69722505C1600640999 /* HqColorImage.m in Sources */,
-				3380DB6B2291251E00470E8F /* HqCustomPageContainerVC.m in Sources */,
 				3338C6A022505C1600640999 /* HqTouchID.m in Sources */,
-				3380DB622290EDB000470E8F /* HqPageTempVC.m in Sources */,
 				3338C67922505C1600640999 /* HqRefreshHeader.m in Sources */,
 				3338C6A722505C1600640999 /* HqNotification.m in Sources */,
 				3338C68522505C1600640999 /* HqViewControllerAnimated.m in Sources */,
@@ -1223,17 +1244,23 @@
 				3338C66422505C1600640999 /* HqAuthID.m in Sources */,
 				3338C68222505C1600640999 /* SuperNavigationVC.m in Sources */,
 				3338C67B22505C1600640999 /* hqRefreshVC.m in Sources */,
+				3331CA9622924CB500E783FA /* HqCustomPageContainerVC.m in Sources */,
 				3338C67E22505C1600640999 /* ThreeDTouchVC.m in Sources */,
 				3338C69922505C1600640999 /* HqShareVC.m in Sources */,
 				3338C6A122505C1600640999 /* HqDeviceInfo.m in Sources */,
+				3331CA9922924CB500E783FA /* HQPage2VC.m in Sources */,
+				331B7246229BABFA00A5D73B /* HSegmentTestVC.m in Sources */,
+				3331CA9322924CB500E783FA /* HqPageContainerVC.m in Sources */,
+				331B7253229BF74A00A5D73B /* HHSegmentView.m in Sources */,
+				3331CA9B22924CB500E783FA /* HqPageDetailVC.m in Sources */,
 				3338C6C922505C1600640999 /* HqRootVC.m in Sources */,
 				3338C68022505C1600640999 /* HqOperation.m in Sources */,
 				3338C67222505C1600640999 /* HqAlertVC.m in Sources */,
 				3338C6AE22505C1600640999 /* UIView+Extension.m in Sources */,
 				3338C67422505C1600640999 /* NSObject+HqSafeGetValue.m in Sources */,
+				3331CA9222924CB500E783FA /* HqPageItemSuperVC.m in Sources */,
 				3338C6C822505C1600640999 /* Dialog.m in Sources */,
 				3338C66B22505C1600640999 /* HqFlowlayout.m in Sources */,
-				3380DB682290F26600470E8F /* HqPageDetailVC.m in Sources */,
 				3338C6AD22505C1600640999 /* NSDate+Extension.m in Sources */,
 				3338C66722505C1600640999 /* HqThemeVC.m in Sources */,
 				3338C69A22505C1600640999 /* HqAlertView.m in Sources */,
@@ -1242,9 +1269,7 @@
 				3338C6AA22505C1600640999 /* HqPullZoomView.m in Sources */,
 				3338C69B22505C1600640999 /* User.m in Sources */,
 				3338C67522505C1600640999 /* HqRegExVC.m in Sources */,
-				3380DB5622904DE100470E8F /* HqPageItemSuperVC.m in Sources */,
 				3338C6A422505C1600640999 /* HqKeyBoard.m in Sources */,
-				33155FEE226EB151000ABDAE /* HqTableView.m in Sources */,
 				3338C68E22505C1600640999 /* UITextField+ZPNumberKeyboard.m in Sources */,
 				334CE22D2282788900360565 /* HGCategoryView.m in Sources */,
 				3338C66922505C1600640999 /* HqLoopView.m in Sources */,
@@ -1254,17 +1279,18 @@
 				3338C67C22505C1600640999 /* HqTimer.m in Sources */,
 				3338C69F22505C1600640999 /* HqTLVParse.m in Sources */,
 				3338C6A922505C1600640999 /* HqKVO.m in Sources */,
-				33155FC8226D9469000ABDAE /* HQPage2VC.m in Sources */,
 				3338C6A222505C1600640999 /* HqFileManager.m in Sources */,
 				3338C67A22505C1600640999 /* HqRefreshFooter.m in Sources */,
 				3338C67622505C1600640999 /* HqRegEx.m in Sources */,
 				3338C66E22505C1600640999 /* HqBanner.m in Sources */,
-				3380DB5C22904F5C00470E8F /* HqPage3VC.m in Sources */,
 				3338C66022505C1600640999 /* ProjectEnvironment.m in Sources */,
+				3331CA9822924CB500E783FA /* HqPage3VC.m in Sources */,
 				3338C68122505C1600640999 /* DownloadOperation.m in Sources */,
+				3331CA9A22924CB500E783FA /* HQPage1VC.m in Sources */,
 				3338C6C622505C1600640999 /* HqTestVC.m in Sources */,
 				3338C68F22505C1600640999 /* HqClipVC.m in Sources */,
 				3338C66622505C1600640999 /* HqAppView.m in Sources */,
+				3331CA9722924CB500E783FA /* HqCustomSegmentPageVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

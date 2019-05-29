@@ -7,9 +7,7 @@
 //
 
 #import "HQSegmentPageViewController.h"
-
-
-@interface HQSegmentPageViewController ()<UITableViewDelegate,UITableViewDataSource,HqPageViewProtocol>
+@interface HQSegmentPageViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong) HqTableView *mainTableView;
 @property(nonatomic,assign) BOOL containerCanScroll;
@@ -34,6 +32,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _headerViewHeight = 150;
+    _sectionHeaderHeight = 50;
     
     self.containerCanScroll = YES;
 
@@ -53,6 +53,24 @@
     _containerCanScroll = containerCanScroll;
     self.mainTableView.showsVerticalScrollIndicator = _containerCanScroll;
 }
+- (void)setHeaderViewHeight:(CGFloat)headerViewHeight{
+    _headerViewHeight = headerViewHeight;
+    if (_headerViewHeight>0) {
+        CGRect bounds = self.headerView.bounds;
+        bounds.size.height = _headerViewHeight;
+        self.headerView.bounds = bounds;
+        self.mainTableView.tableHeaderView = self.headerView;
+    }
+}
+- (void)setSectionHeaderHeight:(CGFloat)sectionHeaderHeight{
+    _sectionHeaderHeight = sectionHeaderHeight;
+    if (_sectionHeaderHeight>0) {
+        CGRect bounds = self.sectionHeaderView.bounds;
+        bounds.size.height = _sectionHeaderHeight;
+        self.sectionHeaderView.bounds = bounds;
+        [self.mainTableView reloadData];
+    }
+}
 
 #pragma mark get
 - (UIScrollView *)mainTableView{
@@ -69,11 +87,20 @@
 - (UIView *)headerView{
     if (!_headerView) {
         _headerView = [[UIView alloc] init];
-        _headerView.frame = CGRectMake(0, self.navBarheight, self.view.bounds.size.width, 200);
+        _headerView.frame = CGRectMake(0, 0, self.view.bounds.size.width, _headerViewHeight);
         _headerView.backgroundColor = [UIColor greenColor];
     }
     return _headerView;
 }
+- (UIView *)sectionHeaderView{
+    if (!_sectionHeaderView) {
+        _sectionHeaderView = [[UIView alloc] init];
+        _sectionHeaderView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _sectionHeaderView.frame = CGRectMake(0, 0, self.view.bounds.size.width, _sectionHeaderHeight);
+    }
+    return _sectionHeaderView;
+}
+//自行改变
 - (UISegmentedControl *)segment{
     if (!_segment) {
         
@@ -89,8 +116,12 @@
     
     NSInteger index = sg.selectedSegmentIndex;
     
-    [self.pageContainerVC scrollToIndex:index animated:YES];
+    [self pageContainerScrollToindex:index animated:YES];
     
+}
+- (void)pageContainerScrollToindex:(NSInteger)index animated:(BOOL)animated{
+    [self.pageContainerVC scrollToIndex:index animated:animated];
+
 }
 //设置自定义的HqCustomPageContainerVC
 - (HqPageContainerVC *)pageContainerVC{
@@ -105,13 +136,11 @@
     return 1;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *shv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
-    shv.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    [shv addSubview:self.segment];
-    return shv;
+//    [self.sectionHeaderView addSubview:self.segment];
+    return self.sectionHeaderView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 50;
+    return self.sectionHeaderHeight;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return SCREEN_HEIGHT-self.navBarheight;
@@ -139,7 +168,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat y = scrollView.contentOffset.y;
     CGFloat shvY = [self.mainTableView rectForHeaderInSection:0].origin.y;
-    
     if (y>=shvY) {
         self.containerCanScroll = NO;
         scrollView.contentOffset = CGPointMake(0, shvY);

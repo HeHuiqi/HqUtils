@@ -24,11 +24,14 @@
 #import "HqUIResponderVC.h"
 #import "HqThemeVC.h"
 #import "HQSegmentPageViewController.h"
+#import "HqCustomSegmentPageVC.h"
+#import "HSegmentTestVC.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSArray *titles;
+
 
 @end
 
@@ -38,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HQSegmentPageViewController",@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
+    _titles = @[@"HSegmentTestVC",@"HQSegmentPageViewController",@"HqCustomSegmentPageVC",@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
     UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
 
@@ -67,7 +70,6 @@
     }else{
         [alert showWithVC:self];
     }
-
 }
 - (void)initView{
     _tableView = [[HqTableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
