@@ -26,6 +26,8 @@ PODS:
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
   - SVProgressHUD (2.2.5)
+  - ZLPhotoBrowser (3.0.0):
+    - SDWebImage
 
 DEPENDENCIES:
   - AFNetworking
@@ -37,6 +39,7 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage
   - SVProgressHUD
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -49,6 +52,7 @@ SPEC REPOS:
     - MJRefresh
     - SDWebImage
     - SVProgressHUD
+    - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -60,7 +64,8 @@ SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  ZLPhotoBrowser: 0c70486b4c9b968fa983d5d96480996fd4fc12fd
 
-PODFILE CHECKSUM: 5eeee5c17bda76de6ffdf1982796b2b3dcd9ba74
+PODFILE CHECKSUM: e09519cc45459336739a25927853ee22d5f3f8d2
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.2

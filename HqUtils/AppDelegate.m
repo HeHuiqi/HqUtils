@@ -18,35 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-//    [self UTCDateStr:@"2019-04-19T02:33:04.000Z" convertFormat:@"yyyy-MM-dd"];
-    
 
+    
     return YES;
 }
 
-//dateStr为这种格式 2019-04-19T02:38:41.000Z
-- (NSString *)UTCDateStr:(NSString *)dateStr convertFormat:(NSString *)format{
-    
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    NSTimeZone *timeZone = [NSTimeZone localTimeZone];
-    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
-    NSDate *date = [df dateFromString:dateStr];
-    NSTimeInterval interval = [timeZone secondsFromGMTForDate:date];
-    date = [date dateByAddingTimeInterval:interval];
-    NSLog(@"date----%@",date);
-
-    [df setDateFormat:format];
-
-    NSString *result = [df stringFromDate:date];
-    NSLog(@"result----%@",result);
-    return result;
-}
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application{
-//    NSLog(@"-------applicationWillEnterForeground");
-//    HqAuthIDVC *auth = [HqAuthIDVC new];
-//    [auth authVerification];
 
 }
 //列出/dev目录下的所有文件，相当于ls命令

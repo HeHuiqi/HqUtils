@@ -75,7 +75,7 @@
 #pragma mark get
 - (UIScrollView *)mainTableView{
     if (!_mainTableView) {
-        CGRect rect = CGRectMake(0, self.navBarheight, self.view.bounds.size.width, self.view.bounds.size.height-self.navBarheight);
+        CGRect rect = CGRectMake(0, self.navBarHeight, self.view.bounds.size.width, self.view.bounds.size.height-self.navBarHeight);
         _mainTableView = [[HqTableView alloc] initWithFrame:rect];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
@@ -143,13 +143,13 @@
     return self.sectionHeaderHeight;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT-self.navBarheight;
+    return SCREEN_HEIGHT-self.navBarHeight;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"13"];
     [self addChildViewController:self.pageContainerVC];
     [cell addSubview:self.pageContainerVC.view];
-    self.pageContainerVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.bounds.size.height-self.navBarheight);
+    self.pageContainerVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.bounds.size.height-self.navBarHeight);
     return cell;
 }
 

@@ -27,6 +27,20 @@
 #import "HqCustomSegmentPageVC.h"
 #import "HSegmentTestVC.h"
 
+#import "HqWebViewTestVC.h"
+#import "HqInvokeManagerVC.h"
+#import "HqCodeVC.h"
+#import "HqTableViewTestVC.h"
+
+#import "HqShortArticleVC.h"
+
+#import "HqMutilImagePickerVC.h"
+#import "HqGCDVC.h"
+#import "HqMsgForwardVC.h"
+#import "HqZLPhotoBrowserVC.h"
+#import "HqCoreTextVC.h"
+
+
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
@@ -41,7 +55,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HSegmentTestVC",@"HQSegmentPageViewController",@"HqCustomSegmentPageVC",@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
+    _titles = @[@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqCodeVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"HSegmentTestVC",@"HQSegmentPageViewController",@"HqCustomSegmentPageVC",@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
     UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
 

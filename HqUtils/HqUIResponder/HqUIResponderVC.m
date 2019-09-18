@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.navigationController.navigationBarHidden = YES;
     HqCellView *cell = [[HqCellView alloc] init];
     cell.backgroundColor = cell.tintColor;
     [self.view addSubview:cell];
@@ -33,7 +34,7 @@
     cell.frame = CGRectMake(0, y, y, 50);
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSLog(@"HqUIResponderVC---touchesEnded==%@",touches);
+    NSLog(@"HqUIResponderVC---touchesEnded==%@",event);
 }
 /*
 #pragma mark - Navigation

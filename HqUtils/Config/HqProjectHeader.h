@@ -20,6 +20,7 @@
 #import <MJExtension.h>
 #import <FMDB.h>
 #import <MJRefresh.h>
+#import <ZLPhotoBrowser/ZLPhotoBrowser.h>
 
 #import "SuperNavigationVC.h"
 #import "SuperVC.h"
@@ -28,6 +29,8 @@
 
 #import "HqAFHttpClient.h"
 #import "HqHttpUtil.h"
+#import "UIImage+HqImage.h"
+#import "NSString+HqString.h"
 
 #import "HqDeviceInfo.h"
 #import "HqString.h"

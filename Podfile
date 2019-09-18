@@ -18,5 +18,6 @@ target 'HqUtils' do
   pod 'MBProgressHUD'
   pod 'SVProgressHUD'
   pod 'IQKeyboardManager'
+  pod 'ZLPhotoBrowser'
 
 end

@@ -133,7 +133,7 @@
 
 
 #pragma mark - NavBar
-- (CGFloat )navBarheight{
+- (CGFloat )navBarHeight{
     BOOL device = IS_iPhoneX;
     CGFloat barHeight = 64;
     if (device) {
@@ -163,7 +163,7 @@
 #pragma mark - NavBarBgBiew //这里可以做透明度的渐变
 - (UIView *)navBarBgView{
     if (!_navBarBgView) {
-        _navBarBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.navBarheight)];
+        _navBarBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.navBarHeight)];
     }
     return _navBarBgView;
 }
@@ -231,7 +231,7 @@
 
 //- (HqNoNetworkView *)noNetworkView{
 //    if (!_noNetworkView) {
-//        _noNetworkView = [[HqNoNetworkView alloc] initWithFrame:CGRectMake(0, self.navBarheight, SCREEN_WIDTH, SCREEN_HEIGHT-self.tabBarheight)];
+//        _noNetworkView = [[HqNoNetworkView alloc] initWithFrame:CGRectMake(0, self.navBarHeight, SCREEN_WIDTH, SCREEN_HEIGHT-self.tabBarheight)];
 //        _noNetworkView.style = 2;
 //        _noNetworkView.hidden = YES;
 //    }

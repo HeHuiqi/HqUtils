@@ -13,7 +13,7 @@
 
 
 @property (nonatomic,strong) UIColor *navbarCorlor;//设置导航颜色
-@property (nonatomic,assign) CGFloat navBarheight;//导航高度
+@property (nonatomic,assign) CGFloat navBarHeight;//导航高度
 @property (nonatomic,assign) CGFloat tabBarheight;
 
 //导航view

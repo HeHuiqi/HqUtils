@@ -53,42 +53,33 @@
     
     
 }
-/*
-- (void)setCornerRaduis:(CGFloat)raduis{
-    UIRectCorner corner = UIRectCornerAllCorners;
-    [self setCorner:corner raduis:raduis];
-}
-- (void)setCorner:(HQUIRectCorner)corner raduis:(CGFloat)raduis{
+
+- (void)hqSetCornerRaduis:(CGFloat)raduis borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth{
+    UIColor *bgColor = self.backgroundColor==nil ? [UIColor whiteColor]:self.backgroundColor;
+    CAShapeLayer *bgLayer = [CAShapeLayer layer];
+    bgLayer.frame = self.bounds;
+    [self.layer addSublayer:bgLayer];
+//    bgLayer.fillRule = kCAFillRuleNonZero;
+    bgLayer.fillColor = bgColor.CGColor;
+//    bgLayer.fillColor = [UIColor clearColor].CGColor;
+    UIBezierPath *bgPath = [UIBezierPath bezierPathWithRect:bgLayer.bounds];
+    UIBezierPath *clipPath = [UIBezierPath bezierPathWithRoundedRect:bgLayer.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(raduis, raduis)];
+    [bgPath appendPath:clipPath];
+//    [clipPath appendPath:bgPath];
+    clipPath.usesEvenOddFillRule = YES;
+    [clipPath addClip];
     
-    NSArray *constraints = self.constraints;
-    //    NSLog(@"constraints-- %@",constraints);
-    CGFloat width = self.bounds.size.width;
-    CGFloat height = self.bounds.size.height;
-    if (width == 0 && height == 0) {
-        for ( NSLayoutConstraint *c in constraints) {
-            if (c.firstAttribute == NSLayoutAttributeWidth) {
-                width = c.constant;
-            }
-            if (c.firstAttribute == NSLayoutAttributeHeight) {
-                height = c.constant;
-            }
-        }
-    }
-    if (width>0 && height >0) {
-        CGRect rect = CGRectMake(0, 0, width, height);
-        //绘制圆角 要设置的圆角 使用“|”来组合
-        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corner cornerRadii:CGSizeMake(raduis, raduis)];
-        CAShapeLayer *maskLayer = [CAShapeLayer layer];
-        maskLayer.fillColor = [UIColor greenColor].CGColor;;
-        maskLayer.path = maskPath.CGPath;
-        self.layer.mask = maskLayer;
-    }else{
-        NSString *reason = [NSString stringWithFormat:@"You must set %@'s width and height !!!,than call this method!!!",NSStringFromClass(self.class)];
-        NSException *exception = [NSException exceptionWithName:@"SetCorner Fail:" reason:reason userInfo:nil];
-        @throw exception;
-    }
+    bgLayer.path = clipPath.CGPath;
+//    self.layer.mask = bgLayer;
     
+//    if (borderWidth>0) {
+//        CAShapeLayer *borderlayer = [CAShapeLayer layer];
+//        UIBezierPath *borderPath = clipPath;
+//        borderlayer.fillColor = [UIColor clearColor].CGColor;
+//        borderlayer.strokeColor = borderColor.CGColor;
+//        borderlayer.path = borderPath.CGPath;
+//        [self.layer addSublayer:borderlayer];
+//    }
 }
-*/
 @end
 

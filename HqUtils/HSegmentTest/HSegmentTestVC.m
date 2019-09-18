@@ -23,11 +23,12 @@
     CGRect barRect = [UIApplication sharedApplication].statusBarFrame;
     CGFloat y = CGRectGetHeight(barRect)+44;
     HHSegmentView *sgv = [[HHSegmentView alloc] initWithFrame:CGRectMake(0, y, self.view.bounds.size.width, 50)];
+    sgv.itemWidth = 100;
     sgv.delegate = self;
     sgv.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:sgv];
     NSMutableArray *titles = @[].mutableCopy;
-    for (int i = 0; i<10; i++) {
+    for (int i = 0; i<20; i++) {
         NSString *t = [NSString stringWithFormat:@"Test%@",@(i)];
         [titles addObject:t];
     }

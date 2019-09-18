@@ -35,6 +35,8 @@ typedef NS_OPTIONS(NSInteger, HQUIRectCorner) {
 // 如：UIRectCornerTopLeft | UIRectCornerTopRight 表示设置左上和右上的圆角
 - (void)hqSetCorner:(HQUIRectCorner)corner raduis:(CGFloat)raduis;
 
+- (void)hqSetCornerRaduis:(CGFloat)raduis borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -234,8 +234,24 @@ UICollectionViewDelegateFlowLayout>
     
     CGFloat contentWidth = scrollView.contentSize.width;
     CGFloat scrollViewWidth = scrollView.bounds.size.width;
-    CGPoint offset = scrollView.contentOffset;
-    CGFloat x = CGRectGetMaxX(view.frame)+self.itemWidth;
+    
+    if (contentWidth>scrollViewWidth) {
+        //标题居中
+        CGFloat offsetX = view.center.x - scrollViewWidth * 0.5;
+        if (offsetX < 0) { //最小
+            offsetX = 0;
+        }
+        CGFloat offsetMax =contentWidth - scrollViewWidth;
+        if (offsetX > offsetMax) { //最大
+            offsetX = offsetMax;
+        }
+        
+        [scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    }
+
+    /*
+     CGPoint offset = scrollView.contentOffset;
+     CGFloat x = CGRectGetMaxX(view.frame)+self.itemWidth;
     if (x >=scrollViewWidth) {
         CGFloat newOffsetX = x - scrollViewWidth + self.itemWidth;
         CGFloat rigthLimit = contentWidth - scrollViewWidth;
@@ -248,6 +264,7 @@ UICollectionViewDelegateFlowLayout>
         offset.x = 0;
         [scrollView setContentOffset:offset animated:YES];
     }
+    */
 }
 /*
  //保留记忆
