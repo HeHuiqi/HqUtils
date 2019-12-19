@@ -48,4 +48,6 @@
 + (NSDictionary *)getAllPropertiesInstance:(id)instance;
 //时分秒
 + (NSString *)formatSeconds:(NSInteger)seconds;
+#pragma mark 格式化url查询参数
++ (NSDictionary *)queryParamsFormatUrlString:(NSString *)urlStr;
 @end

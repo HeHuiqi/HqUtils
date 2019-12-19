@@ -231,4 +231,27 @@
     
     return result;
 }
+#pragma mark 格式化url查询参数
++ (NSDictionary *)queryParamsFormatUrlString:(NSString *)urlStr{
+    NSRange questionRange = [urlStr rangeOfString:@"?"];
+    if (questionRange.length == 0) {
+        return nil;
+    }
+    
+    NSString *query = [urlStr substringFromIndex:questionRange.location+1];
+    if (query.length>0) {
+        query = [query stringByAppendingString:@"&end=placeholder"];
+        NSArray *kvItems = [query componentsSeparatedByString:@"&"];
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithCapacity:0];
+        for (NSString *kvItem in kvItems) {
+            NSArray *kvs = [kvItem componentsSeparatedByString:@"="];
+            [params setValue:kvs.lastObject forKey:kvs.firstObject];
+        }
+        if (params.allKeys.count>0) {
+            return params;
+        }
+    }
+    return nil;
+}
+
 @end

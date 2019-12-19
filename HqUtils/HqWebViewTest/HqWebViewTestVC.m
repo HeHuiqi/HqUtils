@@ -31,9 +31,9 @@ WKNavigationDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self testUIWebView];
+//    [self testUIWebView];
 //    [self testWkWebView];
-//    [self testTextView];
+    [self testTextView];
 }
 
 #pragma mark - get
@@ -140,18 +140,37 @@ WKNavigationDelegate
 }
 
 #pragma mark - testTextView
+- (void)converToHtml:(NSAttributedString *)attributeString{
+    NSDictionary *documentAttributes = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
+    NSData *htmlData = [attributeString dataFromRange:NSMakeRange(0, attributeString.length) documentAttributes:documentAttributes error:NULL];
+    NSString *htmlString = [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding];
+    NSLog(@"htmlString==%@",htmlString);
+}
+#pragma mark - html字符串转纯文本移除img标签
+- (NSAttributedString *)htmlConvertStringRemoveImgTag:(NSString *)noImgTagHtmlStr{
+    NSData *data = [noImgTagHtmlStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *options = @{ NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute :@(NSUTF8StringEncoding) };
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithData:data options:options documentAttributes:nil error:nil];
+    return attStr;
+}
 - (void)testTextView{
     [self.view addSubview:self.textView];
     
     NSMutableAttributedString *matrs = [[NSMutableAttributedString alloc] initWithString:@"这可是电光火石的好看噶时光啊电话给卡上打噶客户端观看了卡和高考啦卡上打噶"];
     NSTextAttachment *imageAttachment = [[NSTextAttachment alloc] init];
-    imageAttachment.image = [UIImage imageNamed:@"640.jpg"];
+    NSString *imageName = @"640.jpg";
+    imageAttachment.image = [UIImage imageNamed:imageName];
     imageAttachment.bounds = CGRectMake(0, 0, self.view.bounds.size.width-10, 200);
 //    imageAttachment.contents = [@"image_index_1" dataUsingEncoding:NSUTF8StringEncoding];
     
     NSAttributedString *imageAtrs = [NSAttributedString attributedStringWithAttachment:imageAttachment];
     [matrs insertAttributedString:imageAtrs atIndex:10];
+    
+    NSAttributedString *linkAtrs = [[NSAttributedString alloc] initWithString:@"我的家" attributes:@{NSLinkAttributeName:@"https://www.baidu.com"}];
+    [matrs insertAttributedString:linkAtrs atIndex:13];
     self.textView.attributedText = matrs;
+    [self converToHtml:matrs];
+    
     /*
     [self requsetContentComplate:^(NSString *conent) {
         conent = [self formatHtmlStr:conent title:@"HAHAHA"];
@@ -178,8 +197,18 @@ WKNavigationDelegate
 }
 #pragma mark - UITextViewDelegate
 - (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange{
-    NSLog(@"textAttachment==%@",textAttachment);
+    NSLog(@"textAttachment==%@",textAttachment.image);
+    NSString *contents = [[NSString alloc] initWithData:textAttachment.contents encoding:NSUTF8StringEncoding];
+    NSLog(@"textAttachment.contents==%@",contents);
+    UIImage *image = [UIImage imageWithData:textAttachment.fileWrapper.regularFileContents];
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
+//    NSLog(@"textAttachment.regularFileContents==%@",textAttachment.fileWrapper.regularFileContents);
+
+
     return YES;
+}
+- (void)saveImageComplate:(id)image{
+    NSLog(@"saveImageComplate");
 }
 
 /*

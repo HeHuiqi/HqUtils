@@ -18,6 +18,18 @@
     });
     return hqtime;
 }
+- (NSString *)getNowTimeTimestamp{
+    [self.dateForMatter setDateStyle:NSDateFormatterMediumStyle];
+    [self.dateForMatter setTimeStyle:NSDateFormatterShortStyle];
+    [self.dateForMatter setDateFormat:@"YYYY-MM-dd HH:mm:ss SSS"]; // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    //设置时区,这个对于时间的处理有时很重要
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    [self.dateForMatter setTimeZone:timeZone];
+    NSDate *datenow = [NSDate date];//现在时间,你可以输出来看下是什么格式
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]*1000];
+    return timeSp;
+}
+
 #pragma mark - 时间戳-->字符串日期
 - (NSString *)dateStringWithFormat:(NSString *)format timeInterval:(NSTimeInterval)timeInterval{
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];

@@ -40,6 +40,17 @@
 #import "HqZLPhotoBrowserVC.h"
 #import "HqCoreTextVC.h"
 
+#import "HqTableViewVC.h"
+#import "HqPhotoPickerVC.h"
+#import "HqTextBindVC.h"
+#import "HqImageBrowserVC.h"
+#import "HqBoxImageViewVC.h"
+
+#import "HqContainerVC.h"
+#import "HqkLineVC.h"
+
+#import "HqChatRoomListVC.h"
+#import "HqChatVC.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -55,12 +66,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqCodeVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"HSegmentTestVC",@"HQSegmentPageViewController",@"HqCustomSegmentPageVC",@"hqRefreshVC",@"HqColorImageVC",@"HqKeyboardUseVC",@"HqDatePickerVC",@"HqShareVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
+    _titles = @[@"HqCodeVC",@"HqChatRoomListVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"HSegmentTestVC",@"HQSegmentPageViewController",@"HqCustomSegmentPageVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
     UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
 
     [self initView];
+
+//    UIImage *borderImage = [UIImage imageNamed:@"btn_border_bg"];
+//    borderImage = [borderImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 30, 10, 30)];
+//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 150, SCREEN_WIDTH-20, 60)];
+//
+//    btn.backgroundColor = [UIColor yellowColor];
+//    [self.view addSubview:btn];
+//    borderImage = [self getBorderSize:btn.bounds.size cornerRaius:30];
+//    [btn setBackgroundImage:borderImage forState:UIControlStateNormal];
     
+}
+- (UIImage *)getBgImageWithSize:(CGSize)cgsize cornerRaius:(CGFloat)cornerRaius{
+    UIView *view = [[UIView alloc] init];
+    view.bounds =CGRectMake(0, 0, cgsize.width, cgsize.height);
+    if (cornerRaius>0) {
+        view.layer.cornerRadius = cornerRaius;
+        view.clipsToBounds = YES;
+    }
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSLog(@"image==%@",image);
+    return image;
+}
+- (UIImage *)getBorderImageWithSize:(CGSize)cgsize cornerRaius:(CGFloat)cornerRaius{
+    UIView *view = [[UIView alloc] init];
+    view.bounds =CGRectMake(0, 0, cgsize.width, cgsize.height);
+    view.layer.borderWidth = 1;
+    view.layer.borderColor = [UIColor redColor].CGColor;
+    if (cornerRaius>0) {
+        view.layer.cornerRadius = cornerRaius;
+        view.clipsToBounds = YES;
+    }
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSLog(@"image==%@",image);
+    return image;
+}
+// 普通的获取UUID的方法
+- (NSString *)getUUID {
+    CFUUIDRef puuid = CFUUIDCreate( nil );
+    CFStringRef uuidString = CFUUIDCreateString(nil, puuid);
+    NSString *result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+    return result;
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self dismissViewControllerAnimated:YES completion:nil];

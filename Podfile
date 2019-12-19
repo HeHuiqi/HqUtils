@@ -19,5 +19,9 @@ target 'HqUtils' do
   pod 'SVProgressHUD'
   pod 'IQKeyboardManager'
   pod 'ZLPhotoBrowser'
+  pod 'TZImagePickerController'#相册管理
+  pod 'RegexKitLite'#正则
+  pod 'YYKit'
+  pod 'JMessage'#极光IM
 
 end

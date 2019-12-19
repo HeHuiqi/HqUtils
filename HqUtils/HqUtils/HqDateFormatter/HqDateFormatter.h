@@ -13,7 +13,8 @@
 @property (nonatomic,strong)NSDateFormatter *dateForMatter;
 
 + (instancetype)shareInstance;
-
+//毫秒
+- (NSString *)getNowTimeTimestamp;
 #pragma mark - 时间戳-->字符串日期
 - (NSString *)dateStringWithFormat:(NSString *)format timeInterval:(NSTimeInterval)timeInterval;
 

@@ -28,10 +28,9 @@
 #pragma mark - MD5加密
 + (NSString *)md5WithString:(NSString *)str;
 
-
-
-+(NSData *)AES256ParmEncryptWithKey:(NSString *)key Encrypttext:(NSData *)text;   //加密
-
-+(NSData *)AES256ParmDecryptWithKey:(NSString *)key Decrypttext:(NSData *)text;   //解密
+#pragma mark - AES256加密
++ (NSData *)AES256EncryptWithKey:(NSString *)key iv:(NSString *)iv encryptText:(NSString *)text;
+#pragma mark - AES256解密
++ (NSData *)AES256DecryptWithKey:(NSString *)key iv:(NSString *)iv decryptHexText:(NSString *)hexText;
 
 @end
