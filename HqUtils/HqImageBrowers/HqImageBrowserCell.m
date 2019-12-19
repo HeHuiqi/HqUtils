@@ -41,14 +41,19 @@
     }
     
 }
-
+- (UIActivityIndicatorView *)activityView{
+    if (!_activityView) {
+        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleWhiteLarge)];
+    }
+    return _activityView;
+}
 - (UIImageView *)bigImageView{
     if (!_bigImageView) {
         _bigImageView = [[UIImageView alloc] init];
         _bigImageView.contentMode = UIViewContentModeScaleAspectFit;
-        _bigImageView.backgroundColor = [UIColor redColor];
-        UIImage *image = [UIImage imageNamed:@"yazi.jpeg"];
-        _bigImageView.image = image;
+        _bigImageView.backgroundColor = [UIColor grayColor];
+//        UIImage *image = [UIImage imageNamed:@"yazi.jpeg"];
+//        _bigImageView.image = image;
     }
     return _bigImageView;
 }
@@ -66,24 +71,53 @@
 }
 - (void)setup{
     [self addSubview:self.contentScrollView];
+    self.contentScrollView.frame = [UIScreen mainScreen].bounds;
     [self.contentScrollView addSubview:self.bigImageView];
+    [self addSubview:self.activityView];
     
 }
+- (UIImage *)thumbImage{
+    if (_thumbImage) {
+        return _thumbImage;
+    }
+    return self.thumbImageView.image;
+}
+- (void)setImageUrl:(NSString *)imageUrl{
+    _imageUrl = imageUrl;
+    if (_imageUrl) {
+        NSURL *url = [NSURL URLWithString:imageUrl];
+        [self showWiththumbImageView:self.thumbImageView];
+        [self.activityView startAnimating];
+        [self.bigImageView sd_setImageWithURL:url placeholderImage:self.thumbImage completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if (image) {
+                CGFloat hwScale = image.size.height/image.size.width;
+                CGFloat imageW = self.contentScrollView.bounds.size.width;
+                CGFloat imageH = hwScale>0 ? imageW*hwScale : imageW;
+                
+                self.bigImageView.bounds = CGRectMake(0, 0, imageW, imageH);
+                NSLog(@"self.bigImageView.bound==%@",NSStringFromCGRect(self.bigImageView.bounds));
+
+            }
+            [self.activityView stopAnimating];
+        }];
+        
+    }
+}
 - (void)layoutSubviews{
-    self.contentScrollView.frame = [UIScreen mainScreen].bounds;
-    [self showWiththumbImageView:self.thumbImageView];
+    [super layoutSubviews];
+    self.activityView.center = CGPointMake(self.bounds.size.width/2.0, self.bounds.size.height/2.0);
 }
 - (void)showWiththumbImageView:(UIImageView * _Nullable)thumbImageView{
     
     if (thumbImageView) {
         self.thumbImageView = thumbImageView;
         self.bigImageView.frame = self.thumbOriginalViewRect;
-        NSLog(@"thumbOriginalViewRect==%@",NSStringFromCGRect(self.thumbOriginalViewRect));
+//        NSLog(@"thumbOriginalViewRect==%@",NSStringFromCGRect(self.thumbOriginalViewRect));
        self.thumbImage = thumbImageView.image;
     }
     
     CGFloat hwScale = self.thumbImage.size.height/self.thumbImage.size.width;
-    CGFloat imageH = hwScale>0 ? self.contentScrollView.bounds.size.width*hwScale : 250;
+    CGFloat imageH = hwScale>0 ? self.contentScrollView.bounds.size.width*hwScale : self.contentScrollView.bounds.size.width;
     CGFloat imageW = self.contentScrollView.bounds.size.width;
 
     if (thumbImageView) {
@@ -95,9 +129,6 @@
     }else{
         self.bigImageView.center = self.contentScrollView.center;
         self.bigImageView.bounds = CGRectMake(0, 0, imageW, imageH);
-        [UIView animateWithDuration:0.3 animations:^{
-//            self.backgroundColor = [UIColor blackColor];
-        }];
     }
 }
 #pragma amrk - UIScrollViewDelegate

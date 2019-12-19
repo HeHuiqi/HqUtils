@@ -84,10 +84,12 @@
 }
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HqImageBrowserCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HqImageBrowserCellId forIndexPath:indexPath];
-    NSLog(@"self.thumbImageView==%@",self.thumbImageView);
-    cell.thumbImageView = self.thumbImageView;
+//    NSLog(@"self.thumbImageView==%@",self.thumbImageView);
+    if (indexPath.row == self.currentPage) {
+        cell.thumbImageView = self.thumbImageView;
+    }
+    cell.imageUrl = self.imageDatas[indexPath.row];
     cell.delegate = self;
-    
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

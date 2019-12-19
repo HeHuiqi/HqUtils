@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) UIImageView *thumbImageView;//缩略视图
 @property(nonatomic,assign) CGRect thumbOriginalViewRect;//缩略视图原始位置;
 @property(nonatomic,strong) UIImage *thumbImage;//缩略图片;
+@property(nonatomic,copy) NSString *imageUrl;
+
+@property(nonatomic,strong) UIActivityIndicatorView *activityView;
 
 
 @end

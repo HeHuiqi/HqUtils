@@ -75,8 +75,8 @@
     HqTimeLineCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     HqImageBrowserView *browserView = [[HqImageBrowserView alloc] init];
     browserView.thumbImageView  = cell.smallImageView;
-    browserView.currentPage = 1;
-    browserView.imageDatas = @[@"",@"",@""];
+    browserView.currentPage = 0;
+    browserView.imageDatas = @[@"https://cdn.lcyoufu.com/assets/sign/rsk.png",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576753360761&di=4a72a32847e20b35cf07195344115465&imgtype=jpg&src=http%3A%2F%2Fimg8.zol.com.cn%2Fbbs%2Fupload%2F19485%2F19484298.jpg",@"https://img-blog.csdnimg.cn/20191216172544126.png"];
     [browserView showInView:nil thumbImageView:nil];
     
 }
