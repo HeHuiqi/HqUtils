@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) BOOL canScroll;
 
+//滚动到顶部
 - (void)hqScorllToTop;
 //子类实现
 - (void)refreshData;

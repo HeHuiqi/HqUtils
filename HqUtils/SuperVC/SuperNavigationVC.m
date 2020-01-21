@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.interactivePopGestureRecognizer.delegate = self;
+
 //    self.delegate = self;
     /*
     if ( @available(iOS 11.0, *)) {

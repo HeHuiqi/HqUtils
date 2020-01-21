@@ -40,7 +40,7 @@
     NSLog(@"刷新--%@--数据",self.title);
 }
 - (void)loadData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSLog(@"end=endRefreshing=");
         [self.tableView.mj_footer endRefreshing];
     });
@@ -48,13 +48,19 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        CGRect rect = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-138);
-        _tableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
     }
     return _tableView;
+}
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    NSLog(@"hqpage1-view==%@",self.view);
+    self.tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    
+    [self hqScorllToTop];
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -72,7 +78,7 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     HqPageDetailVC *vc = [[HqPageDetailVC alloc] init];
     Push(vc);

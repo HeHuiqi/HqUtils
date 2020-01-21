@@ -22,8 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //添加子vc
 - (void)hqAddChildVCWithindex:(NSInteger)index;
+
 #pragma mark - 更新Item的scrollview可滚动
 - (void)updatePageItemCanScroll;
+
 #pragma mark - 切换Item
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated;
 

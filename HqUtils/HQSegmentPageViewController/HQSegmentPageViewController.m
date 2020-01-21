@@ -9,44 +9,48 @@
 #import "HQSegmentPageViewController.h"
 @interface HQSegmentPageViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property(nonatomic,strong) HqTableView *mainTableView;
-@property(nonatomic,assign) BOOL containerCanScroll;
-
 @end
 
 @implementation HQSegmentPageViewController
 
 - (instancetype)init{
     if (self = [super init]) {
+        //默认值
+        self.containerCanScroll = YES;
+        self.headerViewHeight = 200;
+        self.sectionHeaderHeight = 50;
     }
     return self;
 }
+- (UIView *)containerView{
+    if (!_containerView) {
+        _containerView = [[UIView alloc] init];
+    }
+    return _containerView;
+}
 - (void)refresh{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"end=endRefreshing=");
-        [self.mainTableView.mj_header endRefreshing];
-    });
     
     //更新当前ItemPage的数据
     [self.pageContainerVC refreshCurrentItemData];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _headerViewHeight = 150;
-    _sectionHeaderHeight = 50;
-    
-    self.containerCanScroll = YES;
-
     //主视图
     [self.view addSubview:self.mainTableView];
+    if (@available(iOS 11.0, *)) {
+        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+
+    }
     self.mainTableView.tableHeaderView = self.headerView;
     
-    [self scrollViewDidScroll:self.mainTableView];
-
+}
+- (void)addRefreshUI{
     //添加下拉刷新
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
     self.mainTableView.mj_header = header;
-    
+    [self addChildViewController:self.pageContainerVC];
+    [self.view addSubview:self.containerView];
 }
 #pragma mark - set
 - (void)setContainerCanScroll:(BOOL)containerCanScroll{
@@ -75,8 +79,7 @@
 #pragma mark get
 - (UIScrollView *)mainTableView{
     if (!_mainTableView) {
-        CGRect rect = CGRectMake(0, self.navBarHeight, self.view.bounds.size.width, self.view.bounds.size.height-self.navBarHeight);
-        _mainTableView = [[HqTableView alloc] initWithFrame:rect];
+        _mainTableView = [[HqTableView alloc] initWithFrame:CGRectZero];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
@@ -96,9 +99,20 @@
     if (!_sectionHeaderView) {
         _sectionHeaderView = [[UIView alloc] init];
         _sectionHeaderView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        _sectionHeaderView.frame = CGRectMake(0, 0, self.view.bounds.size.width, _sectionHeaderHeight);
+        _sectionHeaderView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.sectionHeaderHeight);
     }
     return _sectionHeaderView;
+}
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    NSLog(@"self.view==%@",self.view);
+    CGFloat width = self.view.bounds.size.width;
+    CGFloat height = self.view.bounds.size.height - self.navBarHeight;
+    self.mainTableView.frame = CGRectMake(0, self.navBarHeight, width, height);
+    self.sectionHeaderView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.sectionHeaderHeight);
+    
+    //配置自己的分段视图
+//      self.segment.center = self.sectionHeaderView.center;
 }
 //自行改变
 - (UISegmentedControl *)segment{
@@ -112,6 +126,7 @@
     }
     return _segment;
 }
+//自己实现
 - (void)segChange:(UISegmentedControl *)sg{
     
     NSInteger index = sg.selectedSegmentIndex;
@@ -136,20 +151,26 @@
     return 1;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    [self.sectionHeaderView addSubview:self.segment];
     return self.sectionHeaderView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return self.sectionHeaderHeight;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCREEN_HEIGHT-self.navBarHeight;
+    return tableView.bounds.size.height;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"13"];
-    [self addChildViewController:self.pageContainerVC];
-    [cell addSubview:self.pageContainerVC.view];
-    self.pageContainerVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.view.bounds.size.height-self.navBarHeight);
+    static NSString *cellId = @"cell";
+    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
+    self.containerView.backgroundColor = HqRandomColor;
+    [cell addSubview:self.containerView];
+    self.containerView.frame = CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height-self.navBarHeight);
+    [self.containerView addSubview:self.pageContainerVC.view];
+    self.pageContainerVC.view.frame = self.containerView.frame;
+
     return cell;
 }
 
@@ -167,7 +188,10 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat y = scrollView.contentOffset.y;
-    CGFloat shvY = [self.mainTableView rectForHeaderInSection:0].origin.y;
+    NSInteger sectionCount = [self.mainTableView numberOfSections];
+    NSInteger section = sectionCount - 1;
+    
+    CGFloat shvY = [self.mainTableView rectForHeaderInSection:section].origin.y;
     if (y>=shvY) {
         self.containerCanScroll = NO;
         scrollView.contentOffset = CGPointMake(0, shvY);
@@ -178,6 +202,12 @@
             [self.pageContainerVC updatePageItemCanScroll];
         }
     }
+    
+    [self mainTableviewDidScroll:scrollView];
+}
+
+- (void)mainTableviewDidScroll:(UIScrollView *)scrollView{
+    //子类实现
 }
 
 @end

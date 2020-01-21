@@ -8,8 +8,7 @@
 
 #import "HqPageContainerVC.h"
 #import "HQPage1VC.h"
-#import "HQPage2VC.h"
-#import "HqPage3VC.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property(nonatomic,strong) HQPage1VC *pageV1;
-@property(nonatomic,strong) HQPage2VC *pageV2;
-@property(nonatomic,strong) HqPage3VC *pageV3;
+@property(nonatomic,strong) HQPage1VC *pageV2;
+@property(nonatomic,strong) HQPage1VC *pageV3;
 
 @end
 

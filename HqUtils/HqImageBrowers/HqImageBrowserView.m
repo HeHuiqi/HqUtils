@@ -93,9 +93,13 @@
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
 
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSInteger index = (NSInteger)scrollView.contentOffset.x/scrollView.bounds.size.width;
+    self.currentPage = index;
+    NSLog(@"self.currentPage==%@",@(self.currentPage));
+}
 #pragma mark - HqImageBrowserCellDelegate
 - (void)tapDismissView:(HqImageBrowserCell *)cell{
     

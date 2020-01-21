@@ -23,8 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 由HqPageContainerVC 实现
 - (void)mainScrollViewCanScroll;
 - (void)mainScrollViewScrollEnabled:(BOOL)scrollEnabled;
-- (void)pageContainerScrollViewToIndex:(NSInteger)index;
 
+//HqPageContainer
+- (void)pageContainerScrollViewToIndex:(NSInteger)index;
+- (void)pageContainerScrollView:(UIScrollView *)scrollView toIndex:(NSInteger)index;
 
 @end
 

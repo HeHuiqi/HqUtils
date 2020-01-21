@@ -19,14 +19,13 @@
     [super viewDidLoad];
     self.currentPageIndex = 0;
     [self.view addSubview:self.containerScrollview];
-    
 }
 - (void)hqAddChildVCWithindex:(NSInteger)index{
-    NSArray *subvc  = self.childViewControllers;
+    NSArray *subvcs  = self.childViewControllers;
     CGFloat height = self.containerScrollview.bounds.size.height;
     CGFloat width  = self.containerScrollview.bounds.size.width;
     UIViewController *vc = self.pageItems[index];
-    if (![subvc containsObject:vc]) {
+    if (![subvcs containsObject:vc]) {
         [self addChildViewController:vc];
         [self.containerScrollview addSubview:vc.view];
         vc.view.frame = CGRectMake(width*index, 0, width, height);
@@ -35,9 +34,6 @@
 - (void)setPageItems:(NSArray *)pageItems{
     _pageItems = pageItems;
     if (_pageItems.count>0) {
-        CGFloat height = self.containerScrollview.bounds.size.height;
-        CGFloat width  = self.containerScrollview.bounds.size.width;
-        _containerScrollview.contentSize = CGSizeMake(width*_pageItems.count, height);
         for (HqPageItemSuperVC *vc  in _pageItems) {
             vc.delegate = self;
         }
@@ -45,15 +41,19 @@
 }
 
 - (UIScrollView *)containerScrollview{
-    if (!_containerScrollview) {
-        CGFloat height = SCREEN_HEIGHT-88;
-        
-        _containerScrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, height)];
-        _containerScrollview.contentSize = CGSizeMake(SCREEN_WIDTH*3, height);
+    if (!_containerScrollview) {        
+        _containerScrollview = [[UIScrollView alloc] initWithFrame:CGRectZero];
         _containerScrollview.pagingEnabled = YES;
         _containerScrollview.delegate = self;
     }
     return _containerScrollview;
+}
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    CGFloat width = self.view.bounds.size.width;
+    CGFloat height = self.view.bounds.size.height;
+   self.containerScrollview.frame = CGRectMake(0, 0, width, height);
+   self.containerScrollview.contentSize = CGSizeMake(self.pageItems.count*width, height);
 }
 
 #pragma mark - HqPageViewProtocol
@@ -64,16 +64,15 @@
 - (void)updateOtherItemVCToTopWithCurrentVC:(HqPageItemSuperVC *)currentVC{
     if (currentVC) {
         NSArray *subvcs = self.childViewControllers;
-        /*
+        
         for (HqPageItemSuperVC *vc  in subvcs) {
             if (![vc isEqual:currentVC]) {
                 [vc hqScorllToTop];
             }
         }
-        */
-        
         
         //优化
+        /*
         if (self.currentPageIndex+1 < subvcs.count) {
             if (self.currentPageIndex==0) {
                 HqPageItemSuperVC *lastVC = subvcs[self.currentPageIndex+1];
@@ -89,6 +88,7 @@
             }
             
         }
+        */
         if (self.delegate) {
             [self.delegate mainScrollViewCanScroll];
         }
@@ -98,8 +98,6 @@
 #pragma mark - 更新Item的scrollview可滚动
 - (void)updatePageItemCanScroll{
     NSArray *subvcs = self.childViewControllers;
-    
-    
     for (HqPageItemSuperVC *vc  in subvcs) {
         vc.canScroll = YES;
     }
@@ -121,8 +119,8 @@
 
 #pragma mark - 切换Item
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated{
-    CGPoint offset = CGPointMake(index*SCREEN_WIDTH, 0);
-    [self.containerScrollview setContentOffset:offset animated:animated];
+    CGPoint offset = CGPointMake(index*self.containerScrollview.bounds.size.width, 0);
+    [self.containerScrollview setContentOffset:offset animated:YES];
 }
 - (void)refreshCurrentItemData{
     HqPageItemSuperVC *vc = self.childViewControllers[self.currentPageIndex];
@@ -134,7 +132,7 @@
         [self.delegate mainScrollViewScrollEnabled:scrollEnabled];
     }
 }
-#pragma mark - UIScrollViewDelegate
+#pragma mark - UIScrollViewDelegate 左右滑动subvc时，禁止主视图不可上下滑动
  - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
      [self notifyMainSrollViewScrollEnabled:YES];
  }
@@ -145,24 +143,18 @@
     
     CGFloat x = scrollView.contentOffset.x;
     NSInteger index = (NSInteger)x/SCREEN_WIDTH;
-    if (self.currentPageIndex !=index) {
+    if (self.currentPageIndex != index) {
         self.lastPageIndex = self.currentPageIndex;
         self.currentPageIndex = index;
         [self hqAddChildVCWithindex:index];
-        if (self.delegate) {
+
+        if ([self.delegate respondsToSelector:@selector(pageContainerScrollViewToIndex:)] && self.delegate) {
             [self.delegate pageContainerScrollViewToIndex:index];
+        }
+        if ([self.delegate respondsToSelector:@selector(pageContainerScrollView:toIndex:)] && self.delegate) {
+            [self.delegate pageContainerScrollView:scrollView toIndex:index];
         }
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

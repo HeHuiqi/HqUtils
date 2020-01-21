@@ -19,7 +19,6 @@
     }
     return self;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
@@ -33,11 +32,9 @@
 }
 - (void)setScrollView:(UIScrollView *)scrollView{
     _scrollView = scrollView;
-    _scrollView.showsVerticalScrollIndicator = NO;
 }
-
 - (void)refreshData{
-    
+    //子类实现
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
@@ -47,6 +44,7 @@
         if (y<=0) {
             scrollView.contentOffset = CGPointZero;
             self.canScroll = NO;
+            //由SegmentPageView实现
             if (self.pageItemOffsetYBlock) {
                 self.pageItemOffsetYBlock(self, y);
             }

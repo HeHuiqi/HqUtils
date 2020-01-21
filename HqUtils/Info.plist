@@ -4,11 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>SourceHanSansCN-Regular.otf</string>
-		<string>SourceHanSansCN-Medium.otf</string>
-	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -36,6 +31,11 @@
 	<string>App需要访问您的麦克风</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App需要访问您的相册</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SourceHanSansCN-Regular.otf</string>
+		<string>SourceHanSansCN-Medium.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

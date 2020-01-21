@@ -174,6 +174,7 @@
 - (void)hqShutup:(UIMenuItem *)item{
     
     NSLog(@"闭嘴");
+    [self.mImageView sd_setImageWithURL:nil];
 
 }
 - (void)hqForwardImage:(UIMenuItem *)item{
