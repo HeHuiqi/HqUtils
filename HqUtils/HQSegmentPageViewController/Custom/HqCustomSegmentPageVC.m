@@ -45,6 +45,7 @@
     self.loopView.frame = CGRectMake(10, 0, self.view.bounds.size.width-20, self.headerViewHeight);
 //    //配置自己的分段视图
     self.segment.center = self.sectionHeaderView.center;
+    [self addArcWithView:self.loopView];
     
 }
 
@@ -59,12 +60,32 @@
     
     CGFloat y = scrollView.contentOffset.y;
     if (y<=0) {
-        NSLog(@"y==%@",@(y));
+//        NSLog(@"y==%@",@(y));
         CGRect loopRect = self.loopView.frame;
         loopRect.size.height = self.headerViewHeight - y;
         loopRect.origin.y = y;
         self.loopView.frame = loopRect;
+        [self addArcWithView:self.loopView];
     }
+    
+}
+- (void)addArcWithView:(UIView *)view{
+    CGFloat width = view.bounds.size.width;
+    CGFloat height = view.bounds.size.height;
+    
+    CAShapeLayer *masklayer = [CAShapeLayer layer];
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    CGFloat radius = width*2;
+    CGFloat centerY = - (radius-height);
+    CGFloat centerX = width/2.0;
+    [path moveToPoint:CGPointMake(centerX, centerY)];
+    [path addArcWithCenter:CGPointMake(centerX, centerY) radius:radius startAngle:0 endAngle:M_PI clockwise:YES];
+
+    masklayer.strokeColor = [UIColor whiteColor].CGColor;
+    masklayer.fillColor = [UIColor redColor].CGColor;
+    masklayer.path = path.CGPath;
+    view.layer.mask = masklayer;
 }
 //需要在ViewdidLoad调用 [self addRefreshUI];
 - (void)refresh{

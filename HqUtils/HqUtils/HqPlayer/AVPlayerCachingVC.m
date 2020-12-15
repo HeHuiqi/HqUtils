@@ -19,7 +19,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface AVPlayerCachingVC () <NSURLConnectionDataDelegate, AVAssetResourceLoaderDelegate>
+#import <MediaPlayer/MediaPlayer.h>
+
+@interface AVPlayerCachingVC () 
 
 @property (nonatomic, strong) NSMutableData *songData;
 @property (nonatomic, strong) AVPlayer *player;
@@ -28,7 +30,7 @@
 
 @property (nonatomic, strong) NSHTTPURLResponse *response;
 @property (nonatomic, strong) NSMutableArray *pendingRequests;
-
+@property(nonatomic,strong)MPMoviePlayerController *playerController;
 
 @end
 
@@ -37,175 +39,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    NSString *video = @"https://v.qq.com/txp/iframe/player.html?vid=x0033t989f6";
+//    video = @"http://7u2klj.com2.z0.glb.clouddn.com/QY1xq6_4diU6-Er-2he1LaodBb0=/FsmC5SL2g6CQ-hslYBorLLSB68sb";
+//    video = @"https://f.video.weibocdn.com/002OAq5pgx07CuhKXojJ0104120040aN0E010.mp4?label=mp4_hd&template=576x1024.24.0&trans_finger=7c347e6ee1691b93dc7e5726f4ef34b3&Expires=1586924278&ssig=eYOrXkRUi7&KID=unistore,video";
+//    _playerView = [[PlayView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 200) withVideoURLString:video];
+//    [self.view addSubview:_playerView];
     
-    _playerView = [[PlayView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 200) withVideoURLString:@"http://7u2klj.com2.z0.glb.clouddn.com/QY1xq6_4diU6-Er-2he1LaodBb0=/FsmC5SL2g6CQ-hslYBorLLSB68sb"];
-    [self.view addSubview:_playerView];
-
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (NSURL *)songURL
-{
-    return [NSURL URLWithString:@"http://7u2klj.com2.z0.glb.clouddn.com/QY1xq6_4diU6-Er-2he1LaodBb0=/FsmC5SL2g6CQ-hslYBorLLSB68sb"];
-}
-
-- (NSURL *)songURLWithCustomScheme:(NSString *)scheme
-{
-    NSURLComponents *components = [[NSURLComponents alloc] initWithURL:[self songURL] resolvingAgainstBaseURL:NO];
-    components.scheme = scheme;
-    
-    return [components URL];
-}
-
-- (void)playSong:(id)sender
-{
-    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[self songURLWithCustomScheme:@"streaming"] options:nil];
-    [asset.resourceLoader setDelegate:self queue:dispatch_get_main_queue()];
-    
-    self.pendingRequests = [NSMutableArray array];
-    
-    
-    
-    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
-    self.player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
-    AVPlayerLayer *avplayerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-    avplayerLayer.frame = CGRectMake(0, 100, self.view.frame.size.width, 200);
-    
-    [self.view.layer addSublayer:avplayerLayer];
-    [playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:NULL];
-}
-
-#pragma mark - NSURLConnection delegate
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    self.songData = [NSMutableData data];
-    self.response = (NSHTTPURLResponse *)response;
-    
-    [self processPendingRequests];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [self.songData appendData:data];
-    
-    [self processPendingRequests];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    [self processPendingRequests];
-    
-    NSString *cachedFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"cached.mp4"];
-    NSLog(@"cachedFilePath == %@",cachedFilePath);
-    [self.songData writeToFile:cachedFilePath atomically:YES];
-}
-
-#pragma mark - AVURLAsset resource loading
-
-- (void)processPendingRequests
-{
-    NSMutableArray *requestsCompleted = [NSMutableArray array];
-    
-    for (AVAssetResourceLoadingRequest *loadingRequest in self.pendingRequests)
-    {
-        [self fillInContentInformation:loadingRequest.contentInformationRequest];
-        
-        BOOL didRespondCompletely = [self respondWithDataForRequest:loadingRequest.dataRequest];
-        
-        if (didRespondCompletely)
-        {
-            [requestsCompleted addObject:loadingRequest];
-            
-            [loadingRequest finishLoading];
-        }
-    }
-    
-    [self.pendingRequests removeObjectsInArray:requestsCompleted];
-}
-
-- (void)fillInContentInformation:(AVAssetResourceLoadingContentInformationRequest *)contentInformationRequest
-{
-    if (contentInformationRequest == nil || self.response == nil)
-    {
-        return;
-    }
-    
-    NSString *mimeType = [self.response MIMEType];
-    CFStringRef contentType = UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (__bridge CFStringRef)(mimeType), NULL);
-    
-    contentInformationRequest.byteRangeAccessSupported = YES;
-    contentInformationRequest.contentType = CFBridgingRelease(contentType);
-    contentInformationRequest.contentLength = [self.response expectedContentLength];
-}
-
-- (BOOL)respondWithDataForRequest:(AVAssetResourceLoadingDataRequest *)dataRequest
-{
-    long long startOffset = dataRequest.requestedOffset;
-    if (dataRequest.currentOffset != 0)
-    {
-        startOffset = dataRequest.currentOffset;
-    }
-    
-    // Don't have any data at all for this request
-    if (self.songData.length < startOffset)
-    {
-        return NO;
-    }
-    
-    // This is the total data we have from startOffset to whatever has been downloaded so far
-    NSUInteger unreadBytes = self.songData.length - (NSUInteger)startOffset;
-    
-    // Respond with whatever is available if we can't satisfy the request fully yet
-    NSUInteger numberOfBytesToRespondWith = MIN((NSUInteger)dataRequest.requestedLength, unreadBytes);
-    
-    [dataRequest respondWithData:[self.songData subdataWithRange:NSMakeRange((NSUInteger)startOffset, numberOfBytesToRespondWith)]];
-    
-    long long endOffset = startOffset + dataRequest.requestedLength;
-    BOOL didRespondFully = self.songData.length >= endOffset;
-    
-    return didRespondFully;
-}
-
-#pragma mark - AVAssetResourceLoaderDelegate
-- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest
-{
-    if (self.connection == nil)
-    {
-        NSURL *interceptedURL = [loadingRequest.request URL];
-        NSURLComponents *actualURLComponents = [[NSURLComponents alloc] initWithURL:interceptedURL resolvingAgainstBaseURL:NO];
-        actualURLComponents.scheme = @"http";
-        
-        NSURLRequest *request = [NSURLRequest requestWithURL:[actualURLComponents URL]];
-        self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
-        [self.connection setDelegateQueue:[NSOperationQueue mainQueue]];
-        
-        [self.connection start];
-    }
-    NSLog(@"pendingRequests === %@",loadingRequest);
-    [self.pendingRequests addObject:loadingRequest];
-    
-    return YES;
-}
-
-- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest
-{
-    [self.pendingRequests removeObject:loadingRequest];
-}
-
-#pragma KVO
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if (self.player.currentItem.status == AVPlayerItemStatusReadyToPlay)
-    {
-        [self.player play];
-    }
+    NSURL *webVideoUrl = [NSURL URLWithString:video];
+    self.playerController =[[MPMoviePlayerController alloc]initWithContentURL:webVideoUrl];
+    self.playerController.view.frame = CGRectMake(0, 100, SCREEN_WIDTH, 300);
+    [self.view addSubview: self.playerController.view];
+    self.playerController.controlStyle = MPMovieControlStyleDefault;
+    //设置是否自动播放(默认为YES）
+//    self.playerController.shouldAutoplay = NO;
+    [self.playerController play];
 }
 
 @end

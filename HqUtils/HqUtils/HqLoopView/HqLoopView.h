@@ -30,11 +30,12 @@ typedef NS_ENUM(NSInteger,HqLoopViewType) {
 @protocol HqLoopViewDelegate;
 @interface HqLoopView : UIView
 
-@property (nonatomic,strong) NSMutableArray *images;//图片数据
+@property (nonatomic,strong) NSArray *images;//图片数据
 @property (nonatomic,assign)  BOOL loop; //是否无限循环轮播
 @property (nonatomic,assign) HqLoopViewType loopViewType;
 @property (nonatomic,weak) id<HqLoopViewDelegate> delegate;
 
+- (void)testData;
 
 @end
 

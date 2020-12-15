@@ -12,6 +12,10 @@
 - (void)dealloc{
     
     NSLog(@"HqTimer-dealloc");
+    if (_timer) {
+        [_timer invalidate];
+        _timer = nil;
+    }
 }
 - (void)destroyDispatchTimer{
     dispatch_source_cancel(self.dispatchTimer);

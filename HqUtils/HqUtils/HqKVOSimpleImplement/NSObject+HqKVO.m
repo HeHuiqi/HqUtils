@@ -48,6 +48,7 @@ void setName(id self,SEL _cmd, NSString *newName){
     //调用父类的set方法,所以oc的方法调用都会转为objc_msgSend()的方式进行消息发送
     //这里要Build Settings要修改一下 （Enable Strict checking of objc_msgSend Calls）为NO,搜索msg即可
     //不然会报编译错误
+    /*
     objc_msgSend(self,@selector(setName:),newName);
 
     //获取观察者
@@ -56,7 +57,7 @@ void setName(id self,SEL _cmd, NSString *newName){
     if (observer) {
         objc_msgSend(observer, @selector(observeValueForKeyPath:ofObject:change:context:),@"name",self,@{@"new":newName,@"kind":@1},nil);
     }
-
+    */
     //让isa指针重新指向子类
     object_setClass(self, subClass);
 }

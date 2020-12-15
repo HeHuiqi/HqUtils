@@ -29,17 +29,21 @@ static CGFloat ScrollInterval = 3.0f;
     _loopViewType = loopViewType;
     [self addSubview:self.collectionView];
     [self addSubview:self.pageControl];
-    self.pageControl.center = CGPointMake(self.center.x, CGRectGetMaxY(self.bounds)-10);
 }
-- (void)setImages:(NSMutableArray *)images{
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.pageControl.center = CGPointMake(self.bounds.size.width/2.0, CGRectGetMaxY(self.bounds)-10);
+}
+- (void)setImages:(NSArray *)images{
     _images = images;
     if (_images) {
         //设置数据时在第一个之前和最后一个之后分别插入数据
         _hqImageData = [NSMutableArray arrayWithArray:_images];
         [_hqImageData addObject:images.firstObject];
         [_hqImageData insertObject:images.lastObject atIndex:0];
+        
         //设置_pageControl的显示页
-        _pageControl.numberOfPages = images.count;
+        self.pageControl.numberOfPages = images.count;
         [self.collectionView reloadData];
         //_collectionView滚动到第二页的位置
         [self initPostion];
@@ -50,12 +54,12 @@ static CGFloat ScrollInterval = 3.0f;
     }
 }
 - (void)initPostion{
-    CGFloat itemOffetxSpace = self.collectionView.bounds.size.width;
+    CGFloat initOffsetX = self.collectionView.bounds.size.width;
     if (self.loopViewType == HqLoopViewTypeSpace) {
-        itemOffetxSpace = (self.collectionView.bounds.size.width-40)-25;
+        initOffsetX = (self.collectionView.bounds.size.width-40)-25;
     }
     dispatch_async( dispatch_get_main_queue(), ^{
-        [self.collectionView setContentOffset:CGPointMake(itemOffetxSpace, self.collectionView.contentOffset.y)];
+        [self.collectionView setContentOffset:CGPointMake(initOffsetX, self.collectionView.contentOffset.y)];
     });
 }
 - (NSTimer *)loopTimer{
@@ -67,9 +71,8 @@ static CGFloat ScrollInterval = 3.0f;
 - (UIPageControl *)pageControl{
     if (!_pageControl) {
         _pageControl = [[UIPageControl alloc] init];
-//        _pageControl.currentPageIndicatorTintColor = HqOrangeColor;
         _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-        _pageControl.pageIndicatorTintColor = [UIColor blueColor];
+        _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     }
     return _pageControl;
 }
@@ -112,12 +115,7 @@ static CGFloat ScrollInterval = 3.0f;
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     HqLoopImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HqLoopImageCellIdentifer forIndexPath:indexPath];
-    
-//    cell.banner = self.hqImageData[indexPath.row];
-//    cell.hqTitleLab.text = self.hqImageData[indexPath.row];
-    NSString *name =self.hqImageData[indexPath.row];
-    cell.bannerImageView.image = [UIImage imageNamed:name];
-    cell.hqTitleLab.text = name;
+    cell.banner = self.hqImageData[indexPath.row];
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -150,9 +148,7 @@ static CGFloat ScrollInterval = 3.0f;
     if (self.loopViewType == HqLoopViewTypeSpace) {
         CGFloat itemOffetxSpace = (_collectionView.bounds.size.width-40)-_collectionView.contentInset.left;
         NSInteger page = _collectionView.contentOffset.x/itemOffetxSpace;
-//        NSLog(@"page==%@",@(page));
-//        NSLog(@"collectionView.contentOffset.x==%@",@(_collectionView.contentOffset.x));
-//        NSLog(@"itemOffetxSpace==%@",@(itemOffetxSpace));
+        
 
         if (page == 0) {//滚动到左边
             itemOffetxSpace = (_collectionView.bounds.size.width-40);
@@ -166,18 +162,23 @@ static CGFloat ScrollInterval = 3.0f;
             _pageControl.currentPage = page-1;
         }
     }else{
-        CGFloat itemOffetxSpace = _collectionView.bounds.size.width;
-        NSInteger page = _collectionView.contentOffset.x/itemOffetxSpace;
-        if (page == 0) {//滚动到左边
-            _collectionView.contentOffset = CGPointMake((_hqImageData.count-2)*itemOffetxSpace, _collectionView.contentOffset.y);
-            _pageControl.currentPage = _hqImageData.count - 2;
-        }
-        else if (page >= _hqImageData.count - 1){//滚动到右边
-            _collectionView.contentOffset = CGPointMake(itemOffetxSpace, _collectionView.contentOffset.y);
-            _pageControl.currentPage = 0;
-        }else{
-            _pageControl.currentPage = page-1;
-        }
+        
+        CGFloat offsetX = self.collectionView.contentOffset.x;
+        NSLog(@"offsetX == %@",@(offsetX));
+        CGFloat collectionViewW = self.collectionView.bounds.size.width;
+         NSInteger page = self.collectionView.contentOffset.x/collectionViewW;
+        //滚动到右边
+         if (offsetX >= collectionViewW*(self.hqImageData.count-1)) {
+             self.collectionView.contentOffset = CGPointMake(collectionViewW, self.collectionView.contentOffset.y);
+             self.pageControl.currentPage = 0;
+         }
+         else if (offsetX <= 0){
+             //滚动到左边
+             self.collectionView.contentOffset = CGPointMake(collectionViewW*(self.hqImageData.count-2), self.collectionView.contentOffset.y);
+             self.pageControl.currentPage = self.hqImageData.count-2;
+         }else{
+             self.pageControl.currentPage = page-1;
+         }
     }
    
 }
@@ -200,6 +201,18 @@ static CGFloat ScrollInterval = 3.0f;
 }
 - (void)dealloc {
     [_loopTimer invalidate];
+}
+
+- (void)testData{
+    NSMutableArray *imageDatas = @[].mutableCopy;
+    for (int i = 0; i<3; i++) {
+        HqBanner *item = [HqBanner new];
+        item.name = [NSString stringWithFormat:@"----%@",@(i+1)];
+        item.icon = [NSString stringWithFormat:@"%@.jpg",@(i+1)];
+        [imageDatas addObject:item];
+    }
+    self.images = imageDatas;
+
 }
 
 @end

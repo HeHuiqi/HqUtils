@@ -29,7 +29,7 @@
     
     
     CFStringRef str = CFSTR("门梁真可怕 当中英文混合之后，😊😊😊😊😊😊😊会出现行高不统一的情况，现在在绘制的时候根据字体的descender来偏移绘制，对齐baseline。🐱🐱🐱🐱🐱🐱🐱🐱同时点击链接的时候会调用drawRect: 造成绘制异常，所以将setNeedsDisplay注释，如需刷新，请手动调用。带上emoji以供测试🐶🐶🐶🐶🐶🐶🐶");
-        str = CFSTR("门梁真可怕 当中英文混合之后，会出现行高不统一的情况，现在在绘制的时候根据字体的descender来偏移绘制，对齐baseline。同时点击链接的时候会调用drawRect: 造成绘制异常，所以将setNeedsDisplay注释，如需刷新，请手动调用。带上emoji以供测试🐶🐶🐶🐶🐶🐶🐶");
+//        str = CFSTR("门梁真可怕 当中英文混合之后，会出现行高不统一的情况，现在在绘制的时候根据字体的descender来偏移绘制，对齐baseline。同时点击链接的时候会调用drawRect: 造成绘制异常，所以将setNeedsDisplay注释，如需刷新，请手动调用。带上emoji以供测试🐶🐶🐶🐶🐶🐶🐶");
 
     CFAllocatorRef alloc = CFAllocatorGetDefault();
     CFIndex maxLength = 0;
@@ -37,7 +37,8 @@
     CFAttributedStringReplaceString(attributeStr, CFRangeMake(0, 0), str);
     
     //设置字体
-    CTFontRef allfont = CTFontCreateWithName(CFSTR(""), 17, NULL);
+    CTFontRef allfont = CTFontCreateWithName(CFSTR(""), 18, NULL);
+    UIFont *font = nil;
     CFAttributedStringSetAttribute(attributeStr, CFRangeMake(0, CFStringGetLength(str)), kCTFontAttributeName, allfont);
     
     //设置颜色
@@ -64,7 +65,6 @@
     CFIndex length = CFStringGetLength(str);
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, length), path, NULL);
     
-    
     CFArrayRef lines = CTFrameGetLines(frame);
     CFIndex lineCount = CFArrayGetCount(lines);
     CGPoint origins[lineCount];
@@ -87,6 +87,7 @@
 //            lineBounds.origin.x = lineOrigin.x;
 //            lineBounds.origin.y = lineOrigin.y;
             //填充
+//            CTLineGetStringIndexForPosition(CTLineRef  _Nonnull line, CGPoint position)
             CGContextSetLineWidth(context, 1.0);
             CGContextAddRect(context,lineBounds);
             CGContextSetStrokeColorWithColor(context, [[UIColor redColor] CGColor]);

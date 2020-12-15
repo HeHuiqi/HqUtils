@@ -31,9 +31,13 @@ PODS:
   - SDWebImage/Core (4.3.3)
   - SVProgressHUD (2.2.5)
   - TZImagePickerController (3.2.4)
-  - YYKit (1.0.9):
-    - YYKit/no-arc (= 1.0.9)
-  - YYKit/no-arc (1.0.9)
+  - YBImageBrowser (2.1.5):
+    - SDWebImage
+    - YYImage
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYText (1.0.7)
   - ZLPhotoBrowser (3.0.0):
     - SDWebImage
 
@@ -50,11 +54,12 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - TZImagePickerController
-  - YYKit
+  - YBImageBrowser
+  - YYText
   - ZLPhotoBrowser
 
 SPEC REPOS:
-  trunk:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - AFNetworking
     - FMDB
     - IQKeyboardManager
@@ -68,7 +73,9 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
     - TZImagePickerController
-    - YYKit
+    - YBImageBrowser
+    - YYImage
+    - YYText
     - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
@@ -85,9 +92,11 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TZImagePickerController: d259369c5c2cc96299e53da868ae5be1b24353cd
-  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  YBImageBrowser: 549bc0f8bc7df723381e1516db240d827ded3673
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZLPhotoBrowser: 0c70486b4c9b968fa983d5d96480996fd4fc12fd
 
-PODFILE CHECKSUM: b06e74f74e61e6327d89a8599db9c7f283e416d1
+PODFILE CHECKSUM: e5d08b66391c64ab1db65fe510efd5167d1c13fb
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

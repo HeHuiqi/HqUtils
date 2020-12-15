@@ -24,7 +24,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [HqChatManage hqRegisterJMWithLaunchOptions:launchOptions];
+//    [HqChatManage hqRegisterJMWithLaunchOptions:launchOptions];
+    
+    NSArray *ids = @[@"id1",@"id2"];
+    NSString *text = [ids componentsJoinedByString:@"-"];
+    NSLog(@"text==%@",text);
+ 
     
     return YES;
 }
@@ -46,7 +51,7 @@
         
         resultData = [HqEncrypt AES256EncryptWithKey:key iv:iv encryptText:json];
         NSLog(@"resultData==%@",[[NSString convertDataToHexStr:resultData] uppercaseString]);
-
+    
 }
 - (NSString *)getNowTimeTimestamp{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;

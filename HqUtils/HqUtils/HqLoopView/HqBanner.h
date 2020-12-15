@@ -12,7 +12,8 @@
 
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *icon;
-@property (nonatomic,copy) NSString *banner;//广告图片地址
+@property (nonatomic,copy) NSString *imageUrl;//广告图片地址
+
 @property (nonatomic,copy) NSString *url;//Dapp网址
 
 @end

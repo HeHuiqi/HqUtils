@@ -16,24 +16,48 @@
     }
     return self;
 }
+- (UIImageView *)bannerImageView{
+    if (!_bannerImageView) {
+        _bannerImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _bannerImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _bannerImageView.clipsToBounds = YES;
+        
+    }
+    return _bannerImageView;
+}
+- (UILabel *)hqTitleLab{
+    if (!_hqTitleLab) {
+        _hqTitleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+        _hqTitleLab.backgroundColor = [UIColor redColor];
+        _hqTitleLab.textAlignment = NSTextAlignmentCenter;
+        _hqTitleLab.font = [UIFont systemFontOfSize:18];
+    }
+    return _hqTitleLab;
+}
 - (void)setup{
-    self.backgroundColor = [UIColor purpleColor];
 
-    _bannerImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    _bannerImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [self addSubview:_bannerImageView];
+    [self addSubview:self.bannerImageView];
 
-    _hqTitleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
-    _hqTitleLab.backgroundColor = [UIColor redColor];
-    _hqTitleLab.textAlignment = NSTextAlignmentCenter;
-    _hqTitleLab.font = [UIFont systemFontOfSize:18];
-    [self addSubview:_hqTitleLab];
 
+    [self addSubview:self.hqTitleLab];
+
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.bannerImageView.frame = self.bounds;
 }
 - (void)setBanner:(HqBanner *)banner{
     _banner = banner;
     if (_banner) {
-        //[_bannerImageView sd_setImageWithURL:[NSURL URLWithString:_banner.banner] placeholderImage:nil];
+        self.hqTitleLab.text = banner.name;
+        if (banner.icon.length>0) {
+            self.bannerImageView.image = [UIImage imageNamed:banner.icon];
+        }else{
+            if (banner.imageUrl.length>0) {
+                NSURL *url = [NSURL URLWithString:banner.imageUrl];
+                [self.bannerImageView sd_setImageWithURL:url placeholderImage:nil];
+            }
+        }
     }
 }
 

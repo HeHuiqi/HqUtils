@@ -50,6 +50,7 @@
 
 #import "HqChatRoomListVC.h"
 #import "HqChatVC.h"
+#import "AVPlayerCachingVC.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -65,7 +66,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqCodeVC",@"HqCustomSegmentPageVC",@"HqChatRoomListVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"HSegmentTestVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
+    _titles = @[@"HqCodeVC",@"AVPlayerCachingVC",@"HqCustomSegmentPageVC",@"HqChatRoomListVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"HSegmentTestVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
     UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
 

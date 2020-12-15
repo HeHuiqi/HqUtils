@@ -65,6 +65,7 @@
 }
 #pragma mark Title
 - (void)setTitle:(NSString *)title{
+//    [super setTitle:title];
     self.titelLab.text = title;
     [self.titelLab sizeToFit];
 }

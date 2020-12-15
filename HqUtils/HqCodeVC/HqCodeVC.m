@@ -7,130 +7,113 @@
 //
 
 #import "HqCodeVC.h"
-#import "HqNewTopicCell.h"
-#import "HqTopicBannerCell.h"
+#import "HqLoopScrollVIew.h"
+#import "HqLoopView.h"
 
-#import "HqProgressBarView.h"
 
-#import "HqLoopUpDownView.h"
-#import "HqTagControl.h"
-
-#import "HqPullZoomView.h"
-
-@interface HqCodeVC ()<UITableViewDelegate,UITableViewDataSource,HqLoopUpDownViewDelegate>
+@interface HqCodeVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,assign) NSUInteger page;
-
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray *datas;
-@property(nonatomic,strong) HqProgressBarView *progressView;
-@property(nonatomic,strong) HqLoopUpDownView *loopView;
 
-@property(nonatomic,strong) HqPullZoomView *zoomView;
 
 @end
 
 @implementation HqCodeVC
 
-- (HqLoopUpDownView *)loopView{
-    if (!_loopView) {
-        _loopView = [[HqLoopUpDownView alloc] init];
-    }
-    return _loopView;
-}
-- (HqPullZoomView *)zoomView{
-    if (!_zoomView) {
-        _zoomView = [[HqPullZoomView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kZoomValue(240))];
-        UIImage *bgImage = nil;
-        bgImage = [UIImage imageNamed:@"weibo_header.png"];
-        bgImage = [UIImage imageNamed:@"my_bg"];
-        _zoomView.backgroundColor = [UIColor redColor];
-        _zoomView.bgImage = bgImage;
-    }
-    return _zoomView;
-}
-
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
-    self.title = @"CodeVC";
-    self.isAlphaZeroNavBar = YES;
-    self.datas = [[NSMutableArray alloc] init];
-    self.page = 1;
-    for (int i = 0; i<100; i++) {
-        [self.datas addObject:@(i).stringValue];
-    }
-    [self.view addSubview:self.zoomView];
-    
+//    [self currentVC];
+//    [self testTabView];
+    [self testLoopView];
 
     
+}
+- (void)testBlock{
+    int (^Multipy)(int,int) = ^(int a, int b){
+        return a*b;
+    };
+    int result = Multipy(2,3);
+    NSLog(@"result==%@",@(result));
+}
+- (void)testHook{
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 100, 100, 50)];
+    [btn setTitle:@"去登录" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btn  addTarget:self action:@selector(goLogin:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+- (void)goLogin:(UIButton *)btn{
+    NSLog(@"btttt==");
+}
+- (id)currentVC{
+    UIWindow *currentWindow = [UIApplication sharedApplication].delegate.window;
+    UIViewController *rootVC = currentWindow.rootViewController;
+    
+    UIViewController * _Nullable (^HqNavTopVC)(UIViewController *) = ^(UIViewController *vc) {
+        UIViewController *topVC = nil;
+        if ([vc isKindOfClass:UINavigationController.class]) {
+            NSArray *vcs = vc.childViewControllers;
+            if (vcs.count>0) {
+                NSInteger preIndex = (vcs.count-2);
+                preIndex = preIndex<=0 ? 0:preIndex;
+               UIViewController *topVC  = vcs[preIndex];
+                NSLog(@"vc==%@,title=%@",topVC.class,topVC.title);
+            }
+        }
+        return topVC;
+    };
+    
+    if (rootVC) {
+        if ([rootVC isKindOfClass:UITabBarController.class]) {
+            UITabBarController *tabVC = (UITabBarController *)rootVC;
+            UIViewController *selectedVC = tabVC.selectedViewController;
+            return HqNavTopVC(selectedVC);
+        }
+        if ([rootVC isKindOfClass:UINavigationController.class]) {
+            return HqNavTopVC(rootVC);
+        }
+    }
+    return nil;
+
+}
+- (void)testHqLoop{
+    HqLoopView *hqLoopView = [[HqLoopView alloc] initWithFrame:CGRectMake(20, 100, 300, 200)];
+    hqLoopView.loopViewType = HqLoopViewTypePlain;
+    [self.view addSubview:hqLoopView];
+    hqLoopView.backgroundColor = [UIColor blackColor];
+    [hqLoopView testData];
+}
+- (void)testLoopView{
+    HqLoopScrollVIew *hqLoopView = [[HqLoopScrollVIew alloc] initWithFrame:CGRectMake(20, 100, self.view.bounds.size.width-40, 200)];
+    hqLoopView.loop = YES;
+    [self.view addSubview:hqLoopView];
+    hqLoopView.backgroundColor = [UIColor blackColor];
+    [hqLoopView testData];
+}
+- (void)dealloc{
+    NSLog(@"dealloc");
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesEnded:touches withEvent:event];
+}
+- (void)initView{
+    
+}
+- (void)testTabView{
+    self.datas = @[].mutableCopy;
+    for (int i = 0; i<20; i++) {
+        [self.datas addObject:@""];
+    }
     [self.view addSubview:self.tableView];
-    CGFloat headerH = CGRectGetHeight(self.zoomView.frame)-self.navBarHeight;
-    UIView *tableHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,headerH) ];
-    UIButton *userIcon = [[UIButton alloc] init];
-    [userIcon setBackgroundImage:[UIImage imageNamed:@"longmao.jpeg"] forState:UIControlStateNormal];
-    CGFloat userIconH = 80;
-    userIcon.bounds = CGRectMake(0, 0, userIconH, userIconH);
-    userIcon.center = CGPointMake(tableHeader.center.x, tableHeader.center.y-userIconH/2.0);
-    userIcon.layer.cornerRadius = 40;
-    userIcon.clipsToBounds = YES;
-    [tableHeader addSubview:userIcon];
-//    tableHeader.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
-    
-    
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(0);
         make.top.equalTo(self.view).offset(self.navBarHeight);
         make.width.mas_equalTo(SCREEN_WIDTH);
         make.bottom.equalTo(self.view).offset(0);
     }];
-    self.tableView.tableHeaderView = tableHeader;
-    self.zoomView.scrollView = self.tableView;
-    
-
-}
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat offsetY = scrollView.contentOffset.y;
-    CGFloat alpha = offsetY/self.navBarHeight;
-    if (offsetY<=0) {
-        alpha = 0;
-    }
-    NSLog(@"alpha==%@",@(alpha));
-
-//    UIColor *color = [UIColor redColor];
-//    UIImage *image = [UIImage createImageWithColor:color];
-//    [self.navigationController.navigationBar setBackgroundImage:image forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-
-}
-- (void)loopDownUp{
-    [self.view addSubview:self.loopView];
-    [self.loopView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(0);
-        make.top.equalTo(self.view).offset(self.navBarHeight);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH, 40));
-    }];
-
-    self.loopView.delegate = self;
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-    for (int i = 0; i<2; i++) {
-        HqLoopUpDownItem *item = [HqLoopUpDownItem new];
-        item.title = [NSString stringWithFormat:@"lab%@",@(i+1)];
-        [items addObject:item];
-    }
-    self.loopView.items = items;
-    self.loopView.backgroundColor = [UIColor purpleColor];
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [super touchesEnded:touches withEvent:event];
-//    [self.loopView startLoop];
-}
-#pragma mark - HqLoopUpDownViewDelegate
-- (void)hqLoopUpDownView:(HqLoopUpDownView *)view clickItem:(HqLoopUpDownItem *)item{
-    NSLog(@"item==%@",item.title);
-}
-- (void)initView{
-
-    
 }
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -169,23 +152,29 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
-#pragma mark - 请求
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
+
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+
+    if (!decelerate) {
+        NSLog(@"---");
+    }
+
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSLog(@"scrollViewDidEndDecelerating");
+}
+#pragma mark - 请求
 - (void)refreshData{
     self.page = 1;
-    [self getArticles];
-    
 }
 - (void)loadData{
     self.page++;
-    [self getArticles];
-}
-- (void)getArticles{
-    [self requsetFollowData];
 }
 #pragma mark 关注的
 - (void)requsetFollowData{
-    
  
 }
 - (void)refreshTableView:(UITableView *)tablview isNomore:(BOOL)isNomore{

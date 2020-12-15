@@ -34,7 +34,7 @@
 
 #import "HqDeviceInfo.h"
 #import "HqString.h"
-
+#import "NSObject+HqNSObjectCategory.h"
 
 #import "HqDateFormatter.h"
 

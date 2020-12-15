@@ -43,13 +43,14 @@
 
     }
     self.mainTableView.tableHeaderView = self.headerView;
+    [self addChildViewController:self.pageContainerVC];
+
     
 }
 - (void)addRefreshUI{
     //添加下拉刷新
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
     self.mainTableView.mj_header = header;
-    [self addChildViewController:self.pageContainerVC];
     [self.view addSubview:self.containerView];
 }
 #pragma mark - set

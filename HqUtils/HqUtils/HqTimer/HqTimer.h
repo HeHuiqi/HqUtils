@@ -8,8 +8,8 @@
 //使用见HqTestVC.h
 #import <Foundation/Foundation.h>
 @class HqTimer;
-typedef void (^HqTimerhandler)(dispatch_source_t timer);
-typedef void (^HqNSTimerhandler)(HqTimer *hqTimer);
+typedef void (^HqTimerhandler)(dispatch_source_t _Nullable timer);
+typedef void (^HqNSTimerhandler)(HqTimer * _Nonnull hqTimer);
 
 
 NS_ASSUME_NONNULL_BEGIN

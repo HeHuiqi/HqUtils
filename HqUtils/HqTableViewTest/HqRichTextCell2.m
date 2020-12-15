@@ -8,7 +8,7 @@
 
 #import "HqRichTextCell2.h"
 #import "RegexKitLite.h"
-#import <YYKit/NSAttributedString+YYText.h>
+#import <YYText/NSAttributedString+YYText.h>
 @implementation HqRichTextCell2
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -160,7 +160,7 @@
     NSMutableAttributedString *resultAtrs = [[NSMutableAttributedString alloc] initWithString: labelText];
     [resultAtrs addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, resultAtrs.length)];
     if (lineSpace>0) {
-        resultAtrs.lineSpacing = lineSpace;
+        resultAtrs.yy_lineSpacing = lineSpace;
     }
     [self addAllAtTagAttributeString:resultAtrs onlyText:labelText aTags:atags didClickLink:didClickLink];
     
@@ -179,7 +179,7 @@
     }
 }
 - (void)addTagLinkWithAttributeString:(NSMutableAttributedString *)atrs range:(NSRange)range didClickLink:(void(^)(NSString *url))didClickLink{
-    [atrs setTextHighlightRange:range color:[UIColor blueColor] backgroundColor:[UIColor lightGrayColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+    [atrs yy_setTextHighlightRange:range color:[UIColor blueColor] backgroundColor:[UIColor lightGrayColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
          [text enumerateAttribute:NSLinkAttributeName inRange:range options:(NSAttributedStringEnumerationReverse) usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
              NSLog(@"link_value==%@",value);
              didClickLink(value);
