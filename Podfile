@@ -24,6 +24,5 @@ target 'HqUtils' do
   pod 'TZImagePickerController'#相册管理
   pod 'RegexKitLite'#正则
   pod 'YYText'
-  pod 'JMessage'#极光IM
 
 end

@@ -11,7 +11,7 @@
 
 @interface HqSubContainerVC ()<UIScrollViewDelegate>
 
-@property(nonatomic,strong) UIView *segmentHeaderView;
+@property(nonatomic,strong) UILabel *segmentHeaderView;
 @property(nonatomic,strong) UIScrollView *containerScrollView;
 @property(nonatomic,strong) HqSubChildVC *subChildVC1;
 @property(nonatomic,strong) HqSubChildVC *subChildVC2;
@@ -19,9 +19,10 @@
 @end
 
 @implementation HqSubContainerVC
-- (UIView *)segmentHeaderView{
+- (UILabel *)segmentHeaderView{
     if (!_segmentHeaderView) {
-        _segmentHeaderView = [[UIView alloc] init];
+        _segmentHeaderView = [[UILabel alloc] init];
+        _segmentHeaderView.text = @"segmentHeaderView";
         _segmentHeaderView.backgroundColor = [UIColor redColor];
     }
     return _segmentHeaderView;

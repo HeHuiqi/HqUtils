@@ -14,8 +14,6 @@
 #import "HqEncrypt.h"
 
 
-#import "HqChatManage.h"
-
 @interface AppDelegate ()
 
 @end

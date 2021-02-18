@@ -43,8 +43,6 @@
 #import "HqTimer.h"
 #import "HqListItemModel.h"
 
-//极光IM
-#import <JMessage/JMessage.h>
 
 
 

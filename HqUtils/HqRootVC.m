@@ -48,9 +48,8 @@
 #import "HqContainerVC.h"
 #import "HqkLineVC.h"
 
-#import "HqChatRoomListVC.h"
-#import "HqChatVC.h"
 #import "AVPlayerCachingVC.h"
+
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -66,27 +65,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqCodeVC",@"AVPlayerCachingVC",@"HqCustomSegmentPageVC",@"HqChatRoomListVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"HSegmentTestVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
+    _titles = @[@"HqCodeVC",@"HqRegExVC",@"AVPlayerCachingVC",@"HqCustomSegmentPageVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"HSegmentTestVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
     UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
 
     [self initView];
 
-//    UIImage *borderImage = [UIImage imageNamed:@"btn_border_bg"];
-//    borderImage = [borderImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 30, 10, 30)];
-//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 150, SCREEN_WIDTH-20, 60)];
-//
-//    btn.backgroundColor = [UIColor yellowColor];
-//    [self.view addSubview:btn];
-//    borderImage = [self getBorderSize:btn.bounds.size cornerRaius:30];
-//    [btn setBackgroundImage:borderImage forState:UIControlStateNormal];
+    /*
+    UIImage *borderImage = [UIImage imageNamed:@"btn_border_bg"];
+    borderImage = [borderImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 30, 10, 30)];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 150, SCREEN_WIDTH-20, 60)];
+
+    btn.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:btn];
+    CGFloat cornerRadius = 30;
     
+    borderImage = [self getBorderImageWithSize:btn.bounds.size cornerRadius:cornerRadius];
+    btn.layer.cornerRadius = cornerRadius;
+    [btn setBackgroundImage:borderImage forState:UIControlStateNormal];
+    */
 }
-- (UIImage *)getBgImageWithSize:(CGSize)cgsize cornerRaius:(CGFloat)cornerRaius{
+- (UIImage *)getBgImageWithSize:(CGSize)cgsize cornerRadius:(CGFloat)cornerRadius{
     UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor whiteColor];
     view.bounds =CGRectMake(0, 0, cgsize.width, cgsize.height);
-    if (cornerRaius>0) {
-        view.layer.cornerRadius = cornerRaius;
+    if (cornerRadius>0) {
+        view.layer.cornerRadius = cornerRadius;
         view.clipsToBounds = YES;
     }
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
@@ -96,13 +100,14 @@
     NSLog(@"image==%@",image);
     return image;
 }
-- (UIImage *)getBorderImageWithSize:(CGSize)cgsize cornerRaius:(CGFloat)cornerRaius{
+- (UIImage *)getBorderImageWithSize:(CGSize)cgsize cornerRadius:(CGFloat)cornerRadius{
     UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor whiteColor];
     view.bounds =CGRectMake(0, 0, cgsize.width, cgsize.height);
     view.layer.borderWidth = 1;
     view.layer.borderColor = [UIColor redColor].CGColor;
-    if (cornerRaius>0) {
-        view.layer.cornerRadius = cornerRaius;
+    if (cornerRadius>0) {
+        view.layer.cornerRadius = cornerRadius;
         view.clipsToBounds = YES;
     }
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);

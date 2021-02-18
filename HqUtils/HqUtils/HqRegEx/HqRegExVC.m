@@ -8,6 +8,7 @@
 
 #import "HqRegExVC.h"
 #import "HqRegEx.h"
+#import <CoreNFC/CoreNFC.h>
 
 @interface HqRegExVC ()
 
@@ -17,7 +18,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self regexTest];
+//    [self regexTest];
+    [self testRegEx];
+
+}
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesEnded:touches withEvent:event];
+//    [self imgTagTest];
+}
+- (void)testRegEx{
+    NSString *content = @"<img src='https://lichang.oss-cn-shanghai.aliyuncs.com/assets/launch/2020-10-14.jpg'>";
+    NSString *pattern = @"src=['\"]([^'\"]+)['\"]";
+    [self findString:content regexString:pattern];
+}
+
+- (void)imgTagTest{
+    NSString *content = @"<p><img src='https://lichang.oss-cn-shanghai.aliyuncs.com/assets/launch/2020-10-14.jpg'></p><p><img src='https://lichang.oss-cn-shanghai.aliyuncs.com/assets/launch/2020-10-15.jpg' ></p><p><img alt='abc' src='https://lichang.oss-cn-shanghai.aliyuncs.com/assets/launch/2020-10-16.jpg'  /></p>";
+    
+    NSString *pattern = @"<img src=['|\"][a-z]{0,}://[a-z|0-9|./-]{0,}['|\"][\\s]{0,}[>/>]";
+    pattern = @"<img[^>]*src[=\"\'\\s]+[^\\.]*\\/([^\\.]+)\\.[^\"\\']+[\"\']?[^>]*>";
+    pattern = @"<img [^>]*src=['\"]([^'\"]+)[^>]*>";
+    [self findString:content regexString:pattern];
+    
+    content = @"<img src='https://lichang.oss-cn-shanghai.aliyuncs.com/assets/launch/2020-10-14.jpg'>";
+    pattern = @"src=['\"]([^'\"]+)['\"]";
+    [self findString:content regexString:pattern];
+
+    /*
+     1.查找img标签，获取img标签的src并存储到list
+     2.对img标签的src进行md5(src)运算，然后查找本地md5(src)路径是否有图片，有直接加载否则
+     替换img标签的src为本地默认图片路径，并为img标签添加md5(src)的class属性
+     3.开始对list中的图片进行异步下载，每下载完成一张图片就开始通过js方法获取md5(src)对应class数学的img标签，
+     修改img标签src为下载图片的本地存储路径
+     */
 
 }
 
@@ -74,7 +107,7 @@
         text = @"今天的天气不错@【您好】 一起去爬山吧！";
         regex = @"@.*? ";
 
-
+    
         NSArray *atMatchs =   [self findString:text regexString:regex];
           for (NSTextCheckingResult *match in atMatchs) {
               NSString *matchStr = [text substringWithRange:match.range];
@@ -106,10 +139,17 @@
 
 - (NSArray<NSTextCheckingResult *> *)findString:(NSString *)string regexString:(NSString *)regexString
 {
-    // 找到文本中所有的@
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionCaseInsensitive error:nil];
-    NSArray *matches = [regex matchesInString:string options:NSMatchingReportCompletion range:NSMakeRange(0, [string length])];
-    NSLog(@"matches==%@",matches);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionAnchorsMatchLines error:nil];
+    NSArray<NSTextCheckingResult *> *matches = [regex matchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length)];
+    NSMutableArray *results = @[].mutableCopy;
+    
+    for (NSTextCheckingResult *result in matches) {
+        NSString *rangeStr = NSStringFromRange(result.range);
+        NSString *matchStr = [string substringWithRange:result.range];
+        NSDictionary *dic = @{@"range":rangeStr,@"match":matchStr};
+        [results addObject:dic];
+    }
+    NSLog(@"results==%@",results);
     return matches;
 }
 

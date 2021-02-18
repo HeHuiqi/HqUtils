@@ -92,6 +92,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.contentView.hidden = YES;
     if (!_subContainerVC) {
         [self addChildViewController:self.subContainerVC];
         [cell addSubview:self.subContainerVC.view];
@@ -104,9 +105,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
     CGFloat y = scrollView.contentOffset.y;
-    if (y>=100 || self.canScroll==NO) {
-        scrollView.contentOffset = CGPointMake(0, 100);
+//    CGRect rect = [self.tableView rectForHeaderInSection:0];
+    
+    //第一个Cell的高度
+    CGFloat limitOffsetY = 100;
+   
+    NSLog(@"limitOffsetY=%@",@(limitOffsetY));
+
+    if (y>=limitOffsetY || self.canScroll==NO) {
+        scrollView.contentOffset = CGPointMake(0, limitOffsetY);
         self.canScroll = NO;
         self.subContainerVC.canScroll = YES;
     }
