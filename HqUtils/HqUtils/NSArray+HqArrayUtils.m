@@ -46,5 +46,38 @@
     }
     return splitResult;
 }
+//找出重复元素
+- (NSArray *)findDuplicateItems2{
+    if (self.count <=1) {
+        return nil;
+    }
+    NSMutableArray *resultItems = @[].mutableCopy;
+    for (NSInteger i = 0; i<self.count; i++) {
+        id item = self[i];
+        for (NSInteger j = i+1; j<self.count; j++) {
+            id subItem = self[j];
+            if ([item isEqual:subItem]) {
+                [resultItems addObject:item];
+            }
+        }
+    }
+    return resultItems;
+}
+- (NSArray *)findDuplicateItems{
+    if (self.count <=1) {
+        return nil;
+    }
+    NSMutableArray *duplicateItem = @[].mutableCopy;
+    NSMutableSet *set = [[NSMutableSet alloc] init];
+    for (NSNumber * item  in self) {
+        if (![set containsObject:item]) {
+            [set addObject:item];
+        }else{
+            [duplicateItem addObject:item];
+        }
+    }
+    return duplicateItem;
+}
+
 
 @end

@@ -1,0 +1,19 @@
+//
+//  HqTabCenterView.h
+//  HqUtils
+//
+//  Created by hehuiqi on 2021/3/16.
+//  Copyright © 2021 hhq. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface HqTabCenterView : UIView
+
+@property(nonatomic,strong) UIImageView *centerImageView;
+
+@end
+
+NS_ASSUME_NONNULL_END

@@ -23,10 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    [HqChatManage hqRegisterJMWithLaunchOptions:launchOptions];
-    
-    NSArray *ids = @[@"id1",@"id2"];
-    NSString *text = [ids componentsJoinedByString:@"-"];
-    NSLog(@"text==%@",text);
+//    [self initWeex];
  
     
     return YES;

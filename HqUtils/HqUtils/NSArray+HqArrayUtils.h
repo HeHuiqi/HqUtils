@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray *)splitArrayWithSubArrayCount:(NSInteger)count;
 //指定子数组大小分割数组，最后不足指定大小将剩余追加在最后
 - (NSArray *)splitArrayWithResult:(NSMutableArray *)splitResult subArrayCount:(NSInteger)count;
+//找出重复元素
+- (NSArray *)findDuplicateItems2;
+- (NSArray *)findDuplicateItems;
 @end
 
 NS_ASSUME_NONNULL_END

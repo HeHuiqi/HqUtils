@@ -1,14 +1,14 @@
 //
-//  HqRichTextView.m
+//  Button.m
 //  HqUtils
 //
-//  Created by hehuiqi on 7/5/19.
-//  Copyright © 2019 hhq. All rights reserved.
+//  Created by hehuiqi on 2021/2/20.
+//  Copyright © 2021 hhq. All rights reserved.
 //
 
-#import "HqRichTextView.h"
+#import "Button.h"
 
-@implementation HqRichTextView
+@implementation Button
 
 /*
 // Only override drawRect: if you perform custom drawing.
