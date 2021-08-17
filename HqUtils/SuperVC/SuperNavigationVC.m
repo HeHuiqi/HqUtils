@@ -31,7 +31,6 @@
     
 }
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    
     BOOL isPop = self.viewControllers.count==1 ? NO:YES;
     return isPop;
 }

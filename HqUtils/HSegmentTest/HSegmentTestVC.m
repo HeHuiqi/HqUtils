@@ -119,7 +119,27 @@ HHPullDownContentViewDelegate>
 }
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    [self.categoryView scrollViewOffsetX:scrollView.contentOffset.x];
     
+    CGFloat ratio = scrollView.contentOffset.x/scrollView.bounds.size.width;
+    NSInteger maxCount = round(scrollView.contentSize.width/scrollView.bounds.size.width);
+    //floorf(double)向下取整
+    NSInteger leftIndex = floorf(ratio);
+    leftIndex = MAX(0, MIN(maxCount - 1, leftIndex));
+    NSInteger rightIndex = leftIndex + 1;
+    
+    NSLog(@"ratio==%@,(int)ratio==%@,leftIndex==%@,rightIndex==%@",@(ratio),@((NSUInteger)ratio),@(leftIndex),@(rightIndex));
+    
+    CGPoint translatedPoint = [scrollView.panGestureRecognizer translationInView:scrollView];
+//    NSLog(@"translatedPoint==%@",@(translatedPoint));
+    if(translatedPoint.x < 0){
+        NSLog(@"右滑");
+    }
+    if(translatedPoint.x > 0){
+        NSLog(@"左滑");
+    }
+    UIColor *c = HqRandomColor;
+//同理通过translatedPoint.y 进行判断上下滑动
 }
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     CGFloat offsetX = scrollView.contentOffset.x;

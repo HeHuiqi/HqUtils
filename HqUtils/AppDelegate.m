@@ -12,7 +12,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 #import "HqEncrypt.h"
-
+#import "HqUncaughtExceptionHandler.h"
 
 @interface AppDelegate ()
 
@@ -22,12 +22,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [HqChatManage hqRegisterJMWithLaunchOptions:launchOptions];
-//    [self initWeex];
- 
+    [HqUncaughtExceptionHandler startCatchCrashWithShowException:NO];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(crashReport:) name:HqUncaughtExceptionReportNofity object:nil];
     
     return YES;
 }
+- (void)crashReport:(NSNotification *)notify{
+    NSLog(@"crash:%@",notify.object);
+}
+
 - (void)encryptParams{
         NSString *time =   [[HqDateFormatter shareInstance] getNowTimeTimestamp];
 

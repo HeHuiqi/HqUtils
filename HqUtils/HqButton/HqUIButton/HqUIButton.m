@@ -21,11 +21,34 @@
 }
 
 - (void)setup{
-    [self hqLayoutSuviews];
+
 }
-- (void)hqLayoutSuviews{
-    
+- (void)setNormalTitle:(NSString *)normalTitle{
+    _normalTitle = normalTitle;
+    [self setTitle:normalTitle forState:(UIControlStateNormal)];
 }
+- (void)setSelectedTitle:(NSString *)selectedTitle{
+    _selectedTitle = selectedTitle;
+    [self setTitle:selectedTitle forState:(UIControlStateSelected)];
+}
+- (void)setNormalTitleColor:(UIColor *)normalTitleColor{
+    _normalTitleColor = normalTitleColor;
+    [self setTitleColor:normalTitleColor forState:(UIControlStateNormal)];
+}
+- (void)setSelectedTitleColor:(UIColor *)selectedTitleColor{
+    _selectedTitleColor = selectedTitleColor;
+    [self setTitleColor:selectedTitleColor forState:(UIControlStateSelected)];
+}
+
+- (void)setNormalImage:(UIImage *)normalImage{
+    _normalImage = normalImage;
+    [self setImage:normalImage forState:(UIControlStateNormal)];
+}
+- (void)setSelectedImage:(UIImage *)selectedImage{
+    _selectedImage = selectedImage;
+    [self setImage:selectedImage forState:(UIControlStateSelected)];
+}
+
 - (CGFloat)imageLabelSpace{
     if (self.currentImage == nil) {
         return 0;
@@ -66,11 +89,12 @@
     CGFloat height = fmax(imageSize.height, lableSize.height);
     width = width + imageLabelSpace + self.contentEdgeInsets.left + self.contentEdgeInsets.right;
     height = height + self.contentEdgeInsets.top + self.contentEdgeInsets.bottom;
-    
+    NSLog(@"size==");
     return CGSizeMake(width, height);
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
+    NSLog(@"layout");
 
     switch (self.imagePosition) {
         case HqUIButtonImagePositionLeft:

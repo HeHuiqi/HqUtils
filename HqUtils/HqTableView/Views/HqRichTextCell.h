@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HqCellModel.h"
 
+#import "HqRichTextContentView.h"
 
 typedef void(^HqImageViweSizeChange) (void);
 
@@ -20,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) UIImageView *firstImageView;
 @property (nonatomic,strong) UIView *bottomView;
 @property (nonatomic,strong) HqCellModel *cellModel;
+
+@property(nonatomic,strong) HqRichTextContentView *richTextContentView;
 
 @property (nonatomic,assign) BOOL imageIsLoaded;
 

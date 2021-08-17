@@ -23,20 +23,18 @@
     });
     return session;
 }
-+ (NSURLSession *)createMyURLSession
-{
++ (NSURLSession *)createMyURLSession{
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:sessionConfig delegate:[self shareInstance] delegateQueue:[NSOperationQueue mainQueue]];
     return urlSession;
 }
 #pragma mark - 创建请求
-+ (NSMutableURLRequest *)createRequestWithHeaders:(NSDictionary *)headers urlString:(NSString *)urlstring requestMethod:(NSString *)method parames:(id)parame
-{
++ (NSMutableURLRequest *)createRequestWithHeaders:(NSDictionary *)headers urlString:(NSString *)urlstring requestMethod:(NSString *)method params:(id)params{
     NSURL *url = nil;
     NSMutableURLRequest *request = nil;
-    if (parame)
+    if (params)
     {
-        NSData *data = [NSJSONSerialization dataWithJSONObject:parame options:NSJSONWritingPrettyPrinted error:nil];
+        NSData *data = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil];
         NSString *jsonStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
         
         if ([method isEqualToString:@"GET"])
@@ -78,12 +76,12 @@
 + (NSURLSessionDataTask *)createSessionTasWithHeaders:(NSDictionary *)headers
                                             urlString:(NSString *)urlstring
                                         requestMethod:(NSString *)method
-                                              parames:(id)parame
+                                              params:(id)params
                                             withBlock:(HqRequestTaskComplete)myRequestTaskComplet
 {
     NSURLSession *session = [self createMyURLSession];
 
-    NSMutableURLRequest *request  =[self createRequestWithHeaders:headers urlString:urlstring requestMethod:method parames:parame];
+    NSMutableURLRequest *request  =[self createRequestWithHeaders:headers urlString:urlstring requestMethod:method params:params];
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSString *dataString = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];

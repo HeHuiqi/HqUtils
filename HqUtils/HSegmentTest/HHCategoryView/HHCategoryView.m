@@ -255,6 +255,19 @@
 
 
 }
+- (void)scrollViewOffsetX:(CGFloat)OffsetX{
+//    NSLog(@"offsetX == %@",@(OffsetX));
+    if (OffsetX >=0) {
+        CGRect indicatorViewRect = self.indicatorView.frame;
+        CGFloat indicatorWidth = indicatorViewRect.size.width;
+        CGFloat scale = OffsetX / self.bounds.size.width;
+        CGFloat initX = (self.itemWidth - indicatorWidth)/2.0;
+        NSLog(@"scale==%@",@(scale));
+        indicatorViewRect.origin.x = self.itemSpace + scale * self.itemWidth +initX;
+        self.indicatorView.frame = indicatorViewRect;
+    }
+
+}
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.collectionView.frame = self.bounds;

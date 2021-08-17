@@ -1,5 +1,5 @@
 //
-//  HqLable.h
+//  HqUILable.h
 //  HqUtils
 //
 //  Created by hehuiqi on 2021/4/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HqLable : UILabel
+@interface HqUILable : UILabel
 
 @property(nonatomic,assign) UIEdgeInsets contentInsets;
 

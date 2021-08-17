@@ -18,27 +18,6 @@ static Dialog *instance = nil;
     return instance;
 }
 
-+ (void)alert:(NSString *)message {
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:nil 
-                              message:message 
-                              delegate:nil 
-                              cancelButtonTitle:@"确定" 
-                              otherButtonTitles:nil, nil];
-    [alertView show];
-
-}
-
-+ (void)alertWithTitle:(NSString *)title andMessage:(NSString *)message {
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:title
-                              message:message
-                              delegate:nil
-                              cancelButtonTitle:@"确定"
-                              otherButtonTitles:nil, nil];
-    [alertView show];
- 
-}
 
 + (void)toast:(UIViewController *)controller withMessage:(NSString *)message {
    
@@ -86,10 +65,6 @@ static Dialog *instance = nil;
     [hud hideAnimated:YES afterDelay:1];
 }
 
-+ (void)hideSimpleToast
-{
-    [SVProgressHUD dismissWithDelay:1];
-}
 
 + (void)toastCenter:(NSString *)message {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];

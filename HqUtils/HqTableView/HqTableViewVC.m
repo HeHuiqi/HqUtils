@@ -38,14 +38,8 @@
     [self.datas addObject:self.cellmodel];
     [self initView];
 
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        self.cellmodel = [[HqCellModel alloc] init];
-        self.cellmodel.content = @"双卡双待噶的根深蒂固说广安市速度快噶说的噶说的跟哈是的啊是个撒蛋糕阿森松岛赶快拉屎森岛宽晃撒到噶";
-        self.cellmodel.imageUrl = @"https://cdn.lcyoufu.com/user/1470/weiwen/28227d9c92aa14df0cfae1cea59ea8d9.jpg?x-oss-process=style/style";
-        NSLog(@"刷新---");
-        [self.tableView reloadData];
-    });
+    self.cellmodel.content = @"双卡双待噶的根深蒂固说广安市速度快噶说的噶说的跟哈是的啊是个撒蛋糕阿森松岛赶快拉屎森岛宽晃撒到噶";
+    self.cellmodel.imageUrl = @"https://cdn.lcyoufu.com/user/1470/weiwen/28227d9c92aa14df0cfae1cea59ea8d9.jpg?x-oss-process=style/style";
 }
 - (void)initView{
     [self.view addSubview:self.tableView];
@@ -57,7 +51,7 @@
         _tableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.estimatedRowHeight = SCREEN_HEIGHT*100;
+        _tableView.estimatedRowHeight = SCREEN_WIDTH*100;
         _tableView.tableFooterView = [UIView new];
     }
     return _tableView;
@@ -74,9 +68,6 @@
         cell = [[HqRichTextCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     cell.cellModel = cellModel;
-//    cell.imageViweSizeChange = ^{
-//        [tableView reloadData];
-//    };
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

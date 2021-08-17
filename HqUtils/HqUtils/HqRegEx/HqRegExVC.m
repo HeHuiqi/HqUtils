@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self regexTest];
-    [self testRegEx];
+    [self regexTest];
+//    [self testRegEx];
 
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -59,11 +59,13 @@
     
     NSString *key = @"name";
     //获取url参数，这里是获取name参数的值
-    NSString *text = @"name=jike&age=12";
-    NSString *regex = [NSString stringWithFormat:@"name=[^&]*"];
+    NSString *text = @"age=12&name=jike&address=pudong";
+    // name=[^&]*
+    NSString *regex = [NSString stringWithFormat:@"%@=[^&]*",key];
     
     NSArray *atMatchs =   [self findString:text regexString:regex];
       for (NSTextCheckingResult *match in atMatchs) {
+
           NSString *matchStr = [text substringWithRange:match.range];
           NSLog(@"matchStr:%@",matchStr);
           matchStr = [matchStr substringFromIndex:key.length+1];
@@ -139,16 +141,18 @@
 
 - (NSArray<NSTextCheckingResult *> *)findString:(NSString *)string regexString:(NSString *)regexString
 {
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionAnchorsMatchLines error:nil];
-    NSArray<NSTextCheckingResult *> *matches = [regex matchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length)];
-    NSMutableArray *results = @[].mutableCopy;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexString options:NSRegularExpressionAllowCommentsAndWhitespace error:nil];
+    NSArray<NSTextCheckingResult *> *matches = [regex matchesInString:string options:NSMatchingReportCompletion range:NSMakeRange(0, string.length)];
+//    NSLog(@"matches==%@",matches);
     
+    NSMutableArray *results = @[].mutableCopy;
     for (NSTextCheckingResult *result in matches) {
         NSString *rangeStr = NSStringFromRange(result.range);
         NSString *matchStr = [string substringWithRange:result.range];
         NSDictionary *dic = @{@"range":rangeStr,@"match":matchStr};
         [results addObject:dic];
     }
+    //打印输出匹配的所有字符串信息
     NSLog(@"results==%@",results);
     return matches;
 }

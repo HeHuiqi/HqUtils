@@ -22,6 +22,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) HqUIButtonImagePosition imagePosition;
 @property(nonatomic,assign) CGFloat imageLabelSpace;
 
+@property(nonatomic,copy) NSString *normalTitle;
+@property(nonatomic,copy) NSString *selectedTitle;
+
+@property(nonatomic,strong) UIColor *normalTitleColor;
+@property(nonatomic,strong) UIColor *selectedTitleColor;
+
+@property(nonatomic,strong) UIImage *normalImage;
+@property(nonatomic,strong) UIImage *selectedImage;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

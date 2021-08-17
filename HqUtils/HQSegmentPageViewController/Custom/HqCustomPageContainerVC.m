@@ -24,7 +24,6 @@
     if (!_pageV1) {
         _pageV1 = [[HQPage1VC alloc] init];
         _pageV1.title = @"HQPage1VC";
-//        _pageV1.delegate = self;
         
     }
     return _pageV1;
@@ -34,27 +33,15 @@
     if (!_pageV2) {
         _pageV2 = [[HQPage1VC alloc] init];
         _pageV2.title = @"HQPage2VC";
-//        _pageV2.delegate = self;
     }
     return _pageV2;
 }
 - (HQPage1VC *)pageV3{
     if (!_pageV3) {
         _pageV3 = [[HQPage1VC alloc] init];
-        _pageV3.title = @"HQPage3VC";
-//        _pageV3.delegate = self;
-        
+        _pageV3.title = @"HQPage3VC";        
     }
     return _pageV3;
-}
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-//    NSLog(@"self-page-view==%@",self.view);
-
-//    CGFloat width = 375;
-//    CGFloat height = 603;
-//    self.containerScrollview.frame = CGRectMake(0, 0, width, height);
-//    self.containerScrollview.contentSize = CGSizeMake(self.pageItems.count*width, height);
 }
 
 /*

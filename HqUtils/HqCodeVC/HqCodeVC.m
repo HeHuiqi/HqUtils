@@ -11,8 +11,8 @@
 #import "HqLoopView.h"
 #import "HqRichTextView.h"
 #import "HqRichTextUtil.h"
-#import "HqLable.h"
-#import "HqImageTitleView.h"
+#import "HqUILable.h"
+#import "HqButton.h"
 #import "HqUIButton.h"
 #import "HqTextFiled.h"
 #import "HqLab.h"
@@ -20,6 +20,9 @@
 #import <objc/runtime.h>
 #import "HqCornerCell.h"
 #import "UITableView+CornerCell.h"
+#import "HqUITextField.h"
+
+#import "HqLableButton.h"
 
 @interface HqCodeVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -28,33 +31,19 @@
 @property(nonatomic,strong) NSMutableArray *datas;
 @property(nonatomic,strong) UIImageView *imageV;
 
-@property(nonatomic,strong) HqLable *qLable;
-@property(nonatomic,strong) HqImageTitleView *imageTitleView;
+@property(nonatomic,strong) HqUILable *qLable;
+@property(nonatomic,strong) HqButton *qBtn;
 @property(nonatomic,strong) HqLab *lab;
+
+@property(nonatomic,strong) HqUIButton *btn;
 
 @end
 
 @implementation HqCodeVC
 
- void solve(int *arr,int length) {
-         for(int i = 0; i < length; i++) {
-             while(arr[i] != i) {
-                 if(arr[i] != arr[arr[i]]) {
-                     int temp = arr[i];
-                     
-                     arr[i] = arr[temp];
-                     arr[temp] = temp;
-                 } else {
-                     NSLog(@"%@",@(arr[i]));
-//                     return true;
-                     break;
-                 }
-             }
-         }
- }
-- (HqLable *)qLable{
+- (HqUILable *)qLable{
     if (!_qLable) {
-        _qLable = [[HqLable alloc] init];
+        _qLable = [[HqUILable alloc] init];
         _qLable.backgroundColor = [UIColor colorWithRed:196.0/255 green:58.0/255.0 blue:133.0/255 alpha:1.0];
         _qLable.font = [UIFont systemFontOfSize:16];
         _qLable.textColor = [UIColor whiteColor];
@@ -62,27 +51,27 @@
     }
     return _qLable;
 }
-- (HqImageTitleView *)imageTitleView{
-    if (!_imageTitleView) {
-        _imageTitleView = [[HqImageTitleView alloc] init];
+- (HqButton *)qBtn{
+    if (!_qBtn) {
+        _qBtn = [[HqButton alloc] init];
     }
-    return _imageTitleView;
+    return _qBtn;
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
+//    [self testView];
 //    [self currentVC];
-    [self testTabView];
+//    [self testTabView];
 //    [self testLoopView];
 
 //    [self testRichtext];
 //    [self testSizeFit];
 //    [self testIntrinsicContentSize];
-//    [self testBtn];
+    [self testBtn];
     
 
 //    [self testTf];
 //    [self testLab];
-    [self testView];
     
 
 }
@@ -100,8 +89,30 @@
 
 }
 - (void)testView{
-   
+    HqUITextField *tf = [[HqUITextField alloc] init];
+    tf.contentInsets = UIEdgeInsetsMake(0, 10, 0, 10);
+    tf.placeholder = @"请输入";
+    [self.view addSubview:tf];
+    [tf mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(10);
+        make.top.equalTo(self.view).offset(self.navBarHeight + 20);
+        make.width.mas_equalTo(self.view.bounds.size.width - 20);
+        make.height.mas_equalTo(40);
+    }];
+    tf.backgroundColor = HqRandomColor;
     
+    HqLableButton *labBtn = [[HqLableButton alloc] init];
+    labBtn.lableAlign = HqLableAlignCenter;
+    labBtn.contentInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    labBtn.labSpace = 5;
+    [self.view addSubview:labBtn];
+    [labBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(10);
+        make.top.equalTo(tf.mas_bottom).offset(20);
+    }];
+    
+    labBtn.titleLab.text = @"今日收益";
+    labBtn.contentLab.text = @"50.134\n万";
     
 }
 - (void)testTf{
@@ -143,65 +154,72 @@
     btn.titleLabel.font = [UIFont systemFontOfSize:15];
     btn.imagePosition = HqUIButtonImagePositionLeft;
     btn.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    
-    [btn setImage:[UIImage imageNamed:@"collect_icon"] forState:(UIControlStateNormal)];
-    [btn setImage:[UIImage imageNamed:@"collect_selected_icon"] forState:(UIControlStateSelected)];
-    [btn setTitle:@"收藏100" forState:(UIControlStateNormal)];
-
-    [btn setTitleColor:[UIColor blueColor] forState:(UIControlStateNormal)];
-    [btn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
-
+    btn.normalImage = [UIImage imageNamed:@"collect_icon"];
+    btn.selectedImage = [UIImage imageNamed:@"collect_selected_icon"];
+    btn.normalTitle = @"收藏100";
+    btn.normalTitleColor = [UIColor blueColor];
+    btn.selectedTitleColor = [UIColor redColor];
     btn.backgroundColor = [UIColor groupTableViewBackgroundColor];
     btn.layer.cornerRadius = 4;
+    self.btn = btn;
+    
 
     [self.view addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(10);
         make.top.equalTo(self.view).offset(self.navBarHeight+20);
-        make.width.mas_equalTo(70);
+//        make.width.mas_equalTo(70);
     }];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:self.imageTitleView];
-    [self.imageTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.qBtn];
+    [self.qBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(10);
         make.top.equalTo(btn.mas_bottom).offset(10);
 //        make.top.equalTo(self.view).offset(self.navBarHeight+20);
-//        make.width.mas_equalTo(70);
-//        make.height.mas_equalTo(40);
+//        make.width.mas_equalTo(100);
+//        make.height.mas_equalTo(100);
     }];
-    self.imageTitleView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.qBtn.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
 //    UIImage *normalBgImage = [UIImage createImageWithColor:[UIColor blueColor]];
 //    UIImage *highlightedBgImage = [UIImage createImageWithColor:[UIColor redColor]];
-//    self.imageTitleView.normalBackgroundImage = normalBgImage;
-//    self.imageTitleView.highlightedBackgroundImage = highlightedBgImage;
+//    self.qBtn.normalBackgroundImage = normalBgImage;
+//    self.qBtn.highlightedBackgroundImage = highlightedBgImage;
     
-    self.imageTitleView.labIconSpace = 10;
+    self.qBtn.labIconSpace = 10;
+    self.qBtn.contentInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    //左右布局
+    self.qBtn.style = HqButtonStyleIconLeft;
+//    self.qBtn.style = HqButtonStyleIconRight;
     
-    //左右布局，只设置左右边距即可，当仅有一个视图时需要设置上左下右边距
-    self.imageTitleView.style = HqImageTitleStyleIconRight;
-    self.imageTitleView.contentInsets = UIEdgeInsetsMake(0, 10, 0, 10);
-    
-    //上下布局,只设置上下边距即可，当仅有一个视图时需要设置上左下右边距
-//    self.imageTitleView.style = HqImageTitleStyleIconTop;
-//    self.imageTitleView.contentInsets = UIEdgeInsetsMake(10, 0, 10, 0);
-    
+    //上下布局
+//    self.qBtn.style = HqButtonStyleIconTop;
+//    self.qBtn.style = HqButtonStyleIconBottom;
+//    self.qBtn.style = HqButtonStyleOnlyShowIcon;
+//    self.qBtn.style = HqButtonStyleOnlyShowLab;
 
-    self.imageTitleView.normalImage = [UIImage imageNamed:@"collect_icon"];
-    self.imageTitleView.selectedImage = [UIImage imageNamed:@"collect_selected_icon"];
-    self.imageTitleView.lable.text = @"收藏100";
-    self.imageTitleView.normalTextCoror = [UIColor colorWithRed:161.0/255 green:161.0/255 blue:161.0/255 alpha:1.0];
-    self.imageTitleView.selectedTextCoror = [UIColor colorWithRed:247.0/255 green:200.0/255 blue:71.0/255 alpha:1.0];
+
+
+    self.qBtn.normalImage = [UIImage imageNamed:@"collect_icon"];
+    self.qBtn.selectedImage = [UIImage imageNamed:@"collect_selected_icon"];
+    self.qBtn.lable.text = @"收藏900000";
+//    self.qBtn.lable.text = @"2000点赞";
+
+    self.qBtn.normalTextColor = [UIColor colorWithRed:161.0/255 green:161.0/255 blue:161.0/255 alpha:1.0];
+    self.qBtn.selectedTextColor = [UIColor colorWithRed:255.0/255 green:198.0/255 blue:23.0/255 alpha:1.0];
     
-    self.imageTitleView.layer.cornerRadius = 4;
-    self.imageTitleView.clipsToBounds = YES;
+//    self.qBtn.tintColor = [UIColor blueColor];
     
-    [self.imageTitleView addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.qBtn.layer.cornerRadius = 4;
+    self.qBtn.clipsToBounds = YES;
     
+    [self.qBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.qBtn.disEanbleTextColor = [UIColor purpleColor];
 
 
 }
+
 - (void)testIntrinsicContentSize{
 
     
@@ -216,42 +234,42 @@
 //        make.width.mas_equalTo(100);
     }];
     
-    [self.view addSubview:self.imageTitleView];
-    [self.imageTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.qBtn];
+    [self.qBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view).offset(-10);
         make.top.equalTo(self.qLable.mas_bottom).offset(10);
 //        make.top.equalTo(self.view).offset(self.navBarHeight+20);
 //        make.width.mas_equalTo(100);
 //        make.height.mas_equalTo(40);
     }];
-    self.imageTitleView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.qBtn.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
 //    UIImage *normalBgImage = [UIImage createImageWithColor:[UIColor blueColor]];
 //    UIImage *highlightedBgImage = [UIImage createImageWithColor:[UIColor redColor]];
-//    self.imageTitleView.normalBackgroundImage = normalBgImage;
-//    self.imageTitleView.highlightedBackgroundImage = highlightedBgImage;
+//    self.qBtn.normalBackgroundImage = normalBgImage;
+//    self.qBtn.highlightedBackgroundImage = highlightedBgImage;
     
-    self.imageTitleView.labIconSpace = 10;
+    self.qBtn.labIconSpace = 10;
     
-    //左右布局，只设置左右边距即可，当仅有一个视图时需要设置上左下右边距
-    self.imageTitleView.style = HqImageTitleStyleIconLeft;
-    self.imageTitleView.contentInsets = UIEdgeInsetsMake(0, 10, 0, 10);
+    //左右布局
+//    self.qBtn.style = HqButtonStyleIconLeft;
+//    self.qBtn.contentInsets = UIEdgeInsetsMake(0, 10, 0, 10);
     
-    //上下布局,只设置上下边距即可，当仅有一个视图时需要设置上左下右边距
-//    self.imageTitleView.style = HqImageTitleStyleIconTop;
-//    self.imageTitleView.contentInsets = UIEdgeInsetsMake(10, 0, 10, 0);
+    //上下布局
+    self.qBtn.style = HqButtonStyleIconTop;
+    self.qBtn.contentInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     
 
-    self.imageTitleView.normalImage = [UIImage imageNamed:@"collect_icon"];
-    self.imageTitleView.selectedImage = [UIImage imageNamed:@"collect_selected_icon"];
-    self.imageTitleView.lable.text = @"收藏100";
-    self.imageTitleView.normalTextCoror = [UIColor colorWithRed:161.0/255 green:161.0/255 blue:161.0/255 alpha:1.0];
-    self.imageTitleView.selectedTextCoror = [UIColor colorWithRed:247.0/255 green:200.0/255 blue:71.0/255 alpha:1.0];
+    self.qBtn.normalImage = [UIImage imageNamed:@"collect_icon"];
+    self.qBtn.selectedImage = [UIImage imageNamed:@"collect_selected_icon"];
+    self.qBtn.lable.text = @"收藏100";
+    self.qBtn.normalTextColor = [UIColor colorWithRed:161.0/255 green:161.0/255 blue:161.0/255 alpha:1.0];
+    self.qBtn.selectedTextColor = [UIColor colorWithRed:247.0/255 green:200.0/255 blue:71.0/255 alpha:1.0];
     
-    self.imageTitleView.layer.cornerRadius = 4;
-    self.imageTitleView.clipsToBounds = YES;
+    self.qBtn.layer.cornerRadius = 4;
+    self.qBtn.clipsToBounds = YES;
     
-    [self.imageTitleView addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.qBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     
 }
 - (void)btnClick:(UIControl *)btn{
@@ -262,40 +280,6 @@
     }else{
         [Dialog simpleToast:@"取消收藏成功"];
     }
-}
-- (void)testSizeFit{
-    
-    /*
-     @property(nonatomic,readonly,strong) NSString *familyName;
-     @property(nonatomic,readonly,strong) NSString *fontName;
-     @property(nonatomic,readonly)        CGFloat   pointSize;
-     @property(nonatomic,readonly)        CGFloat   ascender;
-     @property(nonatomic,readonly)        CGFloat   descender;
-     @property(nonatomic,readonly)        CGFloat   capHeight;
-     @property(nonatomic,readonly)        CGFloat   xHeight;
-     @property(nonatomic,readonly)        CGFloat   lineHeight API_AVAILABLE(ios(4.0));
-     @property(nonatomic,readonly)        CGFloat   leading;
-     */
-    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(10, self.navBarHeight, 0, 0)];
-    lab.text = @"我是\n一个标签\n多行代码";
-    lab.numberOfLines = 0;
-    UIFont *font = SetFont(16);
-    NSLog(@"font.leading == %@",@(font.leading));
-    NSLog(@"font.pointSize == %@",@(font.pointSize));
-    NSLog(@"font.ascender == %@",@(font.ascender));
-    NSLog(@"font.descender == %@",@(font.descender));
-    NSLog(@"font.xHeight == %@",@(font.xHeight));
-
-
-    NSLog(@"font.lineHeight == %@",@(font.lineHeight));
-
-    lab.font = font;
-    lab.textColor = [UIColor whiteColor];
-    lab.backgroundColor = HqRandomColor;
-    [self.view addSubview:lab];
-//    [lab setContentHuggingPriority:(UILayoutPriorityDefaultHigh) forAxis:(UILayoutConstraintAxisHorizontal)];
-//    [lab sizeToFit];
-    NSLog(@"lab.intrinsicContentSize==%@",@(lab.intrinsicContentSize));
 }
 - (void)testRichtext{
     NSString *html = @"<p>征文测试征文测试征文测试</p><p>征文测试征文测试征文测试</p><p><br/></p><p><img src=\"https://lichang-dev.oss-cn-shanghai.aliyuncs.com/user/43/postArt/98932ba5afe8d65e6e393a75449b1c7e.jpg?x-oss-process=style/style\"/>征文测试</p><p><br/></p><p><br/></p><p><br/></p><p>征文测试征文测试征文测试征文测试征文测试征文测试</p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p>征文测试征文测试征文测试征文测试征文测试征文测试</p><p>征文测试征文测试<br/></p><p>征文测试征文测试<br/></p>";
@@ -487,6 +471,9 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
+    self.qBtn.lable.text = @"100000000点赞";
+    self.btn.normalTitle = @"abc";
+    
 }
 - (void)initView{
     

@@ -68,7 +68,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqCodeVC",@"HSegmentTestVC",@"HqCustomTabBarVC",@"HqWeexRootVC",@"HqH5RichTextEditorVC",@"HqDatePickerVC",@"HqRegExVC",@"AVPlayerCachingVC",@"HqCustomSegmentPageVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqClipVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
+    _titles = @[@"HqCodeVC",@"HqClipVC",@"HSegmentTestVC",@"HqCustomTabBarVC",@"HqWeexRootVC",@"HqH5RichTextEditorVC",@"HqDatePickerVC",@"HqRegExVC",@"AVPlayerCachingVC",@"HqCustomSegmentPageVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
     UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
 
@@ -132,6 +132,12 @@
 }
 
 - (void)enterAlert:(UIBarButtonItem *)sender{
+    
+    NSArray *arr=[NSArray arrayWithObjects:@"4",@"5", nil];
+    NSLog(@"%@",[arr objectAtIndex:3]);
+    
+    
+    return;
 
     HqCustomAlertVC *alert = [[HqCustomAlertVC alloc] init];
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ) {
@@ -181,6 +187,7 @@
     UIViewController *vc = [vcClass new];
     vc.title = vcname;
     [self.navigationController pushViewController:vc animated:YES];
+
 
 }
 

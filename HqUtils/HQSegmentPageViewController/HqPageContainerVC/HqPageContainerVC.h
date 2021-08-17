@@ -8,17 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "HqPageViewProtocol.h"
+#import "HqUIScrollView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HqPageContainerVC : UIViewController<UIScrollViewDelegate>
 
 @property (nonatomic,weak) id<HqPageViewProtocol> delegate;
 
-@property (nonatomic,strong) UIScrollView *containerScrollview;
+@property (nonatomic,strong) HqUIScrollView *containerScrollview;
 @property (nonatomic,assign) NSUInteger currentPageIndex;//当前选中Item index
 @property (nonatomic,assign) NSUInteger lastPageIndex;//上一个选中Item index
 
 @property (nonatomic,strong) NSArray *pageItems;//所有的Item vc
+@property (nonatomic,strong) NSMutableDictionary *pageItemsDic;//所有的Item vc
 
 //添加子vc
 - (void)hqAddChildVCWithindex:(NSInteger)index;

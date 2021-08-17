@@ -15,17 +15,31 @@
 
 @implementation HqPageContainerVC
 
+- (NSMutableDictionary *)pageItemsDic{
+    if (!_pageItemsDic) {
+        _pageItemsDic = @{}.mutableCopy;
+    }
+    return _pageItemsDic;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.currentPageIndex = 0;
     [self.view addSubview:self.containerScrollview];
 }
 - (void)hqAddChildVCWithindex:(NSInteger)index{
+    BOOL invalidIndex = index >= self.pageItems.count;
+    if (invalidIndex) {
+        NSAssert(!invalidIndex, @"index out of viewControllers bounds");
+        return;
+    }
     NSArray *subvcs  = self.childViewControllers;
+
     CGFloat height = self.containerScrollview.bounds.size.height;
     CGFloat width  = self.containerScrollview.bounds.size.width;
     UIViewController *vc = self.pageItems[index];
     if (![subvcs containsObject:vc]) {
+        NSString *vckey = [NSString stringWithFormat:@"HqPageItemVC-%@",@(index)];
+        [self.pageItemsDic setObject:vc forKey:vckey];
         [self addChildViewController:vc];
         [self.containerScrollview addSubview:vc.view];
         vc.view.frame = CGRectMake(width*index, 0, width, height);
@@ -40,11 +54,12 @@
     }
 }
 
-- (UIScrollView *)containerScrollview{
+- (HqUIScrollView *)containerScrollview{
     if (!_containerScrollview) {        
-        _containerScrollview = [[UIScrollView alloc] initWithFrame:CGRectZero];
+        _containerScrollview = [[HqUIScrollView alloc] initWithFrame:CGRectZero];
         _containerScrollview.pagingEnabled = YES;
         _containerScrollview.delegate = self;
+        _containerScrollview.bounces = NO;
     }
     return _containerScrollview;
 }
@@ -120,11 +135,15 @@
 #pragma mark - 切换Item
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated{
     CGPoint offset = CGPointMake(index*self.containerScrollview.bounds.size.width, 0);
-    [self.containerScrollview setContentOffset:offset animated:YES];
+    [self.containerScrollview setContentOffset:offset animated:animated];
 }
 - (void)refreshCurrentItemData{
-    HqPageItemSuperVC *vc = self.childViewControllers[self.currentPageIndex];
-    [vc refreshData];
+    //    HqPageItemSuperVC *vc = self.childViewControllers[self.currentPageIndex];
+    NSString *vckey = [NSString stringWithFormat:@"HqPageItemVC-%@",@(self.currentPageIndex)];
+    HqPageItemSuperVC *vc = [self.pageItemsDic objectForKey:vckey];
+    if (vc) {
+        [vc refreshData];
+    }
 }
 #pragma mark 更新主tableview是否可滚动
 - (void)notifyMainSrollViewScrollEnabled:(BOOL)scrollEnabled{
@@ -142,7 +161,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     CGFloat x = scrollView.contentOffset.x;
-    NSInteger index = (NSInteger)x/SCREEN_WIDTH;
+    NSInteger index = (NSInteger)x/scrollView.bounds.size.width;
     if (self.currentPageIndex != index) {
         self.lastPageIndex = self.currentPageIndex;
         self.currentPageIndex = index;

@@ -36,7 +36,10 @@
     self.loopView = loopView;
     
     [self.sectionHeaderView addSubview:self.segment];
-//    [self addRefreshUI]; //添加下拉刷新就不能要做下拉放大了，刷新自己定制
+    [self addRefreshUI]; //添加下拉刷新就不能要做下拉放大了，刷新自己定制
+    
+    self.pageContainerVC = [[HqCustomPageContainerVC alloc] init];
+    
 }
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -45,7 +48,7 @@
     self.loopView.frame = CGRectMake(10, 0, self.view.bounds.size.width-20, self.headerViewHeight);
 //    //配置自己的分段视图
     self.segment.center = self.sectionHeaderView.center;
-    [self addArcWithView:self.loopView];
+//    [self addArcWithView:self.loopView];
     
 }
 
@@ -56,8 +59,8 @@
 }
 - (void)mainTableviewDidScroll:(UIScrollView *)scrollView{
     [super mainTableviewDidScroll:scrollView];
-    //添加处理下拉放大，则需要自定义自己的下拉刷新了 MJRefresh将会是UI错乱
-    
+    /*
+    //添加处理下拉放大，则需要自定义自己的下拉刷新了 MJRefresh将会使UI错乱
     CGFloat y = scrollView.contentOffset.y;
     if (y<=0) {
 //        NSLog(@"y==%@",@(y));
@@ -67,7 +70,8 @@
         self.loopView.frame = loopRect;
         [self addArcWithView:self.loopView];
     }
-    
+    */
+     
 }
 - (void)addArcWithView:(UIView *)view{
     CGFloat width = view.bounds.size.width;
@@ -87,7 +91,6 @@
     masklayer.path = path.CGPath;
     view.layer.mask = masklayer;
 }
-//需要在ViewdidLoad调用 [self addRefreshUI];
 - (void)refresh{
     [super refresh];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -95,6 +98,65 @@
         [self.mainTableView.mj_header endRefreshing];
     });
 }
+#pragma mark UITableViewDelegate,UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSInteger sectionCount = tableView.numberOfSections;
+    if (section < sectionCount-1) {
+        return 3;
+    }
+    return 1;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    NSInteger sectionCount = tableView.numberOfSections;
+    if (section < sectionCount-1 ) {
+        UILabel *shv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
+        shv.textAlignment = NSTextAlignmentCenter;
+        shv.text = [NSString stringWithFormat:@"section--%@",@(section)];
+        shv.backgroundColor = HqRandomColor;
+        return shv;
+    }
+
+    return [super tableView:tableView viewForHeaderInSection:section];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    /*
+    NSInteger sectionCount = tableView.numberOfSections;
+    if (section < sectionCount-1) {
+        UIView *shv = [self tableView:tableView viewForHeaderInSection:section];
+        return CGRectGetHeight(shv.frame);
+    }
+    return [super tableView:tableView heightForHeaderInSection:section];
+    */
+    UIView *shv = [self tableView:tableView viewForHeaderInSection:section];
+    return CGRectGetHeight(shv.frame);
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger sectionCount = [tableView numberOfSections];
+    if (sectionCount-1 == indexPath.section) {
+        return tableView.bounds.size.height - self.sectionHeaderHeight;
+    }
+    return 50;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    NSInteger sectionCount = [tableView numberOfSections];
+    if (indexPath.section < sectionCount-1) {
+        static NSString *cellId = @"normalCell";
+        UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        cell.textLabel.text = [NSString stringWithFormat:@"normalCell-%@",@(indexPath.row)];
+        return cell;
+    }
+    
+    return [super tableView:tableView cellForRowAtIndexPath:indexPath];
+}
+
 /*
 #pragma mark - Navigation
 

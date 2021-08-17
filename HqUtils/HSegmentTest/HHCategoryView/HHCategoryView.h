@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)initSelectedIndex:(NSUInteger)index;
 - (void)reloadFirstItemContent:(id)content;
-
+- (void)scrollViewOffsetX:(CGFloat)OffsetX;
 @end
 
 @protocol HHCategoryViewDelegate <NSObject>

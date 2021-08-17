@@ -8,6 +8,12 @@
 
 #import "HqRichTextCell.h"
 
+@interface HqRichTextCell ()
+
+@property(nonatomic,assign) CGSize imageSize;
+
+@end
+
 @implementation HqRichTextCell
 
 - (UILabel *)contentLab{
@@ -26,6 +32,12 @@
     }
     return _firstImageView;
 }
+- (HqRichTextContentView *)richTextContentView{
+    if (!_richTextContentView) {
+        _richTextContentView = [[HqRichTextContentView alloc] init];
+    }
+    return _richTextContentView;
+}
 
 - (UIView *)bottomView{
     if (!_bottomView) {
@@ -43,89 +55,23 @@
 - (void)setup{
     UIView *contentView = self;
 
-    [contentView addSubview:self.contentLab];
-    [contentView addSubview:self.firstImageView];
-    [contentView addSubview:self.bottomView];
-    self.imageIsLoaded = NO;
-    [self hqLayout];
+    [contentView addSubview:self.richTextContentView];
+    
+    [self.richTextContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(0);
+        make.top.equalTo(self).offset(0);
+        make.right.equalTo(self).offset(0);
+        make.bottom.equalTo(self).offset(0);
+    }];
     
     
 }
-- (void)hqLayout{
-    
-    self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    CGFloat leftSpace = kZoomValue(15);
-    CGFloat contentW = SCREEN_WIDTH - leftSpace*2;
-    UIView *contentView = self;
-    [self.contentLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(contentView).offset(leftSpace);
-        make.top.equalTo(contentView).offset(leftSpace);
-        make.width.mas_equalTo(contentW);
-    }];
-    
-    [self.firstImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentLab.mas_bottom).offset(leftSpace);
-        make.left.equalTo(contentView).offset(leftSpace);
-        make.height.mas_equalTo(kZoomValue(30));
-        make.width.mas_equalTo(contentW);
-    }];
-    
-    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.firstImageView.mas_bottom).offset(leftSpace);
-        make.left.equalTo(contentView).offset(leftSpace);
-        make.width.mas_equalTo(contentW);
-        make.height.mas_equalTo(kZoomValue(40));
-        make.bottom.equalTo(contentView).offset(-leftSpace).priorityHigh();
-    }];
-}
+
 - (void)setCellModel:(HqCellModel *)cellModel{
     _cellModel = cellModel;
     if (_cellModel) {
-        
-        if (cellModel.content.length>0) {
-            
-        }
-        _contentLab.text = cellModel.content;
-         
-         CGFloat leftSpace = kZoomValue(15);
-         CGFloat contentW = SCREEN_WIDTH - leftSpace*2;
-         NSURL *url = [NSURL URLWithString:cellModel.imageUrl];
-         weakly(self);
-        //加载过就不在加载
-//         if (self.imageIsLoaded) {
-//             return;
-//         }
-         [self.firstImageView sd_setImageWithURL:url  completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-             NSLog(@"加载图片。。。");
-             if (image) {
-                 NSLog(@"加载图片完成");
-
-                 CGFloat scaleH = image.size.height/image.size.width;
-                 CGFloat imageH = contentW*scaleH;
-                 CGFloat imageBottomSpace = leftSpace*2+kZoomValue(40);
-                 UIView *contentView = self;
-                 strongly(self);
-                 [self.firstImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-                     make.height.mas_equalTo(imageH);
-                     make.bottom.equalTo(contentView).offset(-imageBottomSpace).priorityHigh();
-                     [self setNeedsLayout];
-                 }];
-                
-//                 self.imageIsLoaded = YES;
-                 //加载完成通知列表在刷新一次
-                 if (self.imageViweSizeChange) {
-                     NSLog(@"imageViweSizeChange");
-                     self.imageViweSizeChange();
-                 }
-             }
-             
-         }];
-       
+        self.richTextContentView.cellModel = cellModel;
     }
-}
-- (void)layoutSubviews{
-    [super layoutSubviews];
-    NSLog(@"layoutSubviews---%@",NSStringFromCGRect(self.bounds));
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -38,7 +38,6 @@
     
     //设置字体
     CTFontRef allfont = CTFontCreateWithName(CFSTR(""), 18, NULL);
-    UIFont *font = nil;
     CFAttributedStringSetAttribute(attributeStr, CFRangeMake(0, CFStringGetLength(str)), kCTFontAttributeName, allfont);
     
     //设置颜色

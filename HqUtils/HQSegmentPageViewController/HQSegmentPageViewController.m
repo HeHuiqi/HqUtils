@@ -7,7 +7,7 @@
 //
 
 #import "HQSegmentPageViewController.h"
-@interface HQSegmentPageViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HQSegmentPageViewController ()
 
 @end
 
@@ -22,19 +22,9 @@
     }
     return self;
 }
-- (UIView *)containerView{
-    if (!_containerView) {
-        _containerView = [[UIView alloc] init];
-    }
-    return _containerView;
-}
-- (void)refresh{
-    
-    //更新当前ItemPage的数据
-    [self.pageContainerVC refreshCurrentItemData];
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.bgImagView];
     //主视图
     [self.view addSubview:self.mainTableView];
     if (@available(iOS 11.0, *)) {
@@ -43,20 +33,24 @@
 
     }
     self.mainTableView.tableHeaderView = self.headerView;
-    [self addChildViewController:self.pageContainerVC];
-
+    
+//    self.pageContainerVC = [[HqCustomPageContainerVC alloc] init];
+//    [self addChildViewController:self.pageContainerVC];
     
 }
 - (void)addRefreshUI{
     //添加下拉刷新
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
     self.mainTableView.mj_header = header;
-    [self.view addSubview:self.containerView];
+}
+- (void)refresh{
+    //更新当前ItemPage的数据
+    [self.pageContainerVC refreshCurrentItemData];
 }
 #pragma mark - set
 - (void)setContainerCanScroll:(BOOL)containerCanScroll{
     _containerCanScroll = containerCanScroll;
-    self.mainTableView.showsVerticalScrollIndicator = _containerCanScroll;
+//    self.mainTableView.showsVerticalScrollIndicator = _containerCanScroll;
 }
 - (void)setHeaderViewHeight:(CGFloat)headerViewHeight{
     _headerViewHeight = headerViewHeight;
@@ -78,6 +72,16 @@
 }
 
 #pragma mark get
+- (UIImageView *)bgImagView{
+    if (!_bgImagView) {
+        CGFloat width = self.view.bounds.size.width;
+        CGFloat height  = self.view.bounds.size.height;
+        _bgImagView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+        _bgImagView.contentMode = UIViewContentModeScaleAspectFill;
+        _bgImagView.clipsToBounds = YES;
+    }
+    return _bgImagView;
+}
 - (UIScrollView *)mainTableView{
     if (!_mainTableView) {
         _mainTableView = [[HqTableView alloc] initWithFrame:CGRectZero];
@@ -85,6 +89,8 @@
         _mainTableView.dataSource = self;
         _mainTableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         _mainTableView.alwaysBounceVertical = YES;
+        _mainTableView.showsVerticalScrollIndicator = NO;
+        _mainTableView.showsHorizontalScrollIndicator = NO;
     }
     return _mainTableView;
 }
@@ -106,19 +112,14 @@
 }
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    NSLog(@"self.view==%@",self.view);
     CGFloat width = self.view.bounds.size.width;
     CGFloat height = self.view.bounds.size.height - self.navBarHeight;
     self.mainTableView.frame = CGRectMake(0, self.navBarHeight, width, height);
     self.sectionHeaderView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.sectionHeaderHeight);
-    
-    //配置自己的分段视图
-//      self.segment.center = self.sectionHeaderView.center;
 }
 //自行改变
 - (UISegmentedControl *)segment{
     if (!_segment) {
-        
         UISegmentedControl *sg = [[UISegmentedControl alloc] initWithItems:@[@"P1",@"p2",@"p3"]];
         sg.frame  = CGRectMake(0, 10, SCREEN_WIDTH, 30);
         [sg addTarget:self action:@selector(segChange:) forControlEvents:UIControlEventValueChanged];
@@ -132,20 +133,22 @@
     
     NSInteger index = sg.selectedSegmentIndex;
     
-    [self pageContainerScrollToindex:index animated:YES];
+    [self pageContainerScrollToindex:index animated:NO];
     
 }
-- (void)pageContainerScrollToindex:(NSInteger)index animated:(BOOL)animated{
-    [self.pageContainerVC scrollToIndex:index animated:animated];
 
-}
 //设置自定义的HqCustomPageContainerVC
-- (HqPageContainerVC *)pageContainerVC{
-    if (!_pageContainerVC) {
-        _pageContainerVC = [[HqCustomPageContainerVC alloc] init];
+- (void)setPageContainerVC:(HqPageContainerVC *)pageContainerVC{
+    _pageContainerVC = pageContainerVC;
+    if (_pageContainerVC) {
+        [self addChildViewController:pageContainerVC];
         _pageContainerVC.delegate = self;
     }
-    return _pageContainerVC;
+    [self.mainTableView reloadData];
+}
+
+- (void)pageContainerScrollToindex:(NSInteger)index animated:(BOOL)animated{
+    [self.pageContainerVC scrollToIndex:index animated:animated];
 }
 #pragma mark UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -158,19 +161,25 @@
     return self.sectionHeaderHeight;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return tableView.bounds.size.height;
+    return tableView.bounds.size.height - self.sectionHeaderHeight;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellId = @"cell";
+    return [self pageContainerVCCell:tableView];
+}
+- (UITableViewCell *)pageContainerVCCell:(UITableView *)tableView{
+    static NSString *cellId = @"pageContainerVC";
     UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell.contentView.hidden = YES;
     }
-    self.containerView.backgroundColor = HqRandomColor;
-    [cell addSubview:self.containerView];
-    self.containerView.frame = CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height-self.navBarHeight);
-    [self.containerView addSubview:self.pageContainerVC.view];
-    self.pageContainerVC.view.frame = self.containerView.frame;
+    if (self.pageContainerVC) {
+        [self addChildViewController:self.pageContainerVC];
+        [self didMoveToParentViewController:self.pageContainerVC];
+        [cell addSubview:self.pageContainerVC.view];
+        CGRect containerRect = cell.bounds;
+        self.pageContainerVC.view.frame = containerRect;
+    }
 
     return cell;
 }
@@ -186,10 +195,14 @@
     self.mainTableView.scrollEnabled = scrollEnabled;
 }
 
+- (void)hqMainScrollViewOffsetY:(CGFloat)offsetY{
+    //子类实现
+}
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat y = scrollView.contentOffset.y;
-    NSInteger sectionCount = [self.mainTableView numberOfSections];
+    [self hqMainScrollViewOffsetY:y];
+    NSInteger sectionCount = self.mainTableView.numberOfSections;
     NSInteger section = sectionCount - 1;
     
     CGFloat shvY = [self.mainTableView rectForHeaderInSection:section].origin.y;

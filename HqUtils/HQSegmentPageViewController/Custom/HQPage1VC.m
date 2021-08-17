@@ -17,6 +17,7 @@
 
 @implementation HQPage1VC
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.datas = [[NSMutableArray alloc] init];
@@ -37,7 +38,7 @@
 - (void)refreshData{
     [super refreshData];
     //刷新数据
-    NSLog(@"刷新--%@--数据",self.title);
+    NSLog(@"SubVC刷新--%@--数据",self.title);
 }
 - (void)loadData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -57,9 +58,8 @@
 }
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    NSLog(@"hqpage1-view==%@",self.view);
     self.tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-    
+    NSLog(@"self.tableView.frame==%@",@(self.tableView.frame));
     [self hqScorllToTop];
 }
 
@@ -79,7 +79,6 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"self--%@",self.navigationController);
     HqPageDetailVC *vc = [[HqPageDetailVC alloc] init];
     Push(vc);
 }

@@ -14,7 +14,7 @@ typedef void  (^HqRequestTaskComplete)( NSHTTPURLResponse *response,id responseD
 + (NSURLSessionDataTask *)createSessionTasWithHeaders:(NSDictionary *)headers
                                             urlString:(NSString *)urlstring
                                         requestMethod:(NSString *)method
-                                              parames:(id)parame
+                                              params:(id)params
                                             withBlock:(HqRequestTaskComplete)myRequestTaskComplet;
 
 @end
