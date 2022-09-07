@@ -3,7 +3,7 @@
 //  customerKeyboard
 //
 //  Created by macpro on 2018/1/24.
-//  Copyright © 2018年 NB_killer. All rights reserved.
+//  Copyright © 2018年 HHQ. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

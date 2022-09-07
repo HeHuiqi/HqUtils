@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 //找出重复元素
 - (NSArray *)findDuplicateItems2;
 - (NSArray *)findDuplicateItems;
+//洗牌打乱
+- (NSArray *)hqShuffle;
+
 @end
 
 NS_ASSUME_NONNULL_END

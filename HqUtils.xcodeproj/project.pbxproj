@@ -60,6 +60,7 @@
 		332137B3233B2165004C3236 /* topic_organizer_small_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 332137B1233B2165004C3236 /* topic_organizer_small_icon@3x.png */; };
 		33214DB622B10D5F00BCBA70 /* HqInvokeManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33214DB222B10D5E00BCBA70 /* HqInvokeManagerVC.m */; };
 		33214DB722B10D5F00BCBA70 /* HqInvokeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33214DB322B10D5E00BCBA70 /* HqInvokeManager.m */; };
+		33231B8726DC8FBC001DB523 /* HqFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33231B8626DC8FBC001DB523 /* HqFPSLabel.m */; };
 		332B225222BDE0EC00A50A10 /* eosbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 332B225122BDE0EC00A50A10 /* eosbg.png */; };
 		332C249A23C5C1EE00C041D4 /* HqLoopUpDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 332C249923C5C1EE00C041D4 /* HqLoopUpDownItem.m */; };
 		332C249D23C5C21200C041D4 /* HqLoopUpDownItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 332C249C23C5C21200C041D4 /* HqLoopUpDownItemView.m */; };
@@ -221,6 +222,21 @@
 		3386793C23BE0D3900FFF5A3 /* HqRecommendTopSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3386793B23BE0D3900FFF5A3 /* HqRecommendTopSegmentView.m */; };
 		33867A4723C56C0100FFF5A3 /* NSArray+HqArrayUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33867A4523C56C0100FFF5A3 /* NSArray+HqArrayUtils.m */; };
 		33867A5A23C5AD5700FFF5A3 /* HqLoopUpDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33867A5923C5AD5700FFF5A3 /* HqLoopUpDownView.m */; };
+		338B79FD26DCE59F0066CFD8 /* HqPainterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B79FC26DCE59F0066CFD8 /* HqPainterVC.m */; };
+		338B7A0126DCE5B20066CFD8 /* HqPainterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B7A0026DCE5B20066CFD8 /* HqPainterView.m */; };
+		338B7A0426DDE63C0066CFD8 /* HqPainterToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B7A0326DDE63C0066CFD8 /* HqPainterToolBar.m */; };
+		338B7A0826DDF4FC0066CFD8 /* HqPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B7A0726DDF4FC0066CFD8 /* HqPath.m */; };
+		338B7A0B26DDF7690066CFD8 /* HqColorSelectBoardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B7A0A26DDF7690066CFD8 /* HqColorSelectBoardVC.m */; };
+		338B7A0F26DE1C270066CFD8 /* HqProPainterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B7A0E26DE1C270066CFD8 /* HqProPainterView.m */; };
+		338B7A1326DE36480066CFD8 /* HqLocalPaintVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B7A1226DE36480066CFD8 /* HqLocalPaintVC.m */; };
+		338B7A1726DE367B0066CFD8 /* HqLocalPintListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B7A1626DE367B0066CFD8 /* HqLocalPintListCell.m */; };
+		338B7A1B26DE38F60066CFD8 /* HqPaintFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 338B7A1A26DE38F60066CFD8 /* HqPaintFileManager.m */; };
+		338C464328C86BEF00E175C9 /* HqPassWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 338C464228C86BEF00E175C9 /* HqPassWordView.m */; };
+		338C464828C86C4400E175C9 /* HqPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338C464728C86C4400E175C9 /* HqPasswordVC.m */; };
+		338C465328C87C4C00E175C9 /* num_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 338C465128C87C4C00E175C9 /* num_selected@2x.png */; };
+		338C465428C87C4C00E175C9 /* num_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 338C465228C87C4C00E175C9 /* num_selected@3x.png */; };
+		338C465728C87C5600E175C9 /* num_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 338C465528C87C5600E175C9 /* num_normal@2x.png */; };
+		338C465828C87C5600E175C9 /* num_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 338C465628C87C5600E175C9 /* num_normal@3x.png */; };
 		338E619B228BDAEB009189BB /* lc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 338E619A228BDAEB009189BB /* lc.jpg */; };
 		339573A723FE8E4F00EB4DF3 /* UIControl+HqClickAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 339573A623FE8E4F00EB4DF3 /* UIControl+HqClickAnalysis.m */; };
 		339573B123FE8FBC00EB4DF3 /* CaptureTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 339573AA23FE8FBC00EB4DF3 /* CaptureTool.m */; };
@@ -450,6 +466,8 @@
 		33214DB322B10D5E00BCBA70 /* HqInvokeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqInvokeManager.m; sourceTree = "<group>"; };
 		33214DB422B10D5E00BCBA70 /* HqInvokeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqInvokeManager.h; sourceTree = "<group>"; };
 		33214DB522B10D5E00BCBA70 /* HqInvokeManagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqInvokeManagerVC.h; sourceTree = "<group>"; };
+		33231B8526DC8FBC001DB523 /* HqFPSLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqFPSLabel.h; sourceTree = "<group>"; };
+		33231B8626DC8FBC001DB523 /* HqFPSLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqFPSLabel.m; sourceTree = "<group>"; };
 		332B225122BDE0EC00A50A10 /* eosbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eosbg.png; sourceTree = "<group>"; };
 		332C249823C5C1EE00C041D4 /* HqLoopUpDownItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqLoopUpDownItem.h; sourceTree = "<group>"; };
 		332C249923C5C1EE00C041D4 /* HqLoopUpDownItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqLoopUpDownItem.m; sourceTree = "<group>"; };
@@ -753,6 +771,32 @@
 		33867A4623C56C0100FFF5A3 /* NSArray+HqArrayUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HqArrayUtils.h"; sourceTree = "<group>"; };
 		33867A5823C5AD5700FFF5A3 /* HqLoopUpDownView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqLoopUpDownView.h; sourceTree = "<group>"; };
 		33867A5923C5AD5700FFF5A3 /* HqLoopUpDownView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqLoopUpDownView.m; sourceTree = "<group>"; };
+		338B79FB26DCE59F0066CFD8 /* HqPainterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPainterVC.h; sourceTree = "<group>"; };
+		338B79FC26DCE59F0066CFD8 /* HqPainterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPainterVC.m; sourceTree = "<group>"; };
+		338B79FF26DCE5B20066CFD8 /* HqPainterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPainterView.h; sourceTree = "<group>"; };
+		338B7A0026DCE5B20066CFD8 /* HqPainterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPainterView.m; sourceTree = "<group>"; };
+		338B7A0226DDE63C0066CFD8 /* HqPainterToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPainterToolBar.h; sourceTree = "<group>"; };
+		338B7A0326DDE63C0066CFD8 /* HqPainterToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPainterToolBar.m; sourceTree = "<group>"; };
+		338B7A0626DDF4FC0066CFD8 /* HqPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPath.h; sourceTree = "<group>"; };
+		338B7A0726DDF4FC0066CFD8 /* HqPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPath.m; sourceTree = "<group>"; };
+		338B7A0926DDF7690066CFD8 /* HqColorSelectBoardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqColorSelectBoardVC.h; sourceTree = "<group>"; };
+		338B7A0A26DDF7690066CFD8 /* HqColorSelectBoardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqColorSelectBoardVC.m; sourceTree = "<group>"; };
+		338B7A0D26DE1C270066CFD8 /* HqProPainterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqProPainterView.h; sourceTree = "<group>"; };
+		338B7A0E26DE1C270066CFD8 /* HqProPainterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqProPainterView.m; sourceTree = "<group>"; };
+		338B7A1126DE36480066CFD8 /* HqLocalPaintVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqLocalPaintVC.h; sourceTree = "<group>"; };
+		338B7A1226DE36480066CFD8 /* HqLocalPaintVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqLocalPaintVC.m; sourceTree = "<group>"; };
+		338B7A1526DE367B0066CFD8 /* HqLocalPintListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqLocalPintListCell.h; sourceTree = "<group>"; };
+		338B7A1626DE367B0066CFD8 /* HqLocalPintListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqLocalPintListCell.m; sourceTree = "<group>"; };
+		338B7A1926DE38F60066CFD8 /* HqPaintFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPaintFileManager.h; sourceTree = "<group>"; };
+		338B7A1A26DE38F60066CFD8 /* HqPaintFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPaintFileManager.m; sourceTree = "<group>"; };
+		338C464128C86BEF00E175C9 /* HqPassWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqPassWordView.h; sourceTree = "<group>"; };
+		338C464228C86BEF00E175C9 /* HqPassWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HqPassWordView.m; sourceTree = "<group>"; };
+		338C464628C86C4400E175C9 /* HqPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqPasswordVC.h; sourceTree = "<group>"; };
+		338C464728C86C4400E175C9 /* HqPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqPasswordVC.m; sourceTree = "<group>"; };
+		338C465128C87C4C00E175C9 /* num_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "num_selected@2x.png"; sourceTree = "<group>"; };
+		338C465228C87C4C00E175C9 /* num_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "num_selected@3x.png"; sourceTree = "<group>"; };
+		338C465528C87C5600E175C9 /* num_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "num_normal@2x.png"; sourceTree = "<group>"; };
+		338C465628C87C5600E175C9 /* num_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "num_normal@3x.png"; sourceTree = "<group>"; };
 		338E619A228BDAEB009189BB /* lc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lc.jpg; sourceTree = "<group>"; };
 		339573A523FE8E4F00EB4DF3 /* UIControl+HqClickAnalysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+HqClickAnalysis.h"; sourceTree = "<group>"; };
 		339573A623FE8E4F00EB4DF3 /* UIControl+HqClickAnalysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+HqClickAnalysis.m"; sourceTree = "<group>"; };
@@ -1251,6 +1295,15 @@
 			path = HqInvokeManager;
 			sourceTree = "<group>";
 		};
+		33231B8426DC8FAF001DB523 /* HqFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				33231B8526DC8FBC001DB523 /* HqFPSLabel.h */,
+				33231B8626DC8FBC001DB523 /* HqFPSLabel.m */,
+			);
+			path = HqFPSLabel;
+			sourceTree = "<group>";
+		};
 		332FEE44233EF25B0003F57C /* HqTextBindVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1359,6 +1412,9 @@
 		3338C55722505B5700640999 /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				338C464528C86C2200E175C9 /* HqPasswordVC */,
+				338C464028C86BEF00E175C9 /* HqPassWordView */,
+				338B79FA26DCE5890066CFD8 /* HqPainter */,
 				33F3EA0326C4CBE000182D08 /* HqUncaughtExceptionHandler */,
 				331C4B3A2660D35600ED7BC2 /* HqIcons */,
 				3354D4AD263555A900F2943E /* HqButton */,
@@ -1490,6 +1546,7 @@
 		3338C58822505C1500640999 /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				33231B8426DC8FAF001DB523 /* HqFPSLabel */,
 				3354D48426353C1400F2943E /* HqUITableViewUtils */,
 				33BB59D82588B527009FF312 /* HqWeakTarget */,
 				33DD4AF423F4F7960030F2E9 /* HqNSObjectCategory */,
@@ -2165,6 +2222,101 @@
 			path = HqLoopUpDownView;
 			sourceTree = "<group>";
 		};
+		338B79FA26DCE5890066CFD8 /* HqPainter */ = {
+			isa = PBXGroup;
+			children = (
+				338B7A1826DE38D00066CFD8 /* HqPaintFileManager */,
+				338B7A1026DE362F0066CFD8 /* HqLocalPaintVC */,
+				338B7A0C26DDF7D60066CFD8 /* Views */,
+				338B7A0526DDF4DC0066CFD8 /* Models */,
+				338B79FE26DCE5A30066CFD8 /* HqPainterView */,
+				338B79FB26DCE59F0066CFD8 /* HqPainterVC.h */,
+				338B79FC26DCE59F0066CFD8 /* HqPainterVC.m */,
+				338B7A0926DDF7690066CFD8 /* HqColorSelectBoardVC.h */,
+				338B7A0A26DDF7690066CFD8 /* HqColorSelectBoardVC.m */,
+			);
+			path = HqPainter;
+			sourceTree = "<group>";
+		};
+		338B79FE26DCE5A30066CFD8 /* HqPainterView */ = {
+			isa = PBXGroup;
+			children = (
+				338B79FF26DCE5B20066CFD8 /* HqPainterView.h */,
+				338B7A0026DCE5B20066CFD8 /* HqPainterView.m */,
+				338B7A0226DDE63C0066CFD8 /* HqPainterToolBar.h */,
+				338B7A0326DDE63C0066CFD8 /* HqPainterToolBar.m */,
+				338B7A0D26DE1C270066CFD8 /* HqProPainterView.h */,
+				338B7A0E26DE1C270066CFD8 /* HqProPainterView.m */,
+			);
+			path = HqPainterView;
+			sourceTree = "<group>";
+		};
+		338B7A0526DDF4DC0066CFD8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				338B7A0626DDF4FC0066CFD8 /* HqPath.h */,
+				338B7A0726DDF4FC0066CFD8 /* HqPath.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		338B7A0C26DDF7D60066CFD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		338B7A1026DE362F0066CFD8 /* HqLocalPaintVC */ = {
+			isa = PBXGroup;
+			children = (
+				338B7A1426DE36560066CFD8 /* Views */,
+				338B7A1126DE36480066CFD8 /* HqLocalPaintVC.h */,
+				338B7A1226DE36480066CFD8 /* HqLocalPaintVC.m */,
+			);
+			path = HqLocalPaintVC;
+			sourceTree = "<group>";
+		};
+		338B7A1426DE36560066CFD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				338B7A1526DE367B0066CFD8 /* HqLocalPintListCell.h */,
+				338B7A1626DE367B0066CFD8 /* HqLocalPintListCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		338B7A1826DE38D00066CFD8 /* HqPaintFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				338B7A1926DE38F60066CFD8 /* HqPaintFileManager.h */,
+				338B7A1A26DE38F60066CFD8 /* HqPaintFileManager.m */,
+			);
+			path = HqPaintFileManager;
+			sourceTree = "<group>";
+		};
+		338C464028C86BEF00E175C9 /* HqPassWordView */ = {
+			isa = PBXGroup;
+			children = (
+				338C465528C87C5600E175C9 /* num_normal@2x.png */,
+				338C465628C87C5600E175C9 /* num_normal@3x.png */,
+				338C465128C87C4C00E175C9 /* num_selected@2x.png */,
+				338C465228C87C4C00E175C9 /* num_selected@3x.png */,
+				338C464128C86BEF00E175C9 /* HqPassWordView.h */,
+				338C464228C86BEF00E175C9 /* HqPassWordView.m */,
+			);
+			path = HqPassWordView;
+			sourceTree = "<group>";
+		};
+		338C464528C86C2200E175C9 /* HqPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				338C464628C86C4400E175C9 /* HqPasswordVC.h */,
+				338C464728C86C4400E175C9 /* HqPasswordVC.m */,
+			);
+			path = HqPasswordVC;
+			sourceTree = "<group>";
+		};
 		339573A423FE8DC900EB4DF3 /* HqAppAnalysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -2690,6 +2842,7 @@
 				3338C68722505C1600640999 /* nav_back@3x.png in Resources */,
 				3338C6BE22505C1600640999 /* stop@2x.png in Resources */,
 				330D296A25EF374200E10E2E /* hq_editor in Resources */,
+				338C465728C87C5600E175C9 /* num_normal@2x.png in Resources */,
 				3338C6B322505C1600640999 /* yuan.png in Resources */,
 				33CEF07F260083B600C92A8F /* lc_tab_task_selected_icon@2x.png in Resources */,
 				33DD0F4A262D6291000E3B20 /* collect_selected_icon@3x.png in Resources */,
@@ -2702,6 +2855,7 @@
 				33CEF081260083B600C92A8F /* lc_tab_my_selected_icon@3x.png in Resources */,
 				339BE88F23CD941B00F92BC2 /* lc_small_blue_arrow_icon@2x.png in Resources */,
 				33D2E972236EAC97002F6D25 /* detail_like_blue_icon@3x.png in Resources */,
+				338C465828C87C5600E175C9 /* num_normal@3x.png in Resources */,
 				3338C68822505C1600640999 /* HqNavBar.md in Resources */,
 				33CEF08A260083B600C92A8F /* lc_tab_task_selected_icon@3x.png in Resources */,
 				33CEF08E260083B600C92A8F /* lc_tab_community_selected_icon@2x.png in Resources */,
@@ -2736,6 +2890,7 @@
 				33DD0F43262D6208000E3B20 /* collect_icon@3x.png in Resources */,
 				3307EC2023D7036400108EAA /* 5.jpg in Resources */,
 				331B728A229F6C7000A5D73B /* 640.jpg in Resources */,
+				338C465328C87C4C00E175C9 /* num_selected@2x.png in Resources */,
 				3338C6B722505C1600640999 /* yuan@2x.png in Resources */,
 				3338C68B22505C1600640999 /* delete@2x.png in Resources */,
 				33CEF080260083B600C92A8F /* lc_tab_add_icon@3x.png in Resources */,
@@ -2760,6 +2915,7 @@
 				3338C6BF22505C1600640999 /* stop@3x.png in Resources */,
 				33CEF07B260083B600C92A8F /* lc_tab_home_selected_icon@3x.png in Resources */,
 				332137B3233B2165004C3236 /* topic_organizer_small_icon@3x.png in Resources */,
+				338C465428C87C4C00E175C9 /* num_selected@3x.png in Resources */,
 				33DD0F44262D6208000E3B20 /* collect_icon@2x.png in Resources */,
 				331B7288229E8FF900A5D73B /* article_template.html in Resources */,
 				33C53CCD2390BC5700C38587 /* SourceHanSansCN-Regular.otf in Resources */,
@@ -2852,6 +3008,7 @@
 				337A95D122CCBA8B003E0EBE /* HqTestCell.m in Sources */,
 				3397DA2323516F4D00B1BA51 /* HqRichTextCell2.m in Sources */,
 				3307EC2523D7038600108EAA /* HqLoopScrollItem.m in Sources */,
+				338B7A0826DDF4FC0066CFD8 /* HqPath.m in Sources */,
 				339573B323FE8FBC00EB4DF3 /* DataContainer.m in Sources */,
 				33D2E9CB23714704002F6D25 /* HqImageBrowserVC.m in Sources */,
 				3338C6CA22505C1600640999 /* HqCellView.m in Sources */,
@@ -2892,14 +3049,17 @@
 				331C4B3626609B6900ED7BC2 /* HqArrowImage.m in Sources */,
 				33214DB722B10D5F00BCBA70 /* HqInvokeManager.m in Sources */,
 				3338C69622505C1600640999 /* HqColorImageVC.m in Sources */,
+				33231B8726DC8FBC001DB523 /* HqFPSLabel.m in Sources */,
 				339BE88B23CD74A400F92BC2 /* HqTagControl.m in Sources */,
 				33867A4723C56C0100FFF5A3 /* NSArray+HqArrayUtils.m in Sources */,
 				3338C6B222505C1600640999 /* HqNSInvocationVC.m in Sources */,
 				3338C69422505C1600640999 /* HqDecimalNumberUtils.m in Sources */,
+				338B7A0B26DDF7690066CFD8 /* HqColorSelectBoardVC.m in Sources */,
 				337A95CB22CC8F0C003E0EBE /* UIImage+QStion.m in Sources */,
 				3338C6A522505C1600640999 /* NSString+HqString.m in Sources */,
 				331AFAE922EEB2B20030C62C /* HqGCDVC.m in Sources */,
 				33030F5E2614463F00B5B879 /* HqCategoryItemBaseCell.m in Sources */,
+				338C464828C86C4400E175C9 /* HqPasswordVC.m in Sources */,
 				33DD0F6226302DA0000E3B20 /* HqTextFiled.m in Sources */,
 				33746FEE233353A70098A2CC /* HqRichTextCell.m in Sources */,
 				33E825F2239DEC9000C54A2C /* HqklineShowModel.m in Sources */,
@@ -2911,10 +3071,13 @@
 				33E825EC239DE97D00C54A2C /* HqkLineModel.m in Sources */,
 				330D28C125E8FB0600E10E2E /* HqTextAttachment.m in Sources */,
 				3338C68D22505C1600640999 /* ZPNumberKeyboard.m in Sources */,
+				338B7A1726DE367B0066CFD8 /* HqLocalPintListCell.m in Sources */,
 				3338C67322505C1600640999 /* HqCustomAlertVC.m in Sources */,
 				3338C56822505B5800640999 /* main.m in Sources */,
+				338B7A0126DCE5B20066CFD8 /* HqPainterView.m in Sources */,
 				3354D4502632A78C00F2943E /* HqLab.m in Sources */,
 				331B725A229CC8A700A5D73B /* HHSegmentCell.m in Sources */,
+				338B7A1B26DE38F60066CFD8 /* HqPaintFileManager.m in Sources */,
 				3338C66122505C1600640999 /* ProjectConst.m in Sources */,
 				331AFA3322E6F1AA0030C62C /* HqMutilImagePickerModel.m in Sources */,
 				3338C69322505C1600640999 /* HqAFHttpClient.m in Sources */,
@@ -2962,6 +3125,7 @@
 				33E825E5239A7A8600C54A2C /* HqPointModel.m in Sources */,
 				331B729522A227EE00A5D73B /* HqPreviewWebImageVC.m in Sources */,
 				3331CA9322924CB500E783FA /* HqPageContainerVC.m in Sources */,
+				338B79FD26DCE59F0066CFD8 /* HqPainterVC.m in Sources */,
 				337D347125F7806400F95DD7 /* MyTabBar.m in Sources */,
 				332C249D23C5C21200C041D4 /* HqLoopUpDownItemView.m in Sources */,
 				33C53D092392258200C38587 /* HqNewTopicCell.m in Sources */,
@@ -2997,6 +3161,7 @@
 				33DD4AF723F4F81F0030F2E9 /* NSObject+HqNSObjectCategory.m in Sources */,
 				33D2E9D223715A7C002F6D25 /* HqTimeLineCell.m in Sources */,
 				33350197233DF2A700888035 /* HqPhotoPickerVC.m in Sources */,
+				338B7A0F26DE1C270066CFD8 /* HqProPainterView.m in Sources */,
 				3354D47D2632D5F900F2943E /* HqCornerCell.m in Sources */,
 				332FDD5226463B7A00A7FA82 /* HqUIScrollView.m in Sources */,
 				3386793C23BE0D3900FFF5A3 /* HqRecommendTopSegmentView.m in Sources */,
@@ -3035,11 +3200,13 @@
 				3338C68122505C1600640999 /* DownloadOperation.m in Sources */,
 				33E825D8239A7A7400C54A2C /* HqkLineVC.m in Sources */,
 				3331CA9A22924CB500E783FA /* HQPage1VC.m in Sources */,
+				338C464328C86BEF00E175C9 /* HqPassWordView.m in Sources */,
 				33030F7C261465FE00B5B879 /* HHPageView.m in Sources */,
 				3307EC1523D701CB00108EAA /* HqLoopScrollItemView.m in Sources */,
 				3338C6C622505C1600640999 /* HqTestVC.m in Sources */,
 				33D07CBB262D2E1C0025B32B /* HqButton.m in Sources */,
 				33CBD0472306890B00B8AB4E /* HqSetCornerView.m in Sources */,
+				338B7A0426DDE63C0066CFD8 /* HqPainterToolBar.m in Sources */,
 				33C53CDA2390FFBE00C38587 /* HqSubContainerVC.m in Sources */,
 				3338C68F22505C1600640999 /* HqClipVC.m in Sources */,
 				3338C66622505C1600640999 /* HqAppView.m in Sources */,
@@ -3053,6 +3220,7 @@
 				3331CA9722924CB500E783FA /* HqCustomSegmentPageVC.m in Sources */,
 				33746FEA233353440098A2CC /* HqTableViewVC.m in Sources */,
 				33BB59DB2588B53A009FF312 /* HqWeakTarget.m in Sources */,
+				338B7A1326DE36480066CFD8 /* HqLocalPaintVC.m in Sources */,
 				3354D4B7263557C100F2943E /* HqLableButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -78,6 +78,18 @@
     }
     return duplicateItem;
 }
+- (NSArray *)hqShuffle{
+    NSMutableArray *items = self.mutableCopy;
+    NSInteger i = self.count - 1;
+    while (i > 0) {
+        NSInteger random_index = arc4random() % (i + 1);
+        id temp = items[i];
+        items[i] = items[random_index];
+        items[random_index] = temp;
+        i -= 1;
+    }
+    return items;
+}
 
 
 @end

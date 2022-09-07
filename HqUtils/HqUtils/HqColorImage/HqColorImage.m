@@ -3,7 +3,7 @@
 //  customerKeyboard
 //
 //  Created by macpro on 2018/1/24.
-//  Copyright © 2018年 NB_killer. All rights reserved.
+//  Copyright © 2018年 HHQ. All rights reserved.
 //
 
 #import "HqColorImage.h"
@@ -36,7 +36,7 @@
         _bglayer.lineWidth = 2.0;
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:4.0];
         _bglayer.cornerRadius = 4.0;
-        _bglayer.path = path.CGPath;
+        _bglayer.path = path.CGPath;        
     }
     return _bglayer;
 }

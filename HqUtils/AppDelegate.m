@@ -13,7 +13,7 @@
 #import <CommonCrypto/CommonCryptor.h>
 #import "HqEncrypt.h"
 #import "HqUncaughtExceptionHandler.h"
-
+#import "HqFPSLabel.h"
 @interface AppDelegate ()
 
 @end
@@ -24,6 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [HqUncaughtExceptionHandler startCatchCrashWithShowException:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(crashReport:) name:HqUncaughtExceptionReportNofity object:nil];
+//    [HqFPSLabel showFPSInView:nil];
+
     
     return YES;
 }
@@ -49,6 +51,9 @@
         
         resultData = [HqEncrypt AES256EncryptWithKey:key iv:iv encryptText:json];
         NSLog(@"resultData==%@",[[NSString convertDataToHexStr:resultData] uppercaseString]);
+    
+
+
     
 }
 - (NSString *)getNowTimeTimestamp{

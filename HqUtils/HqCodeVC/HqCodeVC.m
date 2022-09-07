@@ -57,6 +57,45 @@
     }
     return _qBtn;
 }
+- (void)test_img {
+    NSString *str = @"abcdefg";
+    str = @"a";
+    
+    UIImageView *imgv = [[UIImageView alloc] init];
+    imgv.backgroundColor = [UIColor redColor];
+    [self.view addSubview:imgv];
+    [imgv mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(15);
+        make.top.equalTo(self.view).offset(self.navBarHeight + 30);
+    }];
+    
+    CGRect rect  = {0,0,60,30};
+    CGRect rect1 = CGRectOffset(rect, 3, 5);
+    NSLog(@"rect1==%@",@(rect1));
+    CGRect rect2 = CGRectInset(rect, 3, 5);
+    NSLog(@"rect2==%@",@(rect2));
+    
+    UIFont *font = SetFont(20);
+    NSLog(@"%@,%@,%@,%@",@(font.lineHeight),@(font.ascender),@(font.descender),@(font.pointSize));
+    CGFloat originY = (30 - font.lineHeight )/2.0;
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
+        NSDictionary *attributes = @{NSFontAttributeName:SetFont(20),
+                                     NSForegroundColorAttributeName:[UIColor blueColor],
+                                     NSBackgroundColorAttributeName:[UIColor grayColor]};
+        [str drawAtPoint:CGPointMake(0, originY) withAttributes:attributes];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            imgv.image = image;
+            
+        });
+    });
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
 //    [self testView];
@@ -67,13 +106,107 @@
 //    [self testRichtext];
 //    [self testSizeFit];
 //    [self testIntrinsicContentSize];
-    [self testBtn];
+//    [self testBtn];
     
 
 //    [self testTf];
 //    [self testLab];
+//    [self numLab];
+    
+    [self test_img];
     
 
+}
+- (UIImage *)getScreenshot:(CALayer *)layer{
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, 0.0);
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+- (NSAttributedString *)numberCard:(NSInteger)number font:(UIFont *)font unit:(NSString *)unit{
+    NSString *numStr = [NSString stringWithFormat:@"%02ld",number];
+    NSString *num1 = [numStr substringToIndex:1];
+    NSString *num2 = [numStr substringFromIndex:1];
+    
+    UIImage *image1 = [self textToImage:num1 font:SetFont(10) size:CGSizeMake(12, 16)];
+    UIImage *image2 = [self textToImage:num2 font:SetFont(10) size:CGSizeMake(12, 16)];
+    
+    CGFloat imgH = image1.size.height + 2;
+    CGFloat offsetY  = (font.lineHeight + font.descender  - imgH)/2.0;
+
+    NSMutableAttributedString *atrs = [[NSMutableAttributedString alloc] init];
+    NSAttributedString *space = [[NSAttributedString alloc] initWithString:@" "];
+
+    NSTextAttachment *at1 = [[NSTextAttachment alloc] init];
+    at1.image = image1;
+    at1.bounds = CGRectMake(0, offsetY, image1.size.width, image1.size.height);
+
+    NSTextAttachment *at2 = [[NSTextAttachment alloc] init];
+    at2.image = image2;
+    at2.bounds = CGRectMake(0, offsetY, image2.size.width, image2.size.height);
+    
+    NSAttributedString *atrsAt1 = [NSAttributedString attributedStringWithAttachment:at1];
+    NSAttributedString *atrsAt2 = [NSAttributedString attributedStringWithAttachment:at2];
+    [atrs appendAttributedString:space];
+    [atrs appendAttributedString:atrsAt1];
+    [atrs appendAttributedString:space];
+    [atrs appendAttributedString:atrsAt2];
+    [atrs appendAttributedString:space];
+    NSMutableAttributedString *unitAtr = [[NSMutableAttributedString alloc] initWithString:unit];
+
+    [atrs appendAttributedString:unitAtr];
+    
+
+    
+    
+    return atrs;
+}
+- (UIImage *)textToImage:(NSString *)text font:(UIFont *)font size:(CGSize)size{
+    
+    UILabel *lab = [[UILabel alloc] init];
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.text = text;
+    lab.layer.borderWidth = 1.0;
+    lab.font = font;
+    lab.layer.borderColor = COLORA(204, 204, 204).CGColor;
+    lab.layer.cornerRadius = 2;
+    lab.clipsToBounds = YES;
+    lab.frame = CGRectMake(0, 0, size.width, size.height);
+    UIImage *image = [self getScreenshot:lab.layer];
+    return  image;
+}
+- (NSAttributedString *)showTime:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second font:(UIFont *)font{
+    NSMutableAttributedString *atrs = [[NSMutableAttributedString alloc] initWithString:@"投票倒计时:"];
+    NSAttributedString *hourAtr = [self numberCard:9 font:font unit:@"小时"];
+    NSAttributedString *minuteAtr = [self numberCard:8 font:font unit:@"分钟"];
+    NSAttributedString *secondAtr = [self numberCard:7 font:font unit:@"秒"];
+    [atrs appendAttributedString:hourAtr];
+    [atrs appendAttributedString:minuteAtr];
+    [atrs appendAttributedString:secondAtr];
+    return atrs;
+}
+- (void)numLab{
+
+
+//    UIImage *image =  [self textToImage:@"9" font:SetFont(10) size:CGSizeMake(12, 16)];
+
+    
+    UIFont *font = SetFont(12);
+    NSAttributedString *atrs = [self showTime:9 minute:9 second:9 font:font];
+    
+    UILabel *show_lab =  [[UILabel alloc] init];
+    show_lab.backgroundColor = [UIColor redColor];
+    show_lab.font = font;
+    show_lab.attributedText = atrs;
+    [self.view addSubview:show_lab];
+   
+    
+    [show_lab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(15);
+        make.top.equalTo(self.view).offset(self.navBarHeight + 30);
+    }];
 }
 - (void)testLab{
     self.lab = [[HqLab alloc] init];
