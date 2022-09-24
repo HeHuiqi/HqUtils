@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^HqLoginSucBlock)(void);
+typedef void(^HNSLoginSucBlock)(void);
 typedef void(^HqRegisterSucBlock)(void);
 
 NS_ASSUME_NONNULL_BEGIN

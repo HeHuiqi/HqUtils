@@ -57,7 +57,7 @@
 
 #import "HqPainterVC.h"
 #import "HqPasswordVC.h"
-
+#import "HqCHCodeInputVC.h"
 
 @interface HqRootVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -73,7 +73,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HqUtils";
-    _titles = @[@"HqPasswordVC",@"HqPainterVC",@"HqCodeVC",@"HqClipVC",@"HSegmentTestVC",@"HqCustomTabBarVC",@"HqWeexRootVC",@"HqH5RichTextEditorVC",@"HqDatePickerVC",@"HqRegExVC",@"AVPlayerCachingVC",@"HqCustomSegmentPageVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
+    _titles = @[@"HqNightModeVC",@"HqCHCodeInputVC",@"HqPasswordVC",@"HqPainterVC",@"HqCodeVC",@"HqClipVC",@"HSegmentTestVC",@"HqCustomTabBarVC",@"HqWeexRootVC",@"HqH5RichTextEditorVC",@"HqDatePickerVC",@"HqRegExVC",@"AVPlayerCachingVC",@"HqCustomSegmentPageVC",@"HqkLineVC",@"HqContainerVC",@"HqBoxImageViewVC",@"HqImageBrowserVC",@"HqTextBindVC",@"HqPhotoPickerVC",@"HqTableViewVC",@"HqCoreTextVC",@"HqMsgForwardVC",@"HqGCDVC",@"HqMutilImagePickerVC",@"HqZLPhotoBrowserVC", @"HqShortArticleVC",@"HqTableViewTestVC",@"HqInvokeManagerVC",@"HqWebViewTestVC",@"hqRefreshVC",@"HqColorImageVC",@"HqRegExVC",@"HqKVOTestVC",@"HqAuthIDVC",@"HqNSInvocationVC",@"HqUIResponderVC",@"HqThemeVC",@"HqTestVC"];
     UIBarButtonItem *rbtn = [[UIBarButtonItem alloc] initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(enterAlert:)];
     self.navigationItem.rightBarButtonItem = rbtn;
 

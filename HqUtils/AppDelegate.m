@@ -14,6 +14,7 @@
 #import "HqEncrypt.h"
 #import "HqUncaughtExceptionHandler.h"
 #import "HqFPSLabel.h"
+#import "HqNightModeVC/HqNightModeLayer.h"
 @interface AppDelegate ()
 
 @end
@@ -25,6 +26,15 @@
     [HqUncaughtExceptionHandler startCatchCrashWithShowException:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(crashReport:) name:HqUncaughtExceptionReportNofity object:nil];
 //    [HqFPSLabel showFPSInView:nil];
+    
+
+   
+    //延时一下等待window初始化完成
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        BOOL isOpen =  GetUserBoolDefault(kNightModeIsOpen);
+        NSLog(@"isOpen:%@",@(isOpen));
+        [HqNightModeLayer openNightMode:isOpen];
+    });
 
     
     return YES;

@@ -344,6 +344,9 @@
 		33DD0F57262D89EE000E3B20 /* HqUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD0F56262D89EE000E3B20 /* HqUIButton.m */; };
 		33DD0F6226302DA0000E3B20 /* HqTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD0F6126302DA0000E3B20 /* HqTextFiled.m */; };
 		33DD4AF723F4F81F0030F2E9 /* NSObject+HqNSObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD4AF623F4F81F0030F2E9 /* NSObject+HqNSObjectCategory.m */; };
+		33E1802028DC6980004B5DB1 /* HqCHCodeInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E1801F28DC6980004B5DB1 /* HqCHCodeInputVC.m */; };
+		33E1802628DC69AE004B5DB1 /* CHCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E1802328DC69AE004B5DB1 /* CHCodeView.m */; };
+		33E1802728DC69AE004B5DB1 /* CHCodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E1802528DC69AE004B5DB1 /* CHCodeInputView.m */; };
 		33E825D8239A7A7400C54A2C /* HqkLineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E825D7239A7A7400C54A2C /* HqkLineVC.m */; };
 		33E825E5239A7A8600C54A2C /* HqPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E825DF239A7A8600C54A2C /* HqPointModel.m */; };
 		33E825E6239A7A8600C54A2C /* HqQipaoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E825E1239A7A8600C54A2C /* HqQipaoView.m */; };
@@ -355,6 +358,9 @@
 		33E825F2239DEC9000C54A2C /* HqklineShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E825F1239DEC9000C54A2C /* HqklineShowModel.m */; };
 		33E825F5239E1E4300C54A2C /* HqYCoordinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E825F4239E1E4300C54A2C /* HqYCoordinateView.m */; };
 		33F3EA0626C4CC0300182D08 /* HqUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F3EA0526C4CC0300182D08 /* HqUncaughtExceptionHandler.m */; };
+		33F91D7C28DEA3E500ADA384 /* HqNightModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F91D7B28DEA3E500ADA384 /* HqNightModeVC.m */; };
+		33F91D7F28DEA3FC00ADA384 /* HqNightModeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F91D7E28DEA3FC00ADA384 /* HqNightModeView.m */; };
+		33F91D8228DEC11E00ADA384 /* HqNightModeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F91D8128DEC11E00ADA384 /* HqNightModeLayer.m */; };
 		33FB063A2331D3ED00A853A3 /* open.html in Resources */ = {isa = PBXBuildFile; fileRef = 33FB06392331D3ED00A853A3 /* open.html */; };
 /* End PBXBuildFile section */
 
@@ -940,6 +946,12 @@
 		33DD0F6126302DA0000E3B20 /* HqTextFiled.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqTextFiled.m; sourceTree = "<group>"; };
 		33DD4AF523F4F81F0030F2E9 /* NSObject+HqNSObjectCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+HqNSObjectCategory.h"; sourceTree = "<group>"; };
 		33DD4AF623F4F81F0030F2E9 /* NSObject+HqNSObjectCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HqNSObjectCategory.m"; sourceTree = "<group>"; };
+		33E1801E28DC6980004B5DB1 /* HqCHCodeInputVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqCHCodeInputVC.h; sourceTree = "<group>"; };
+		33E1801F28DC6980004B5DB1 /* HqCHCodeInputVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqCHCodeInputVC.m; sourceTree = "<group>"; };
+		33E1802228DC69AE004B5DB1 /* CHCodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCodeInputView.h; sourceTree = "<group>"; };
+		33E1802328DC69AE004B5DB1 /* CHCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCodeView.m; sourceTree = "<group>"; };
+		33E1802428DC69AE004B5DB1 /* CHCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCodeView.h; sourceTree = "<group>"; };
+		33E1802528DC69AE004B5DB1 /* CHCodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCodeInputView.m; sourceTree = "<group>"; };
 		33E825D6239A7A7400C54A2C /* HqkLineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqkLineVC.h; sourceTree = "<group>"; };
 		33E825D7239A7A7400C54A2C /* HqkLineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqkLineVC.m; sourceTree = "<group>"; };
 		33E825DA239A7A8600C54A2C /* HqQipaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HqQipaoView.h; sourceTree = "<group>"; };
@@ -962,6 +974,12 @@
 		33E825F4239E1E4300C54A2C /* HqYCoordinateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqYCoordinateView.m; sourceTree = "<group>"; };
 		33F3EA0426C4CC0300182D08 /* HqUncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		33F3EA0526C4CC0300182D08 /* HqUncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqUncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		33F91D7A28DEA3E500ADA384 /* HqNightModeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqNightModeVC.h; sourceTree = "<group>"; };
+		33F91D7B28DEA3E500ADA384 /* HqNightModeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqNightModeVC.m; sourceTree = "<group>"; };
+		33F91D7D28DEA3FC00ADA384 /* HqNightModeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqNightModeView.h; sourceTree = "<group>"; };
+		33F91D7E28DEA3FC00ADA384 /* HqNightModeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqNightModeView.m; sourceTree = "<group>"; };
+		33F91D8028DEC11E00ADA384 /* HqNightModeLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HqNightModeLayer.h; sourceTree = "<group>"; };
+		33F91D8128DEC11E00ADA384 /* HqNightModeLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HqNightModeLayer.m; sourceTree = "<group>"; };
 		33FB06392331D3ED00A853A3 /* open.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = open.html; sourceTree = "<group>"; };
 		60ED819FFF2C3256E8BCB18A /* Pods-HqUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HqUtils.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HqUtils/Pods-HqUtils.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1412,6 +1430,8 @@
 		3338C55722505B5700640999 /* HqUtils */ = {
 			isa = PBXGroup;
 			children = (
+				33F91D7928DEA3C500ADA384 /* HqNightModeVC */,
+				33E1801D28DC6962004B5DB1 /* HqCHCodeInputVC */,
 				338C464528C86C2200E175C9 /* HqPasswordVC */,
 				338C464028C86BEF00E175C9 /* HqPassWordView */,
 				338B79FA26DCE5890066CFD8 /* HqPainter */,
@@ -2601,6 +2621,27 @@
 			path = HqNSObjectCategory;
 			sourceTree = "<group>";
 		};
+		33E1801D28DC6962004B5DB1 /* HqCHCodeInputVC */ = {
+			isa = PBXGroup;
+			children = (
+				33E1802128DC69AE004B5DB1 /* CHCodeInputView */,
+				33E1801E28DC6980004B5DB1 /* HqCHCodeInputVC.h */,
+				33E1801F28DC6980004B5DB1 /* HqCHCodeInputVC.m */,
+			);
+			path = HqCHCodeInputVC;
+			sourceTree = "<group>";
+		};
+		33E1802128DC69AE004B5DB1 /* CHCodeInputView */ = {
+			isa = PBXGroup;
+			children = (
+				33E1802228DC69AE004B5DB1 /* CHCodeInputView.h */,
+				33E1802528DC69AE004B5DB1 /* CHCodeInputView.m */,
+				33E1802428DC69AE004B5DB1 /* CHCodeView.h */,
+				33E1802328DC69AE004B5DB1 /* CHCodeView.m */,
+			);
+			path = CHCodeInputView;
+			sourceTree = "<group>";
+		};
 		33E825D5239A7A4C00C54A2C /* HqkLine */ = {
 			isa = PBXGroup;
 			children = (
@@ -2671,6 +2712,19 @@
 				33F3EA0526C4CC0300182D08 /* HqUncaughtExceptionHandler.m */,
 			);
 			path = HqUncaughtExceptionHandler;
+			sourceTree = "<group>";
+		};
+		33F91D7928DEA3C500ADA384 /* HqNightModeVC */ = {
+			isa = PBXGroup;
+			children = (
+				33F91D7A28DEA3E500ADA384 /* HqNightModeVC.h */,
+				33F91D7B28DEA3E500ADA384 /* HqNightModeVC.m */,
+				33F91D7D28DEA3FC00ADA384 /* HqNightModeView.h */,
+				33F91D7E28DEA3FC00ADA384 /* HqNightModeView.m */,
+				33F91D8028DEC11E00ADA384 /* HqNightModeLayer.h */,
+				33F91D8128DEC11E00ADA384 /* HqNightModeLayer.m */,
+			);
+			path = HqNightModeVC;
 			sourceTree = "<group>";
 		};
 		8CB0DAF407536C01A655E213 /* Pods */ = {
@@ -3018,6 +3072,7 @@
 				3338C6D122505DF600640999 /* NSObject+HqInputLimit.m in Sources */,
 				3338C67722505C1600640999 /* HqKeyChain.m in Sources */,
 				3302A2BE23840F4E00E8F7DE /* HqNineBoxView.m in Sources */,
+				33F91D7C28DEA3E500ADA384 /* HqNightModeVC.m in Sources */,
 				33E825E7239A7A8600C54A2C /* HqFoldLineView.m in Sources */,
 				3338C69022505C1600640999 /* UIFont+HqCustomFont.m in Sources */,
 				3338C66C22505C1600640999 /* HqLoopImageCell.m in Sources */,
@@ -3030,6 +3085,7 @@
 				3338C67D22505C1600640999 /* AppDelegate+Hq3DTouch.m in Sources */,
 				3338C67022505C1600640999 /* UIImage+HqImage.m in Sources */,
 				3397DA2A2354434200B1BA51 /* HqAtVC.m in Sources */,
+				33E1802728DC69AE004B5DB1 /* CHCodeInputView.m in Sources */,
 				332FEE47233EF2770003F57C /* HqTextBindVC.m in Sources */,
 				3338C6A822505C1600640999 /* HqKVOTestVC.m in Sources */,
 				330D28C225E8FB0600E10E2E /* HqRichTextView.m in Sources */,
@@ -3069,6 +3125,7 @@
 				3338C67F22505C1600640999 /* HqPreviewVC.m in Sources */,
 				3338C69222505C1600640999 /* HqNSURLSession.m in Sources */,
 				33E825EC239DE97D00C54A2C /* HqkLineModel.m in Sources */,
+				33E1802628DC69AE004B5DB1 /* CHCodeView.m in Sources */,
 				330D28C125E8FB0600E10E2E /* HqTextAttachment.m in Sources */,
 				3338C68D22505C1600640999 /* ZPNumberKeyboard.m in Sources */,
 				338B7A1726DE367B0066CFD8 /* HqLocalPintListCell.m in Sources */,
@@ -3090,6 +3147,7 @@
 				3331CA9422924CB500E783FA /* HqTableView.m in Sources */,
 				33B8E1F123A25FA100B9C8E9 /* HqListItemModel.m in Sources */,
 				3354D4A32635516A00F2943E /* HqUITextField.m in Sources */,
+				33F91D8228DEC11E00ADA384 /* HqNightModeLayer.m in Sources */,
 				3338C69722505C1600640999 /* HqColorImage.m in Sources */,
 				3338C6A022505C1600640999 /* HqTouchID.m in Sources */,
 				330A99BA23084AD600BB65F5 /* HqTitleView.m in Sources */,
@@ -3129,6 +3187,7 @@
 				337D347125F7806400F95DD7 /* MyTabBar.m in Sources */,
 				332C249D23C5C21200C041D4 /* HqLoopUpDownItemView.m in Sources */,
 				33C53D092392258200C38587 /* HqNewTopicCell.m in Sources */,
+				33E1802028DC6980004B5DB1 /* HqCHCodeInputVC.m in Sources */,
 				331B7253229BF74A00A5D73B /* HHSegmentView.m in Sources */,
 				33E825F5239E1E4300C54A2C /* HqYCoordinateView.m in Sources */,
 				33DD0F57262D89EE000E3B20 /* HqUIButton.m in Sources */,
@@ -3156,6 +3215,7 @@
 				3338C69A22505C1600640999 /* HqAlertView.m in Sources */,
 				3397DA2623541FB900B1BA51 /* SelectUserController.m in Sources */,
 				331AFA2922E6E57D0030C62C /* HqMutilImagePickerVC.m in Sources */,
+				33F91D7F28DEA3FC00ADA384 /* HqNightModeView.m in Sources */,
 				3338C55A22505B5700640999 /* AppDelegate.m in Sources */,
 				33CEF09D2600872300C92A8F /* HqCustomTabBar.m in Sources */,
 				33DD4AF723F4F81F0030F2E9 /* NSObject+HqNSObjectCategory.m in Sources */,

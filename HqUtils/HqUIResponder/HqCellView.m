@@ -12,6 +12,7 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"HqCellView-touchesEnded");
+    // 点击时将会继续将事件传递给父视图
     [self.nextResponder touchesEnded:touches withEvent:event];
 }
 - (void)tintColorDidChange{
